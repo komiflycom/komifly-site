@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prism — every AI tool, one glass-clear subscription</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+/* ---------- Reset & base ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root{
+  --bg-base: #07090f;
+  --bg-elevated: #0d111d;
+  --violet: #8b5cf6;
+  --violet-soft: #a78bfa;
+  --cyan: #22d3ee;
+  --pink: #f472b6;
+  --text-primary: #f3f4fb;
+  --text-muted: #98a0b8;
+  --text-faint: #5d6480;
+  --glass-bg: rgba(255,255,255,0.05);
+  --glass-bg-strong: rgba(255,255,255,0.09);
+  --glass-border: rgba(255,255,255,0.14);
+  --glass-border-soft: rgba(255,255,255,0.07);
+  --radius-lg: 26px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --ease: cubic-bezier(.22,1,.36,1);
+}
+
+html { scroll-behavior: smooth; }
+
+body{
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  overflow-x: hidden;
+  position: relative;
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+input { font: inherit; color: inherit; }
+
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em; }
+
+.visually-hidden{
+  position:absolute; width:1px; height:1px; overflow:hidden;
+  clip:rect(0 0 0 0); white-space:nowrap;
+}
+
+:focus-visible{
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Aurora backdrop ---------- */
+.aurora{
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.aurora::before, .aurora::after, .aurora span{
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.55;
+}
+.aurora::before{
+  width: 620px; height: 620px;
+  background: radial-gradient(circle, var(--violet), transparent 70%);
+  top: -180px; left: -120px;
+  animation: drift1 26s ease-in-out infinite alternate;
+}
+.aurora::after{
+  width: 560px; height: 560px;
+  background: radial-gradient(circle, var(--cyan), transparent 70%);
+  bottom: -200px; right: -140px;
+  animation: drift2 30s ease-in-out infinite alternate;
+}
+.aurora span{
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, var(--pink), transparent 70%);
+  top: 38%; left: 46%;
+  opacity: 0.28;
+  animation: drift3 34s ease-in-out infinite alternate;
+}
+@keyframes drift1{ to { transform: translate(80px, 60px) scale(1.1); } }
+@keyframes drift2{ to { transform: translate(-70px, -50px) scale(1.15); } }
+@keyframes drift3{ to { transform: translate(-60px, 40px) scale(0.9); } }
+
+/* ---------- Layout helpers ---------- */
+.wrap{
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+section{ padding: 128px 0; position: relative; }
+.eyebrow-free-heading{ max-width: 640px; }
+.section-head{
+  max-width: 620px;
+  margin: 0 0 56px;
+}
+.section-head h2{ font-size: clamp(2rem, 3.4vw, 2.7rem); line-height: 1.15; margin-bottom: 16px; }
+.section-head p{ color: var(--text-muted); font-size: 1.08rem; }
+
+/* ---------- Glass primitives ---------- */
+.glass{
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  border-radius: var(--radius-md);
+  position: relative;
+}
+.glass::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.35), rgba(255,255,255,0) 40%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.96rem;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s var(--ease);
+  white-space: nowrap;
+}
+.btn-primary{
+  background: linear-gradient(135deg, var(--violet), var(--cyan));
+  color: #06070c;
+  box-shadow: 0 8px 30px -6px rgba(139,92,246,0.55);
+}
+.btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 14px 38px -6px rgba(139,92,246,0.7); }
+.btn-ghost{
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+}
+.btn-ghost:hover{ background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+.btn-block{ width: 100%; }
+
+/* ---------- Nav ---------- */
+.site-nav{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(7,9,15,0.6);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border-bottom: 1px solid var(--glass-border-soft);
+}
+.nav-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.brand-mark{ width: 30px; height: 30px; color: var(--violet-soft); }
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+.nav-links a{ transition: color 0.2s var(--ease); }
+.nav-links a:hover{ color: var(--text-primary); }
+.nav-actions{ display: flex; align-items: center; gap: 18px; }
+.nav-toggle{
+  display: none;
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
+  align-items: center;
+  justify-content: center;
+}
+.nav-toggle svg{ width: 20px; height: 20px; }
+
+/* ---------- Hero ---------- */
+.hero{ padding-top: 96px; padding-bottom: 80px; }
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 64px;
+  align-items: center;
+}
+.hero-copy h1{
+  font-size: clamp(2.4rem, 4.6vw, 3.65rem);
+  line-height: 1.08;
+  margin-bottom: 22px;
+  opacity: 0;
+  animation: rise 0.8s var(--ease) 0.05s forwards;
+}
+.hero-copy .lede{
+  font-size: 1.14rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin-bottom: 34px;
+  opacity: 0;
+  animation: rise 0.8s var(--ease) 0.18s forwards;
+}
+.hero-ctas{
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+  opacity: 0;
+  animation: rise 0.8s var(--ease) 0.3s forwards;
+}
+.hero-stats{
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: rise 0.8s var(--ease) 0.42s forwards;
+}
+.stat-chip{
+  padding: 12px 18px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+}
+.stat-chip strong{ color: var(--text-primary); font-weight: 600; }
+
+@keyframes rise{
+  from{ opacity: 0; transform: translateY(18px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+/* Hero visual: fanned glass cards */
+.hero-visual{
+  position: relative;
+  height: 460px;
+  perspective: 1400px;
+  opacity: 0;
+  animation: rise 1s var(--ease) 0.25s forwards;
+}
+.card-stack{
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+.tool-card{
+  position: absolute;
+  width: 220px;
+  padding: 22px;
+  border-radius: var(--radius-md);
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.55);
+  transition: transform 0.4s var(--ease);
+}
+.tool-card .icon-badge{ margin-bottom: 30px; }
+.tool-card h4{ font-size: 1.02rem; margin-bottom: 6px; }
+.tool-card p{ font-size: 0.82rem; color: var(--text-muted); }
+.tc-1{ top: 8%; left: 6%; transform: rotate(-9deg) translateZ(0); z-index: 1; }
+.tc-2{ top: 20%; left: 32%; transform: rotate(3deg) translateZ(40px); z-index: 3; box-shadow: 0 40px 80px -20px rgba(139,92,246,0.45); border-color: rgba(167,139,250,0.4); }
+.tc-3{ top: 6%; left: 58%; transform: rotate(11deg) translateZ(0); z-index: 2; }
+.tc-4{ top: 46%; left: 20%; transform: rotate(-4deg) translateZ(-10px); z-index: 1; opacity: 0.85; }
+
+.icon-badge{
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-badge svg{ width: 22px; height: 22px; }
+.ib-violet{ background: rgba(139,92,246,0.18); color: var(--violet-soft); }
+.ib-cyan{ background: rgba(34,211,238,0.16); color: var(--cyan); }
+.ib-pink{ background: rgba(244,114,182,0.16); color: var(--pink); }
+
+/* ---------- Bundles / pricing ---------- */
+.bundles-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+.billing-toggle{
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 999px;
+}
+.billing-toggle button{
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: background 0.25s var(--ease), color 0.25s var(--ease);
+}
+.billing-toggle button.active{
+  background: linear-gradient(135deg, var(--violet), var(--cyan));
+  color: #06070c;
+}
+.save-badge{
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--cyan);
+  margin-left: 6px;
+}
+
+.pricing-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  align-items: stretch;
+}
+.plan-card{
+  padding: 38px 32px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.plan-card:hover{ transform: translateY(-6px); }
+.plan-card.featured{
+  background: linear-gradient(180deg, rgba(139,92,246,0.14), rgba(34,211,238,0.06));
+  border: 1px solid rgba(167,139,250,0.5);
+  box-shadow: 0 30px 70px -24px rgba(139,92,246,0.55);
+  transform: translateY(-14px);
+}
+.plan-card.featured:hover{ transform: translateY(-20px); }
+.plan-tag{
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(34,211,238,0.14);
+  color: var(--cyan);
+  margin-bottom: 18px;
+}
+.plan-name{ font-size: 1.3rem; margin-bottom: 6px; }
+.plan-desc{ color: var(--text-muted); font-size: 0.9rem; margin-bottom: 26px; }
+.plan-price{ display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; }
+.plan-price .amount{ font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; }
+.plan-price .period{ color: var(--text-muted); font-size: 0.92rem; }
+.plan-note{ font-size: 0.8rem; color: var(--text-faint); margin-bottom: 28px; }
+.plan-tools{ margin-bottom: 32px; flex-grow: 1; }
+.plan-tools li{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--glass-border-soft);
+  color: var(--text-muted);
+}
+.plan-tools li:last-child{ border-bottom: none; }
+.plan-tools li svg{ width: 16px; height: 16px; color: var(--cyan); flex-shrink: 0; }
+.plan-tools li span{ color: var(--text-primary); }
+
+/* ---------- Tools showcase ---------- */
+.tools-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.tool-chip{
+  padding: 26px 24px;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.tool-chip:hover{ transform: translateY(-4px); border-color: var(--glass-border); }
+.tool-chip h4{ font-size: 1.05rem; margin: 16px 0 8px; }
+.tool-chip p{ font-size: 0.85rem; color: var(--text-muted); }
+
+/* ---------- Why Prism ---------- */
+.why-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.why-card{ padding: 30px 26px; }
+.why-card h4{ font-size: 1.02rem; margin: 18px 0 8px; }
+.why-card p{ font-size: 0.87rem; color: var(--text-muted); }
+
+/* ---------- Testimonials ---------- */
+.testi-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.testi-card{ padding: 30px 28px; display: flex; flex-direction: column; gap: 20px; }
+.testi-card p.quote{ font-size: 0.98rem; color: var(--text-primary); line-height: 1.6; }
+.testi-person{ display: flex; align-items: center; gap: 12px; }
+.testi-avatar{
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--violet), var(--pink));
+}
+.testi-person strong{ display: block; font-size: 0.9rem; }
+.testi-person span{ font-size: 0.8rem; color: var(--text-muted); }
+
+/* ---------- FAQ ---------- */
+.faq-list{ max-width: 760px; }
+.faq-item{
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.faq-item summary{
+  cursor: pointer;
+  list-style: none;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.faq-item summary::-webkit-details-marker{ display: none; }
+.faq-item summary .plus{
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--glass-bg-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s var(--ease);
+}
+.faq-item[open] summary .plus{ transform: rotate(45deg); }
+.faq-item .faq-a{
+  padding: 0 26px 24px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  max-width: 620px;
+}
+
+/* ---------- CTA band ---------- */
+.cta-band{
+  padding: 70px 60px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(139,92,246,0.16), rgba(34,211,238,0.08));
+  border: 1px solid rgba(167,139,250,0.35);
+}
+.cta-band h2{ font-size: clamp(1.8rem, 3.4vw, 2.5rem); margin-bottom: 14px; }
+.cta-band p{ color: var(--text-muted); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+/* ---------- Footer ---------- */
+footer{
+  border-top: 1px solid var(--glass-border-soft);
+  padding: 72px 0 32px;
+}
+.footer-grid{
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 56px;
+}
+.footer-brand p{ color: var(--text-muted); font-size: 0.9rem; margin-top: 14px; max-width: 260px; }
+.footer-col h5{ font-size: 0.85rem; margin-bottom: 16px; color: var(--text-primary); }
+.footer-col ul li{ margin-bottom: 10px; }
+.footer-col ul li a{ color: var(--text-muted); font-size: 0.88rem; transition: color 0.2s var(--ease); }
+.footer-col ul li a:hover{ color: var(--text-primary); }
+.newsletter-form{ display: flex; gap: 8px; margin-top: 14px; }
+.newsletter-form input{
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  font-size: 0.86rem;
+}
+.newsletter-form input::placeholder{ color: var(--text-faint); }
+.newsletter-form button{
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--violet), var(--cyan));
+  color: #06070c;
+  font-weight: 600;
+  font-size: 0.86rem;
+}
+.footer-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 28px;
+  border-top: 1px solid var(--glass-border-soft);
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.social-row{ display: flex; gap: 14px; }
+.social-row a{
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.social-row a:hover{ color: var(--text-primary); border-color: var(--glass-border); }
+.social-row svg{ width: 15px; height: 15px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1080px){
+  .pricing-grid, .why-grid{ grid-template-columns: repeat(2, 1fr); }
+  .tools-grid{ grid-template-columns: repeat(3, 1fr); }
+  .testi-grid{ grid-template-columns: repeat(1, 1fr); }
+  .footer-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .hero-visual{ height: 380px; order: -1; }
+  .plan-card.featured{ transform: none; }
+  .plan-card.featured:hover{ transform: translateY(-6px); }
+}
+@media (max-width: 760px){
+  .nav-links, .nav-actions .btn-ghost{ display: none; }
+  .nav-toggle{ display: flex; }
+  section{ padding: 80px 0; }
+  .wrap{ padding: 0 22px; }
+  .pricing-grid, .why-grid, .tools-grid{ grid-template-columns: 1fr; }
+  .footer-grid{ grid-template-columns: 1fr; gap: 32px; }
+  .bundles-head{ flex-direction: column; align-items: flex-start; }
+}
+
+/* Mobile nav drawer */
+.mobile-drawer{
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(320px, 84vw);
+  height: 100vh;
+  background: rgba(10,13,22,0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-left: 1px solid var(--glass-border);
+  padding: 100px 32px 32px;
+  transform: translateX(100%);
+  transition: transform 0.4s var(--ease);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.mobile-drawer.open{ transform: translateX(0); }
+.mobile-drawer a{ font-size: 1.1rem; font-family: var(--font-display); }
+.drawer-backdrop{
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.4s var(--ease);
+  z-index: 150;
+}
+.drawer-backdrop.open{ opacity: 1; pointer-events: auto; }
+
+</style>
+</head>
+<body>
+
+<div class="aurora"><span></span></div>
+
+<!-- ===== Nav ===== -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 4L27 24H5L16 4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M16 4L16 16L9 24" stroke="var(--cyan)" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M16 16L23 24" stroke="var(--pink)" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      Prism
+    </a>
+    <ul class="nav-links">
+      <li><a href="#bundles">Bundles</a></li>
+      <li><a href="#tools">Included tools</a></li>
+      <li><a href="#why">Why Prism</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#bundles" class="btn btn-ghost">Log in</a>
+      <a href="#bundles" class="btn btn-primary">Start free trial</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="#bundles">Bundles</a>
+  <a href="#tools">Included tools</a>
+  <a href="#why">Why Prism</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#faq">FAQ</a>
+  <a href="#bundles" class="btn btn-primary btn-block" style="margin-top:10px;">Start free trial</a>
+</div>
+
+<main id="top">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>Every AI tool your work needs, split into one clear subscription.</h1>
+        <p class="lede">Prism bundles the AI apps you'd otherwise pay for separately, chat, image, voice, writing and more, into a single glass-clear plan. One login, one invoice, one price.</p>
+        <div class="hero-ctas">
+          <a href="#bundles" class="btn btn-primary">Build your bundle</a>
+          <a href="#tools" class="btn btn-ghost">See what's included</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-chip glass"><strong>8 tools</strong> in one plan</div>
+          <div class="stat-chip glass">Save up to <strong>46%</strong> vs. separate plans</div>
+          <div class="stat-chip glass"><strong>Cancel</strong> anytime, no contracts</div>
+        </div>
+      </div>
+
+      <div class="hero-visual" id="heroVisual">
+        <div class="card-stack" id="cardStack">
+          <div class="tool-card tc-1">
+            <div class="icon-badge ib-cyan">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.4"/><circle cx="12" cy="12" r="8.4" stroke-dasharray="2 4"/></svg>
+            </div>
+            <h4>Lumen</h4>
+            <p>Image generation</p>
+          </div>
+          <div class="tool-card tc-2">
+            <div class="icon-badge ib-violet">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>
+            </div>
+            <h4>Cortex</h4>
+            <p>Conversational assistant</p>
+          </div>
+          <div class="tool-card tc-3">
+            <div class="icon-badge ib-pink">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4M7 6v12M11 3v18M15 6v12M19 10v4"/></svg>
+            </div>
+            <h4>Echo</h4>
+            <p>Voice &amp; audio AI</p>
+          </div>
+          <div class="tool-card tc-4">
+            <div class="icon-badge ib-cyan">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17V7l8-3 8 3v10l-8 3-8-3Z"/><path d="M4 7l8 3 8-3M12 10v10"/></svg>
+            </div>
+            <h4>Scribe</h4>
+            <p>Writing &amp; editing</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Bundles / Pricing ===== -->
+  <section id="bundles">
+    <div class="wrap">
+      <div class="bundles-head">
+        <div class="eyebrow-free-heading">
+          <h2>Pick your spectrum</h2>
+          <p style="color:var(--text-muted); font-size:1.05rem; margin-top:12px;">Three bundles, each covering more of the toolkit. Move up or down whenever your work changes.</p>
+        </div>
+        <div class="billing-toggle glass">
+          <button class="active" id="billMonthly">Monthly</button>
+          <button id="billYearly">Yearly <span class="save-badge">Save 20%</span></button>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Beam -->
+        <div class="plan-card glass">
+          <div class="plan-name">Beam</div>
+          <p class="plan-desc">For solo work that needs a couple of reliable tools, not a whole stack.</p>
+          <div class="plan-price">
+            <span class="amount" data-monthly="19" data-yearly="15">$19</span>
+            <span class="period">/ month</span>
+          </div>
+          <p class="plan-note" data-monthly-note="Billed monthly" data-yearly-note="Billed $180 yearly">Billed monthly</p>
+          <ul class="plan-tools">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Cortex</span> — chat assistant</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Scribe</span> — writing &amp; editing</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Echo</span> — voice &amp; audio</li>
+          </ul>
+          <a href="#" class="btn btn-ghost btn-block">Choose Beam</a>
+        </div>
+
+        <!-- Spectrum -->
+        <div class="plan-card glass featured">
+          <span class="plan-tag">Most popular</span>
+          <div class="plan-name">Spectrum</div>
+          <p class="plan-desc">The full creative kit for freelancers and small teams shipping regularly.</p>
+          <div class="plan-price">
+            <span class="amount" data-monthly="39" data-yearly="31">$39</span>
+            <span class="period">/ month</span>
+          </div>
+          <p class="plan-note" data-monthly-note="Billed monthly" data-yearly-note="Billed $372 yearly">Billed monthly</p>
+          <ul class="plan-tools">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Cortex</span> — chat assistant</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Scribe</span> — writing &amp; editing</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Echo</span> — voice &amp; audio</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Lumen</span> — image generation</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Vision</span> — visual analysis</li>
+          </ul>
+          <a href="#" class="btn btn-primary btn-block">Choose Spectrum</a>
+        </div>
+
+        <!-- Prism Max -->
+        <div class="plan-card glass">
+          <div class="plan-name">Prism Max</div>
+          <p class="plan-desc">Every tool in the stack, for teams that run their whole workflow on AI.</p>
+          <div class="plan-price">
+            <span class="amount" data-monthly="69" data-yearly="55">$69</span>
+            <span class="period">/ month</span>
+          </div>
+          <p class="plan-note" data-monthly-note="Billed monthly" data-yearly-note="Billed $660 yearly">Billed monthly</p>
+          <ul class="plan-tools">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>All 8 tools</span> — full stack</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Flux</span> — video generation</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Atlas</span> — research assistant</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Pulse</span> — analytics &amp; insight</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>3 seats</span> included</li>
+          </ul>
+          <a href="#" class="btn btn-ghost btn-block">Choose Prism Max</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Tools showcase ===== -->
+  <section id="tools">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>One subscription, a full spectrum of AI</h2>
+        <p>Eight purpose-built tools, sharing one account and one bill. Mix and match by bundle, or swap tools as your work shifts.</p>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-chip glass">
+          <div class="icon-badge ib-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div>
+          <h4>Cortex</h4>
+          <p>A conversational assistant for drafting, research and quick answers.</p>
+        </div>
+        <div class="tool-chip glass">
+          <div class="icon-badge ib-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.4"/><circle cx="12" cy="12" r="8.4" stroke-dasharray="2 4"/></svg></div>
+          <h4>Lumen</h4>
+          <p>Image generation and editing, tuned for product and brand visuals.</p>
+        </div>
+        <div class="tool-chip glass">
+          <div class="icon-badge ib-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4M7 6v12M11 3v18M15 6v12M19 10v4"/></svg></div>
+          <h4>Echo</h4>
+          <p>Voice cloning, transcription and audio cleanup in one panel.</p>
+        </div>
+        <div class="tool-chip glass">
+          <div class="icon-badge ib-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17V7l8-3 8 3v10l-8 3-8-3Z"/><path d="M4 7l8 3 8-3M12 10v10"/></svg></div>
+          <h4>Scribe</h4>
+          <p>Writing and editing that keeps your voice, from outline to final pass.</p>
+        </div>
+        <div class="tool-chip glass">
+          <div class="icon-badge ib-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="2.6"/></svg></div>
+          <h4>Vision</h4>
+          <p>Reads documents, screenshots and photos, and answers questions about them.</p>
+        </div>
+        <div class="tool-chip glass">
+          <div class="icon-badge ib-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4 20 12 6 20V4Z"/></svg></div>
+          <h4>Flux</h4>
+          <p>Short-form video generation from a script, a product shot, or a prompt.</p>
+        </div>
+        <div class="tool-chip glass">
+          <div class="icon-badge ib-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-3.5 6-4-2 3.5-6 4 2Z"/></svg></div>
+          <h4>Atlas</h4>
+          <p>Deep research across sources, with citations you can actually check.</p>
+        </div>
+        <div class="tool-chip glass">
+          <div class="icon-badge ib-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l4-6 4 3 5-8 5 5"/></svg></div>
+          <h4>Pulse</h4>
+          <p>Turns spreadsheets and dashboards into plain-language insight.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Why Prism ===== -->
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Why bundle through Prism</h2>
+        <p>The same tools you'd subscribe to individually, run through one account with fewer bills to track.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card glass">
+          <div class="icon-badge ib-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="6" rx="1.5"/><rect x="4" y="14" width="16" height="6" rx="1.5"/></svg></div>
+          <h4>Bundled pricing</h4>
+          <p>Pay one rate for the whole set instead of separate invoices for every tool.</p>
+        </div>
+        <div class="why-card glass">
+          <div class="icon-badge ib-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <h4>Single sign-on</h4>
+          <p>One login opens every tool in your bundle, no separate passwords to manage.</p>
+        </div>
+        <div class="why-card glass">
+          <div class="icon-badge ib-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 12a9 9 0 0 1-15 6.7L3 16"/></svg></div>
+          <h4>Swap tools anytime</h4>
+          <p>Traded Flux for Atlas this month? Change your line-up without changing plans.</p>
+        </div>
+        <div class="why-card glass">
+          <div class="icon-badge ib-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M12 19V5M20 19v-7"/></svg></div>
+          <h4>Usage dashboard</h4>
+          <p>See what each tool costs you and where your usage actually goes, in one view.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Testimonials ===== -->
+  <section id="reviews">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>People who cancelled four other subscriptions</h2>
+        <p>A few notes from people running their work through a Prism bundle.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card glass">
+          <p class="quote">I was paying for a chat tool, an image tool and a transcription app separately. Spectrum replaced all three and still came in cheaper.</p>
+          <div class="testi-person">
+            <div class="testi-avatar"></div>
+            <div><strong>Maya Osei</strong><span>Freelance brand designer</span></div>
+          </div>
+        </div>
+        <div class="testi-card glass">
+          <p class="quote">Swapping Flux in when I needed video for a launch, then swapping it back out, is the feature that sold me. No plan changes, no calls.</p>
+          <div class="testi-person">
+            <div class="testi-avatar"></div>
+            <div><strong>Daniel Cho</strong><span>Founder, small studio</span></div>
+          </div>
+        </div>
+        <div class="testi-card glass">
+          <p class="quote">Prism Max gives my team of three shared seats across every tool. Onboarding a new hire now takes one invite, not eight.</p>
+          <div class="testi-person">
+            <div class="testi-avatar"></div>
+            <div><strong>Priya Nathan</strong><span>Ops lead, content team</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Questions before you switch</h2>
+        <p>Everything people usually ask before moving their tools into one bundle.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item glass" open>
+          <summary>Can I mix tools from different bundles?<span class="plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="faq-a">Each bundle sets which tools are included, but you can swap any tool in your bundle for another of equal standing once a month, so your line-up can follow the work instead of a fixed list.</div>
+        </details>
+        <details class="faq-item glass">
+          <summary>What happens if I go over a tool's usage limit?<span class="plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="faq-a">You'll get a heads-up in your dashboard before you hit the ceiling. From there you can add a top-up for that tool alone, or upgrade the bundle, whichever costs less for what you need.</div>
+        </details>
+        <details class="faq-item glass">
+          <summary>Can I cancel or downgrade mid-cycle?<span class="plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="faq-a">Yes. Changes take effect at your next billing date, and you keep full access to your current bundle until then. There's no minimum term on any plan.</div>
+        </details>
+        <details class="faq-item glass">
+          <summary>Is my data shared between the bundled tools?<span class="plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="faq-a">No. Each tool keeps its own workspace and history. The bundle shares your login and billing, not your files or conversations, unless you explicitly connect two tools yourself.</div>
+        </details>
+        <details class="faq-item glass">
+          <summary>Do Prism Max seats share one usage pool?<span class="plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="faq-a">Yes, the three included seats draw from a shared usage pool that you can monitor per person from the dashboard, and you can add extra seats at a flat per-seat rate.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA band ===== -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="cta-band glass">
+        <h2>Ready to simplify your AI stack?</h2>
+        <p>Start on Spectrum with a 14-day trial. No card needed until you decide to stay.</p>
+        <a href="#bundles" class="btn btn-primary">Build your bundle</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand">
+          <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 4L27 24H5L16 4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M16 4L16 16L9 24" stroke="var(--cyan)" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M16 16L23 24" stroke="var(--pink)" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          Prism
+        </a>
+        <p>One subscription for the AI tools you actually use. Bundled, billed simply, cancel anytime.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <label for="newsletterEmail" class="visually-hidden">Email address</label>
+          <input id="newsletterEmail" type="email" placeholder="you@email.com" required>
+          <button type="submit">Notify me</button>
+        </form>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#bundles">Bundles</a></li>
+          <li><a href="#tools">Included tools</a></li>
+          <li><a href="#why">Why Prism</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Terms of service</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Prism. All rights reserved.</span>
+      <div class="social-row">
+        <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.4"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="8.4" cy="8.4" r="0.6" fill="currentColor"/><path d="M8.4 11v6M12.4 17v-3.4a1.8 1.8 0 0 1 3.6 0V17"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav drawer
+  const navToggle = document.getElementById('navToggle');
+  const drawer = document.getElementById('mobileDrawer');
+  const backdrop = document.getElementById('drawerBackdrop');
+
+  function closeDrawer(){
+    drawer.classList.remove('open');
+    backdrop.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }
+  function toggleDrawer(){
+    const isOpen = drawer.classList.toggle('open');
+    backdrop.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  }
+  navToggle.addEventListener('click', toggleDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+  // Billing toggle: monthly / yearly
+  const billMonthly = document.getElementById('billMonthly');
+  const billYearly = document.getElementById('billYearly');
+  const amounts = document.querySelectorAll('.plan-price .amount');
+  const notes = document.querySelectorAll('.plan-note');
+
+  function setBilling(mode){
+    billMonthly.classList.toggle('active', mode === 'monthly');
+    billYearly.classList.toggle('active', mode === 'yearly');
+    amounts.forEach(el => {
+      el.textContent = '$' + el.getAttribute('data-' + mode);
+    });
+    notes.forEach(el => {
+      el.textContent = el.getAttribute('data-' + mode + '-note');
+    });
+  }
+  billMonthly.addEventListener('click', () => setBilling('monthly'));
+  billYearly.addEventListener('click', () => setBilling('yearly'));
+
+  // Subtle pointer-driven tilt on the hero card stack
+  const heroVisual = document.getElementById('heroVisual');
+  const cardStack = document.getElementById('cardStack');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (heroVisual && cardStack && !prefersReducedMotion && window.matchMedia('(min-width: 900px)').matches) {
+    heroVisual.addEventListener('mousemove', (e) => {
+      const rect = heroVisual.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      cardStack.style.transform = `rotateY(${x * 10}deg) rotateX(${y * -10}deg)`;
+    });
+    heroVisual.addEventListener('mouseleave', () => {
+      cardStack.style.transform = 'rotateY(0deg) rotateX(0deg)';
+    });
+  }
+</script>
+
+</body>
+</html>
