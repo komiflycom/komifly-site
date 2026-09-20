@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<!-- ============================== TEMEL SEO ============================== -->
+<title>Trendyol Kâr Hesaplama ve BuyBox Takip Programı | KomiFly</title>
+<meta name="description" content="Trendyol satıcıları için Windows programı: komisyon, KDV, kargo desisi ve stopajla her ürünün gerçek kârını hesaplar, BuyBox ve rakip fiyatlarını izler, Excel'i tek tıkla hazırlar." />
+<link rel="canonical" href="https://komifly.com/" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow" />
+<meta name="keywords" content="trendyol kâr hesaplama programı, trendyol komisyon hesaplama, trendyol buybox takip, trendyol rakip takip programı, trendyol fiyat güncelleme, trendyol desi hesaplama, trendyol satıcı programı, trendyol komisyon indirimi, trendyol kârlılık analizi" />
+<meta name="author" content="KomiFly" />
+<meta name="publisher" content="KomiFly" />
+<meta name="application-name" content="KomiFly" />
+<meta name="theme-color" content="#09090b" />
+<meta name="color-scheme" content="dark" />
+<meta name="rating" content="general" />
+<meta http-equiv="content-language" content="tr" />
+<link rel="alternate" hreflang="tr" href="https://komifly.com/" />
+<link rel="alternate" hreflang="x-default" href="https://komifly.com/" />
+
+<!-- ====================== OPEN GRAPH (WhatsApp / Facebook / LinkedIn) ====================== -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="KomiFly" />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:url" content="https://komifly.com/" />
+<meta property="og:title" content="Trendyol Kâr Hesaplama ve BuyBox Takip Programı | KomiFly" />
+<meta property="og:description" content="Komisyon, KDV, kargo desisi ve stopajı hesaba katarak gerçek kârı gösterir; BuyBox'ı ve rakip fiyatlarını izler, Trendyol şablonuna uygun Excel üretir." />
+<meta property="og:image" content="https://komifly.com/og-image.jpg" />
+<meta property="og:image:secure_url" content="https://komifly.com/og-image.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="KomiFly - Trendyol kâr hesaplama ve BuyBox takip programı" />
+
+<!-- ============================== TWITTER / X ============================== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Trendyol Kâr Hesaplama ve BuyBox Takip Programı | KomiFly" />
+<meta name="twitter:description" content="Komisyon, KDV, kargo desisi ve stopajı hesaba katarak gerçek kârı gösterir; BuyBox'ı ve rakip fiyatlarını izler, Trendyol şablonuna uygun Excel üretir." />
+<meta name="twitter:image" content="https://komifly.com/og-image.jpg" />
+<meta name="twitter:image:alt" content="KomiFly - Trendyol kâr hesaplama ve BuyBox takip programı" />
+
+<!-- ============================== IKONLAR ============================== -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+<!-- ============================== PERFORMANS ============================== -->
+<link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          zinc: {
+            50:'#fafafa',100:'#f4f4f5',200:'#e4e4e7',300:'#d4d4d8',400:'#a1a1aa',
+            500:'#71717a',600:'#52525b',700:'#3f3f46',800:'#27272a',900:'#18181b',950:'#09090b'
+          }
+        }
+      }
+    }
+  }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+<style>
+  :root { color-scheme: dark; }
+  html, body { background:#09090b; }
+  body { -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+  ::selection { background: rgba(249,115,22,0.3); }
+  ::-webkit-scrollbar { height: 8px; width: 8px; }
+  ::-webkit-scrollbar-thumb { background:#3f3f46; border-radius:9999px; }
+  details summary::-webkit-details-marker { display:none; }
+  .tabular-nums { font-variant-numeric: tabular-nums; }
+</style>
+
+<!-- ============================== YAPISAL VERI (JSON-LD) ============================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://komifly.com/#software",
+  "name": "KomiFly",
+  "alternateName": "KomiFly Trendyol Kâr ve Rekabet Takip Programı",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "E-ticaret / Pazaryeri Yönetim Yazılımı",
+  "operatingSystem": "Windows",
+  "inLanguage": "tr-TR",
+  "url": "https://komifly.com/",
+  "image": "https://komifly.com/og-image.jpg",
+  "description": "Trendyol satıcıları için Windows programı: komisyon, KDV, kargo desisi ve stopajla her ürünün gerçek kârını hesaplar, BuyBox ve rakip fiyatlarını izler, Excel'i tek tıkla hazırlar.",
+  "softwareHelp": "https://komifly.com/#sss",
+  "featureList": [
+    "Trendyol kâr hesaplama (komisyon, KDV, hizmet bedeli, kargo, stopaj)",
+    "BuyBox takibi ve 1. sıra fiyat karşılaştırması",
+    "4 tarifeli komisyon indirimi hesaplama ve otomatik tarife seçimi",
+    "Rakip satıcı, fiyat, stok ve kupon takibi",
+    "Desi yönetimi ve gerçek kargo maliyeti tespiti",
+    "Flaş Ürün (24 saat / 3 saat) uygunluk ve kâr hesabı",
+    "Trendyol şablonuna uygun toplu fiyat güncelleme Excel çıktısı",
+    "Satış analizi, iade oranı ve kârlılık raporları"
+  ],
+  "publisher": {
+    "@id": "https://komifly.com/#org"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://komifly.com/#org",
+  "name": "KomiFly",
+  "url": "https://komifly.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://komifly.com/favicon-512.png",
+    "width": 512,
+    "height": 512
+  },
+  "image": "https://komifly.com/og-image.jpg",
+  "description": "Trendyol satıcıları için Windows programı: komisyon, KDV, kargo desisi ve stopajla her ürünün gerçek kârını hesaplar, BuyBox ve rakip fiyatlarını izler, Excel'i tek tıkla hazırlar.",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Türkiye"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "telephone": "+90-542-698-34-65",
+      "availableLanguage": [
+        "Turkish"
+      ],
+      "url": "https://wa.me/905426983465"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://komifly.com/#website",
+  "url": "https://komifly.com/",
+  "name": "KomiFly",
+  "inLanguage": "tr-TR",
+  "publisher": {
+    "@id": "https://komifly.com/#org"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://komifly.com/#webpage",
+  "url": "https://komifly.com/",
+  "name": "Trendyol Kâr Hesaplama ve BuyBox Takip Programı | KomiFly",
+  "description": "Trendyol satıcıları için Windows programı: komisyon, KDV, kargo desisi ve stopajla her ürünün gerçek kârını hesaplar, BuyBox ve rakip fiyatlarını izler, Excel'i tek tıkla hazırlar.",
+  "inLanguage": "tr-TR",
+  "isPartOf": {
+    "@id": "https://komifly.com/#website"
+  },
+  "about": {
+    "@id": "https://komifly.com/#software"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://komifly.com/og-image.jpg"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://komifly.com/#faq",
+  "inLanguage": "tr-TR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Trendyol'a doğrudan fiyat gönderiyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. KomiFly, Trendyol'un kendi Excel şablonuyla birebir uyumlu bir dosya üretir; siz bu dosyayı panele yüklersiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Verilerim güvende mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Program bilgisayarınızda çalışır, veriler yerel olarak tutulur. Bilgileriniz kendi cihazınızdan dışarı çıkmaz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Trendyol kâr hesabına hangi kalemler dahil ediliyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alış fiyatı, KDV, komisyon, hizmet bedeli, desiye göre kargo, stopaj ve net KDV etkisi tek tek hesaplanır. Her satırdaki Detay bağlantısıyla hesabın adımlarını görebilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Trendyol komisyon oranları programda nasıl hesaplanıyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "4 tarifeli komisyon Excel'inizi yüklersiniz; KomiFly her ürün için dört tarifenin de kârını ayrı ayrı hesaplar, en kârlı tarifeyi işaretler ve seçiminizi toplu olarak uygular."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Desi nedir, kâr hesabını nasıl etkiler?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Desi, kargo ücretinin hesaplandığı hacimsel ağırlıktır. Üründe yazan desi gerçeğinden düşükse aradaki farkı siz ödersiniz. KomiFly teslim edilen siparişlerden gerçek desiyi öğrenir, TL cinsinden kargo kaybını gösterir ve tek tuşla toplu düzeltir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "BuyBox takibi nasıl çalışıyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Program ürünlerinizin BuyBox durumunu ve 1. sıradaki fiyatı sürekli izler. BuyBox içi ve BuyBox dışı için ayrı asgari kâr kuralları tanımlayabilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Rakip fiyatlarını takip edebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Web taraması rakip satıcıları, sıralarını, fiyat, stok ve kupon/kampanya bilgisini toplar; değişiklikler zaman çizelgesine düşer. Kendi ürün linkinizi rakip linkiyle eşleştirip renk ve beden bazında karşılaştırma yapabilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Flaş Ürün kampanyalarına uygunluğu görebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. 24 Saat ve 3 Saat flaş fiyatları için uygunluk ve kâr hesabı yapılır; yalnızca uygun süreyi yazan, Trendyol Flaş şablonuna uygun bir Excel dosyası üretilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Satış adetleri nasıl hesaplanıyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Satış adetleri stok hareketinden tahmini olarak hesaplanır. Ekranlarda bu değerler 'tahmini satış' olarak belirtilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lisans nasıl çalışıyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lisans bilgisayarınıza bağlıdır; süreli ve takip edilecek ürün linki kapasitesine göre verilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Başka bilgisayara taşıyabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Taşıma için yeni bir lisans dosyası gerekir."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://komifly.com/#howto",
+  "name": "KomiFly ile Trendyol kâr takibine 3 adımda başlayın",
+  "inLanguage": "tr-TR",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Kurun ve bağlanın",
+      "text": "Programı kurun, Trendyol API bilgilerinizi girin. Verileriniz kendi bilgisayarınızda kalır.",
+      "url": "https://komifly.com/#adimlar"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Tarayın",
+      "text": "Ürünler, siparişler, komisyon Excel'i ve rakipler içeri gelsin. Sonuçlar tüm menülere otomatik yansır.",
+      "url": "https://komifly.com/#adimlar"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Karar verin",
+      "text": "Kâr, BuyBox ve rakip verisine göre fiyatı ve komisyon tarifesini seçin; Excel'i Trendyol'a yükleyin.",
+      "url": "https://komifly.com/#adimlar"
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen bg-zinc-950 text-zinc-100 antialiased">
+<style id="sf-style">
+/* JS yüklenene kadar görünen, arama motorlarının okuduğu statik içerik */
+.sf{max-width:1100px;margin:0 auto;padding:28px 20px 60px;color:#d4d4d8;font:16px/1.65 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.sf h1,.sf h2,.sf h3{color:#fafafa;line-height:1.25;margin:0 0 10px}
+.sf h1{font-size:clamp(28px,5vw,46px);letter-spacing:-.02em}
+.sf h2{font-size:clamp(22px,3.4vw,32px);letter-spacing:-.01em;margin-top:8px}
+.sf h3{font-size:17px}
+.sf p{margin:0 0 14px}
+.sf section{padding:34px 0;border-top:1px solid #27272a}
+.sf-top{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding-bottom:18px}
+.sf-brand{font-size:20px;font-weight:700;color:#fafafa;margin:0}
+.sf-brand span{color:#fb923c}
+.sf-top nav a{color:#a1a1aa;text-decoration:none;margin-right:16px;font-size:14px}
+.sf-hero{text-align:center;border-top:0}
+.sf-tag{display:inline-block;border:1px solid #3f3f46;border-radius:999px;padding:5px 12px;font-size:13px;color:#d4d4d8}
+.sf-lead{max-width:760px;margin:0 auto 18px;color:#a1a1aa}
+.sf-cta{display:inline-block;background:linear-gradient(135deg,#f97316,#fbbf24);color:#09090b;font-weight:700;
+  padding:13px 26px;border-radius:10px;text-decoration:none}
+.sf-badges{list-style:none;display:flex;flex-wrap:wrap;gap:18px;justify-content:center;padding:0;margin:18px 0 0;
+  font-size:13px;color:#71717a}
+.sf-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:18px}
+.sf-card{border:1px solid #27272a;border-radius:14px;padding:18px;background:#0e0e11}
+.sf-card p{color:#a1a1aa;font-size:14px;margin:0}
+.sf-list{padding-left:20px}.sf-list li{margin-bottom:8px}
+.sf-faq{border:1px solid #27272a;border-radius:12px;padding:14px 18px;margin-bottom:10px;background:#0e0e11}
+.sf-faq p{color:#a1a1aa;font-size:14px;margin:0}
+.sf-foot{border-top:1px solid #27272a;padding-top:20px;font-size:13px;color:#71717a}
+</style>
+<div id="root"><div class="sf">
+  <header class="sf-top">
+    <p class="sf-brand">Komi<span>Fly</span></p>
+    <nav aria-label="Ana menü">
+      <a href="#neden">Neden KomiFly</a>
+      <a href="#ozellikler">Özellikler</a>
+      <a href="#ekranlar">Ekranlar</a>
+      <a href="#adimlar">Nasıl Başlarım</a>
+      <a href="#sss">SSS</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+  </header>
+
+  <section class="sf-hero">
+    <p class="sf-tag">Trendyol satıcıları için Windows masaüstü programı</p>
+    <h1>Trendyol kâr hesaplama ve BuyBox takip programı</h1>
+    <p class="sf-lead">Hangi fiyatın size ne kazandırdığını tahmin etmeyin, görün. Komisyon tarifeleri değişiyor,
+      kargo desileri kayıyor, rakipler her gün fiyat kırıyor, BuyBox bir saatte el değiştiriyor.
+      <strong>KomiFly</strong> hepsini tek ekranda toplar; komisyon, KDV, hizmet bedeli, kargo ve stopajı hesaba katarak
+      her ürünün gerçek kârını hesaplar ve ne yapmanız gerektiğini önünüze koyar.</p>
+    <p><a class="sf-cta" href="https://wa.me/905426983465?text=Merhaba%20KOM%C4%B0FLY%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" rel="noopener">WhatsApp'tan Bilgi Al</a></p>
+    <ul class="sf-badges">
+      <li>Verileriniz kendi bilgisayarınızda</li>
+      <li>Trendyol şablonuyla uyumlu Excel</li>
+      <li>Kurulumu kolay</li>
+    </ul>
+  </section>
+
+  <section id="neden">
+    <h2>Neden KomiFly? Kâr hesabını tahmine bırakmayın</h2>
+    <p>Elle takip hem vakit alır hem hata yapmaya açıktır. KomiFly bu işi sizin için yapar.</p>
+    <div class="sf-grid"><article class="sf-card"><h3>Gerçek kârı görürsünüz</h3><p>Alış, KDV, komisyon, hizmet bedeli, kargo (desiye göre), stopaj ve net KDV etkisi tek tek hesaplanır. Her satırda &quot;Detay&quot; ile hesabı adım adım açarsınız.</p></article>
+<article class="sf-card"><h3>BuyBox'ı takip eder</h3><p>Ürünlerinizin BuyBox durumunu ve 1. sıradaki fiyatı sürekli izler. BuyBox içi ve dışı için ayrı asgari kâr kuralları tanımlarsınız.</p></article>
+<article class="sf-card"><h3>Komisyon kararını saniyede verir</h3><p>4 tarifeli komisyon Excel'ini yükleyin; her ürün için dört tarifenin kârı hesaplanır, kârlı olanı işaretlenir ve toplu uygulanır.</p></article>
+<article class="sf-card"><h3>Rakibi ürün ürün izler</h3><p>Web taraması rakip satıcıları, sıralarını, fiyat, stok ve kupon/kampanya bilgisini toplar. Değişiklikler zaman çizelgesine düşer.</p></article></div>
+  </section>
+
+  <section id="ozellikler">
+    <h2>Özellikler: bir Trendyol mağazasını yönetmek için gereken her şey</h2>
+    <p>Onlarca ürün değil, binlerce ürün ölçeğinde çalışacak şekilde tasarlandı.</p>
+    <div class="sf-grid"><article class="sf-card"><h3>Dashboard &amp; Satış Takibi</h3><p>Rekabet &amp; Satış Takip Merkezi, ürün bazlı satış zaman çizgisi, görselli satış liderleri, en çok satan kategori, marka ve ürünler.</p></article>
+<article class="sf-card"><h3>Ürün &amp; Rakip Takip Merkezi</h3><p>Renk/beden bazında varyant matrisi, mağaza özeti, stok hareketi, tahmini satış, fiyat ve stok geçmişi grafikleri.</p></article>
+<article class="sf-card"><h3>Fiyat Güncelleme</h3><p>Maliyet ve kâr hedefine göre hedef satış fiyatı; kâr marjı %, kâr oranı % veya TL tutar. BuyBox 1. sıra ile yan yana karşılaştırma.</p></article>
+<article class="sf-card"><h3>Komisyon İndirimleri</h3><p>4 tarifeli komisyon hesabı ve otomatik seçim, tıkla-sürükle çoklu seçim, TL eşiği ile otomatik tarife, iki ayrı Excel çıktısı.</p></article>
+<article class="sf-card"><h3>Flaş Ürün</h3><p>24 Saat / 3 Saat fiyatları için uygunluk ve kâr hesabı; yalnızca uygun süreyi yazan, Trendyol Flaş şablonuna uygun export.</p></article>
+<article class="sf-card"><h3>Desi Yönetimi</h3><p>Teslim edilen siparişlerden gerçek desiyi öğrenir, TL cinsinden kargo kaybını gösterir, tek tuşla toplu düzeltir.</p></article>
+<article class="sf-card"><h3>Satış Analizi</h3><p>Çok satanlar her ekranda yeşil, iade/iptali yüksekler kırmızı işaretlenir. İade oranı, kayıp tutar ve iade sebepleri.</p></article>
+<article class="sf-card"><h3>Link Rakip Fırsatları</h3><p>Kendi linkinizi rakip linkiyle eşleştirin; renk/beden bazında fiyat, stok, sıra ve satış karşılaştırması, hedef fiyat.</p></article>
+<article class="sf-card"><h3>Akıllı Tarama Merkezi</h3><p>Trendyol API, WEB rakip ve sipariş taraması tek yerde. BuyBox'takilere öncelik, boşta kalınca devam, hata günlüğü.</p></article></div>
+  </section>
+
+  <section id="ekranlar">
+    <h2>Programın içinden görüntüler</h2>
+    <p>Dashboard, Ürünler, Fiyat Güncelleme, Komisyon İndirimleri, Flaş Ürün, Desi Yönetimi, Kârlılık Hesaplama,
+      Link Rakip Fırsatları, Satış Analizi, Tarama, Raporlar, Değişiklikler ve Ayarlar menülerinden gerçek ekranlar.</p>
+  </section>
+
+  <section id="adimlar">
+    <h2>3 adımda başlayın</h2>
+    <div class="sf-grid"><article class="sf-card"><h3>1. Kurun ve bağlanın</h3><p>Programı kurun, Trendyol API bilgilerinizi girin. Verileriniz kendi bilgisayarınızda kalır.</p></article>
+<article class="sf-card"><h3>2. Tarayın</h3><p>Ürünler, siparişler, komisyon Excel'i ve rakipler içeri gelsin. Sonuçlar tüm menülere otomatik yansır.</p></article>
+<article class="sf-card"><h3>3. Karar verin</h3><p>Kâr, BuyBox ve rakip verisine göre fiyatı ve komisyon tarifesini seçin; Excel'i Trendyol'a yükleyin.</p></article></div>
+  </section>
+
+  <section id="kimler">
+    <h2>Kimler için? Ölçeği büyüyen Trendyol satıcısı için</h2>
+    <p>Ürün sayısı arttıkça her kalemi elle hesaplamak imkânsızlaşır. KomiFly, kararı veriyle almanızı sağlar.</p>
+    <ul class="sf-list"><li>Trendyol'da yüzlerce, binlerce ürünle satış yapan mağazalar</li><li>Komisyon indirimi kampanyalarında hangi ürüne girileceğini elle hesaplamaktan yorulanlar</li><li>Kargo desisi yüzünden görünmez zarar edenler</li><li>BuyBox savaşında rakibi gün içinde izlemek isteyenler</li></ul>
+  </section>
+
+  <section id="sss">
+    <h2>Sık sorulan sorular</h2>
+    <div class="sf-faq"><h3>Trendyol'a doğrudan fiyat gönderiyor mu?</h3><p>Hayır. KomiFly, Trendyol'un kendi Excel şablonuyla birebir uyumlu bir dosya üretir; siz bu dosyayı panele yüklersiniz.</p></div><div class="sf-faq"><h3>Verilerim güvende mi?</h3><p>Program bilgisayarınızda çalışır, veriler yerel olarak tutulur. Bilgileriniz kendi cihazınızdan dışarı çıkmaz.</p></div><div class="sf-faq"><h3>Trendyol kâr hesabına hangi kalemler dahil ediliyor?</h3><p>Alış fiyatı, KDV, komisyon, hizmet bedeli, desiye göre kargo, stopaj ve net KDV etkisi tek tek hesaplanır. Her satırdaki Detay bağlantısıyla hesabın adımlarını görebilirsiniz.</p></div><div class="sf-faq"><h3>Trendyol komisyon oranları programda nasıl hesaplanıyor?</h3><p>4 tarifeli komisyon Excel'inizi yüklersiniz; KomiFly her ürün için dört tarifenin de kârını ayrı ayrı hesaplar, en kârlı tarifeyi işaretler ve seçiminizi toplu olarak uygular.</p></div><div class="sf-faq"><h3>Desi nedir, kâr hesabını nasıl etkiler?</h3><p>Desi, kargo ücretinin hesaplandığı hacimsel ağırlıktır. Üründe yazan desi gerçeğinden düşükse aradaki farkı siz ödersiniz. KomiFly teslim edilen siparişlerden gerçek desiyi öğrenir, TL cinsinden kargo kaybını gösterir ve tek tuşla toplu düzeltir.</p></div><div class="sf-faq"><h3>BuyBox takibi nasıl çalışıyor?</h3><p>Program ürünlerinizin BuyBox durumunu ve 1. sıradaki fiyatı sürekli izler. BuyBox içi ve BuyBox dışı için ayrı asgari kâr kuralları tanımlayabilirsiniz.</p></div><div class="sf-faq"><h3>Rakip fiyatlarını takip edebilir miyim?</h3><p>Evet. Web taraması rakip satıcıları, sıralarını, fiyat, stok ve kupon/kampanya bilgisini toplar; değişiklikler zaman çizelgesine düşer. Kendi ürün linkinizi rakip linkiyle eşleştirip renk ve beden bazında karşılaştırma yapabilirsiniz.</p></div><div class="sf-faq"><h3>Flaş Ürün kampanyalarına uygunluğu görebilir miyim?</h3><p>Evet. 24 Saat ve 3 Saat flaş fiyatları için uygunluk ve kâr hesabı yapılır; yalnızca uygun süreyi yazan, Trendyol Flaş şablonuna uygun bir Excel dosyası üretilir.</p></div><div class="sf-faq"><h3>Satış adetleri nasıl hesaplanıyor?</h3><p>Satış adetleri stok hareketinden tahmini olarak hesaplanır. Ekranlarda bu değerler 'tahmini satış' olarak belirtilir.</p></div><div class="sf-faq"><h3>Lisans nasıl çalışıyor?</h3><p>Lisans bilgisayarınıza bağlıdır; süreli ve takip edilecek ürün linki kapasitesine göre verilir.</p></div><div class="sf-faq"><h3>Başka bilgisayara taşıyabilir miyim?</h3><p>Taşıma için yeni bir lisans dosyası gerekir.</p></div>
+  </section>
+
+  <section id="iletisim" class="sf-hero">
+    <h2>Hangi ürünün gerçekten kazandırdığını görün</h2>
+    <p class="sf-lead">Komisyon tarifesini doğru seçin, kargo desisini kontrol edin, BuyBox'ı takip edin.
+      Kâr hesabını KomiFly yapsın.</p>
+    <p><a class="sf-cta" href="https://wa.me/905426983465?text=Merhaba%20KOM%C4%B0FLY%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" rel="noopener">WhatsApp'tan İletişime Geç</a></p>
+  </section>
+
+  <footer class="sf-foot">
+    <p>KomiFly - Trendyol kâr hesaplama, komisyon indirimi, desi yönetimi, BuyBox ve rakip takip programı.
+      Windows masaüstü uygulaması, veriler yereldir.</p>
+    <p>&copy; 2026 KomiFly. Tüm hakları saklıdır.</p>
+  </footer>
+</div></div>
+
+<script type="text/babel" data-presets="react" data-type="module">
+const { useState } = React;
+
+/* ------------------------------------ helpers ------------------------------------ */
+
+function cn(...parts) {
+  return parts.filter(Boolean).join(" ");
+}
+
+const LOGO_SRC = "data:image/png;base64,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";
+
+const WHATSAPP_URL =
+  "https://wa.me/905426983465?text=" + encodeURIComponent("Merhaba KOMİFLY hakkında bilgi almak istiyorum");
+
+/* ------------------------------------ icons ------------------------------------ */
+
+function Icon({ name, className }) {
+  const common = {
+    className,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    "aria-hidden": "true",
+  };
+  const paths = {
+    lock: <><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></>,
+    check: <polyline points="20 6 9 17 4 12"/>,
+    trendingUp: <><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></>,
+    radar: <><path d="M12 12 20 8"/><path d="M12 12a8 8 0 1 0 8 8"/><path d="M12 12a4 4 0 1 0 4 4"/><path d="M12 2v4"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></>,
+    percent: <><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></>,
+    arrowLeftRight: <><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="M16 21l4-4-4-4"/><path d="M20 17H4"/></>,
+    layoutDashboard: <><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></>,
+    package: <><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></>,
+    tag: <><path d="M20.5 12.5 12.6 20.4a2 2 0 0 1-2.8 0l-7.2-7.2a2 2 0 0 1 0-2.8L10.5 2.5H19a1.5 1.5 0 0 1 1.5 1.5v8.5z"/><circle cx="15" cy="7" r="1.3" fill="currentColor" stroke="none"/></>,
+    zap: <polygon points="13 2 3 14 11 14 10 22 21 10 13 10 13 2"/>,
+    scale: <><path d="M12 3v18"/><path d="M6 7 3 13a3 3 0 0 0 6 0L6 7z"/><path d="M18 7l-3 6a3 3 0 0 0 6 0l-3-6z"/><path d="M6 7h12"/><path d="M9 21h6"/></>,
+    scanSearch: <><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="11" cy="11" r="4"/><path d="m16.5 16.5-2.2-2.2"/></>,
+    shieldCheck: <><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></>,
+    star: <polygon points="12 2 15 9 22 9.5 16.5 14 18 21 12 17.3 6 21 7.5 14 2 9.5 9 9"/>,
+    monitor: <><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></>,
+    cpu: <><rect x="6" y="6" width="12" height="12" rx="1"/><rect x="10" y="10" width="4" height="4"/><path d="M6 2v2M10 2v2M14 2v2M18 2v2M6 20v2M10 20v2M14 20v2M18 20v2M2 6h2M2 10h2M2 14h2M2 18h2M20 6h2M20 10h2M20 14h2M20 18h2"/></>,
+    download: <><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><path d="M5 21h14"/></>,
+  };
+  return <svg {...common}>{paths[name]}</svg>;
+}
+
+function WhatsAppIcon({ className }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  );
+}
+
+function Logo({ className }) {
+  return (
+    <div className={cn("flex items-center gap-2.5", className)}>
+      <span className="relative grid h-9 w-9 place-items-center overflow-hidden rounded-xl shadow-lg shadow-orange-500/25 ring-1 ring-inset ring-white/10">
+        <img src={LOGO_SRC} alt="KomiFly logosu" className="h-full w-full object-cover" />
+      </span>
+      <span className="text-lg font-semibold tracking-tight text-zinc-50">
+        Komi<span className="text-orange-400">Fly</span>
+      </span>
+    </div>
+  );
+}
+
+/* ------------------------------------ mock primitives ------------------------------------ */
+
+function Blur({ children, className }) {
+  return (
+    <span title="Gizli tutulan bilgi" className={cn("select-none rounded-[3px] blur-[4px] saturate-150", className)}>
+      {children}
+    </span>
+  );
+}
+
+function Chip({ children, tone = "neutral", className }) {
+  const tones = {
+    neutral: "bg-zinc-800 text-zinc-300 ring-zinc-700",
+    up: "bg-emerald-500/12 text-emerald-300 ring-emerald-500/25",
+    down: "bg-red-500/12 text-red-300 ring-red-500/25",
+    brand: "bg-orange-500/12 text-orange-300 ring-orange-500/25",
+    info: "bg-sky-500/12 text-sky-300 ring-sky-500/25",
+  };
+  return (
+    <span className={cn("inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ring-inset", tones[tone], className)}>
+      {children}
+    </span>
+  );
+}
+
+function Stat({ label, value, hint, tone = "neutral" }) {
+  const valueTone = {
+    neutral: "text-zinc-100",
+    up: "text-emerald-400",
+    down: "text-red-400",
+    brand: "text-orange-400",
+  }[tone];
+  return (
+    <div className="rounded-lg border border-zinc-800 bg-zinc-900/60 px-3 py-2.5">
+      <div className="text-[10px] font-medium uppercase tracking-wide text-zinc-500">{label}</div>
+      <div className={cn("mt-1 text-lg font-semibold tabular-nums leading-none", valueTone)}>{value}</div>
+      {hint ? <div className="mt-1 text-[10px] leading-tight text-zinc-500">{hint}</div> : null}
+    </div>
+  );
+}
+
+function Thumb({ className }) {
+  return (
+    <div aria-hidden="true" className={cn("shrink-0 rounded-md bg-gradient-to-br from-zinc-700 to-zinc-800 ring-1 ring-inset ring-zinc-700", className)} />
+  );
+}
+
+/* ------------------------------------ app window ------------------------------------ */
+
+const SIDEBAR = [
+  { glyph: "▦", label: "Dashboard", key: "dashboard" },
+  { glyph: "▤", label: "Ürünler", key: "urunler" },
+  { glyph: "₺", label: "Fiyat Güncelle", key: "fiyat" },
+  { glyph: "%", label: "Komisyon İndirimleri", key: "komisyon" },
+  { glyph: "⚡", label: "Flaş Ürün", key: "flas" },
+  { glyph: "▣", label: "Desi Yönetimi", key: "desi" },
+  { glyph: "◑", label: "Karlılık Hesaplama", key: "kar" },
+  { glyph: "⇄", label: "Link Rakip Fırsatları", key: "link" },
+  { glyph: "★", label: "Satış Analizi", key: "satis" },
+  { glyph: "↻", label: "Tarama", key: "tarama" },
+  { glyph: "▥", label: "Raporlar", key: "raporlar" },
+  { glyph: "≡", label: "Değişiklikler", key: "degisiklikler" },
+  { glyph: "⚙", label: "Ayarlar & Lisans", key: "ayarlar" },
+];
+
+function AppWindow({ active, title, children }) {
+  return (
+    <div className="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 shadow-2xl shadow-black/50 ring-1 ring-white/5">
+      <div className="flex items-center gap-2 border-b border-zinc-800 bg-zinc-900/80 px-3 py-2">
+        <div className="flex gap-1.5">
+          <span className="h-3 w-3 rounded-full bg-red-500/80" />
+          <span className="h-3 w-3 rounded-full bg-amber-500/80" />
+          <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
+        </div>
+        <div className="ml-2 flex items-center gap-2 text-xs text-zinc-400">
+          <span className="grid h-4 w-4 place-items-center rounded bg-gradient-to-br from-orange-500 to-amber-400 text-[9px] font-bold text-zinc-950">
+            K
+          </span>
+          KomiFly — {title}
+        </div>
+        <div className="ml-auto hidden items-center gap-3 text-[11px] text-zinc-500 sm:flex">
+          <span className="rounded bg-zinc-800 px-1.5 py-0.5">Hız modu açık</span>
+          <span>Lisans 0/50000 ürün</span>
+        </div>
+      </div>
+
+      <div className="flex">
+        <nav className="hidden w-44 shrink-0 flex-col gap-0.5 border-r border-zinc-800 bg-zinc-900/40 p-2 md:flex">
+          {SIDEBAR.map((item) => {
+            const isActive = item.key === active;
+            return (
+              <div
+                key={item.key}
+                className={cn(
+                  "flex items-center gap-2.5 rounded-md px-2.5 py-1.5 text-[12px]",
+                  isActive
+                    ? "bg-orange-500/15 font-medium text-orange-300 ring-1 ring-inset ring-orange-500/25"
+                    : "text-zinc-400"
+                )}
+              >
+                <span className={cn("w-4 text-center text-[13px]", isActive ? "text-orange-400" : "text-zinc-500")}>
+                  {item.glyph}
+                </span>
+                <span className="truncate">{item.label}</span>
+              </div>
+            );
+          })}
+          <div className="mt-1 flex items-center gap-2.5 rounded-md px-2.5 py-1.5 text-[12px] text-zinc-500">
+            <span className="w-4 text-center">⌘</span>
+            <span className="truncate">Admin Girişi</span>
+          </div>
+        </nav>
+
+        <div className="min-w-0 flex-1 bg-[radial-gradient(120%_120%_at_0%_0%,rgba(249,115,22,0.05),transparent_45%)]">
+          <div className="max-h-[440px] overflow-hidden p-4">{children}</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ScreenHead({ title, desc }) {
+  return (
+    <div className="mb-3">
+      <h4 className="text-sm font-semibold text-zinc-100">{title}</h4>
+      <p className="mt-0.5 text-[11px] leading-snug text-zinc-500">{desc}</p>
+    </div>
+  );
+}
+
+/* ------------------------------------ screens ------------------------------------ */
+
+function DashboardScreen() {
+  const leaders = [
+    { name: "Dış Mekan Kobra Tokalı Taktik Eğitim Kemeri", qty: 27 },
+    { name: "Erkek Askeri Fanila Atlet 3'lü Set", qty: 11 },
+    { name: "Unisex Fermuarlı Taktik Polar Mont - Siyah", qty: 10 },
+    { name: "Blackhawk Askeri Tactical Pilot Eldiven", qty: 10 },
+    { name: "Single Sword Kışlık Polar Boyunluk & Bere", qty: 9 },
+  ];
+  const max = leaders[0].qty;
+  return (
+    <div>
+      <ScreenHead
+        title="Trendyol Rekabet & Satış Takip Merkezi"
+        desc="15 dakikada BuyBox'ta 1. olmadığınız ürünleri öncelikli izler; gece boşta kalınca tüm ürünleri tarar."
+      />
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+        <Stat label="Aktif Ürün" value="2.051" hint="15 dk • Buybox 1. olmadıklarımız" tone="brand" />
+        <Stat label="Tahmini Satış" value="172" hint="Seçilen kapsamda stok düşüşü" tone="up" />
+        <Stat label="Fiyat Değişimi" value="154" hint="Seçilen dönem" />
+        <Stat label="Kampanya Değişimi" value="148" hint="Başladı / değişti / bitti" tone="info" />
+      </div>
+
+      <div className="mt-3 grid gap-2 lg:grid-cols-2">
+        <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-3">
+          <div className="mb-2 text-[11px] font-medium text-zinc-300">Görselli Satış Liderleri</div>
+          <div className="space-y-2">
+            {leaders.map((p) => (
+              <div key={p.name} className="flex items-center gap-2">
+                <Thumb className="h-7 w-7" />
+                <div className="min-w-0 flex-1">
+                  <div className="truncate text-[11px] text-zinc-300">{p.name}</div>
+                  <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-zinc-800">
+                    <div className="h-full rounded-full bg-gradient-to-r from-orange-500 to-amber-400" style={{ width: `${(p.qty / max) * 100}%` }} />
+                  </div>
+                </div>
+                <span className="text-[11px] font-semibold tabular-nums text-orange-300">{p.qty}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-3">
+          <div className="mb-2 text-[11px] font-medium text-zinc-300">Son Değişiklikler</div>
+          <ul className="space-y-2 text-[11px]">
+            <li className="flex items-start gap-2">
+              <Chip tone="down">Stok ↓</Chip>
+              <span className="text-zinc-400"><Blur>IŞIK ASKERİ MALZEME</Blur>: stok 334 → 328 (6 tahmini)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Chip tone="info">Kampanya</Chip>
+              <span className="text-zinc-400"><Blur>IŞIK ASKERİ MALZEME</Blur>: kampanya değişti</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Chip tone="brand">Fiyat</Chip>
+              <span className="text-zinc-400">Sepette 217,55 ₺ → <span className="text-zinc-200">129,99 ₺</span></span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Chip tone="down">Satıcı</Chip>
+              <span className="text-zinc-400"><Blur>Özmert Askeri</Blur>: seller_left</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PriceCard({ title, variant, brand, myPrice, firstPrice, buy, commission, profit, suggested, canWin }) {
+  const profitNeg = profit.trim().startsWith("-");
+  return (
+    <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-3">
+      <div className="flex items-start gap-2">
+        <Thumb className="h-9 w-9" />
+        <div className="min-w-0 flex-1">
+          <div className="truncate text-[12px] font-medium text-zinc-200">{title}</div>
+          <div className="truncate text-[10px] text-zinc-500">{variant} • <Blur>{brand}</Blur></div>
+        </div>
+        <Chip tone="down">2. sıra</Chip>
+      </div>
+
+      <div className="mt-3 grid grid-cols-4 gap-2 text-center">
+        <div>
+          <div className="text-[9px] uppercase text-zinc-500">Benim</div>
+          <div className="text-[12px] font-semibold text-zinc-100">{myPrice}</div>
+        </div>
+        <div>
+          <div className="text-[9px] uppercase text-zinc-500">1. Sıra</div>
+          <div className="text-[12px] font-semibold text-zinc-300">{firstPrice}</div>
+        </div>
+        <div>
+          <div className="text-[9px] uppercase text-zinc-500">Alış</div>
+          <div className="text-[12px] font-semibold text-zinc-100"><Blur>{buy}</Blur></div>
+        </div>
+        <div>
+          <div className="text-[9px] uppercase text-zinc-500">Komisyon</div>
+          <div className="text-[12px] font-semibold text-zinc-300">{commission}</div>
+        </div>
+      </div>
+
+      <div className="mt-3 flex items-center justify-between rounded-md border border-zinc-800 bg-zinc-950/60 px-2.5 py-2">
+        <div>
+          <div className="text-[9px] uppercase text-zinc-500">Önerilen Fiyat</div>
+          <div className="text-[13px] font-semibold text-orange-300">{suggested}</div>
+        </div>
+        <div className="text-right">
+          <div className="text-[9px] uppercase text-zinc-500">Bu fiyatta net kâr</div>
+          <div className={cn("text-[13px] font-semibold", profitNeg ? "text-red-400" : "text-emerald-400")}>{profit}</div>
+        </div>
+      </div>
+      {canWin ? (
+        <div className="mt-2 text-[10px] text-emerald-400">✓ Kâr hedefini bozmadan 1. sıraya çıkılabilir</div>
+      ) : (
+        <div className="mt-2 text-[10px] text-red-400">✕ 1. sıraya çıkmak kâr hedefini bozar</div>
+      )}
+    </div>
+  );
+}
+
+function FiyatScreen() {
+  return (
+    <div>
+      <ScreenHead
+        title="Ürün Komisyon Fiyat Güncelleme"
+        desc="Alış maliyeti, komisyon, kargo ve kâr hedefinize göre hesaplanan satış fiyatları; BuyBox 1. sıra fiyatı ile karşılaştırmalı."
+      />
+      <div className="mb-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+        <Stat label="Toplam Barkod" value="34.938" />
+        <Stat label="1. Sıra Bende" value="4.604" tone="up" />
+        <Stat label="1. Sıraya Çıkabilir" value="91" tone="brand" />
+        <Stat label="Fiyat Artırma Fırsatı" value="468" tone="info" />
+      </div>
+      <div className="grid gap-2 lg:grid-cols-2">
+        <PriceCard title="WIND MAX 2 Su Geçirmez Bot & Outdoor Ayakkabı" variant="Siyah / 40" brand="Lescon" myPrice="4.228,99 ₺" firstPrice="4.229,99 ₺" buy="2.750,00 ₺" commission="%17,50" profit="+567,01 ₺" suggested="4.229,89 ₺" canWin />
+        <PriceCard title="5'li Asker İç Çamaşırı ve Malzemesi Seti" variant="Haki / 2XL" brand="ERDOĞANLAR" myPrice="677,15 ₺" firstPrice="678,15 ₺" buy="412,51 ₺" commission="%15,50" profit="+20,08 ₺" suggested="678,05 ₺" canWin />
+      </div>
+    </div>
+  );
+}
+
+function KomisyonScreen() {
+  const rows = [
+    { t: "1. Tarife", com: "%17,50", price: "813,26 ₺", profit: "-81,36 ₺", ok: false },
+    { t: "2. Tarife", com: "%13,00", price: "742,10 ₺", profit: "+4,90 ₺", ok: true, best: false },
+    { t: "3. Tarife", com: "%8,50", price: "698,40 ₺", profit: "+58,05 ₺", ok: true, best: true },
+    { t: "4. Tarife", com: "%5,00", price: "664,20 ₺", profit: "+96,10 ₺", ok: true, best: false },
+  ];
+  return (
+    <div>
+      <ScreenHead
+        title="Komisyon İndirimleri"
+        desc="Trendyol'un 4 tarifeli komisyon Excel'ini yükleyin; her ürün için dört tarifenin kârı hesaplanır, kârlı tarife işaretlenir."
+      />
+      <div className="mb-3 flex items-center gap-2">
+        <Thumb className="h-9 w-9" />
+        <div className="min-w-0">
+          <div className="truncate text-[12px] font-medium text-zinc-200">Korumalı Motosiklet Eldiveni TSE EN 13594 Onaylı</div>
+          <div className="text-[10px] text-zinc-500">Barkod: TYB3PWTBJUA8M7VI11 • <Blur>SPEED BİKER</Blur></div>
+        </div>
+      </div>
+      <div className="overflow-hidden rounded-lg border border-zinc-800">
+        <table className="w-full text-left text-[11px]">
+          <thead className="bg-zinc-900/70 text-zinc-500">
+            <tr>
+              <th className="px-3 py-2 font-medium">Tarife</th>
+              <th className="px-3 py-2 font-medium">Komisyon</th>
+              <th className="px-3 py-2 font-medium">Hedef Fiyat</th>
+              <th className="px-3 py-2 font-medium">Net Kâr</th>
+              <th className="px-3 py-2 font-medium">Durum</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-zinc-800">
+            {rows.map((r) => (
+              <tr key={r.t} className={r.best ? "bg-emerald-500/5" : ""}>
+                <td className="px-3 py-2 font-medium text-zinc-200">{r.t}</td>
+                <td className="px-3 py-2 tabular-nums text-zinc-300">{r.com}</td>
+                <td className="px-3 py-2 tabular-nums text-zinc-300">{r.price}</td>
+                <td className={cn("px-3 py-2 tabular-nums font-medium", r.ok ? "text-emerald-400" : "text-red-400")}>{r.profit}</td>
+                <td className="px-3 py-2">
+                  {r.best ? <Chip tone="up">✓ Önerilen</Chip> : r.ok ? <Chip tone="neutral">Uygun</Chip> : <Chip tone="down">Zararda</Chip>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="mt-2 flex flex-wrap items-center gap-2 text-[10px] text-zinc-500">
+        <Chip tone="brand">Seçili ürünlere toplu uygula</Chip>
+        <Chip tone="neutral">TL eşiği ile otomatik tarife</Chip>
+        <Chip tone="info">Trendyol şablonlu Excel çıktısı</Chip>
+      </div>
+    </div>
+  );
+}
+
+function FlasScreen() {
+  const rows = [
+    { name: "5.11 Taktik Gömlek & Pantolon Takım", p24: "32.900 ₺", p3: "29.400 ₺", pick: "3 Saat", ok: true },
+    { name: "Blackhawk Pilot Eldiven Siyah", p24: "1.240 ₺", p3: "1.180 ₺", pick: "24 Saat", ok: true },
+    { name: "Polar Bere & Boyunluk Seti", p24: "310 ₺", p3: "295 ₺", pick: "Uygun Değil", ok: false },
+  ];
+  return (
+    <div>
+      <ScreenHead
+        title="Flaş Ürün"
+        desc="24 Saat (K) / 3 Saat (L) fiyatından hangisinin min. kâr ve komisyon tarifesi şartını sağladığı hesaplanır; sadece uygun olan dışa aktarılır."
+      />
+      <div className="mb-3 flex flex-wrap gap-2">
+        <Chip tone="neutral">Tümü 1.143</Chip>
+        <Chip tone="up">✅ Aktarılacak 636</Chip>
+        <Chip tone="down">Uygun Değil 459</Chip>
+        <Chip tone="brand">⚠ Bilgi Eksik 48</Chip>
+      </div>
+      <div className="space-y-2">
+        {rows.map((r) => (
+          <div key={r.name} className="flex items-center gap-3 rounded-lg border border-zinc-800 bg-zinc-900/50 p-2.5">
+            <Thumb className="h-9 w-9" />
+            <div className="min-w-0 flex-1">
+              <div className="truncate text-[12px] font-medium text-zinc-200">{r.name}</div>
+              <div className="text-[10px] text-zinc-500"><Blur>SINGLE SWORD</Blur> • Komisyon %21,50</div>
+            </div>
+            <div className="hidden text-center sm:block">
+              <div className="text-[9px] uppercase text-zinc-500">24 Saat</div>
+              <div className="text-[11px] tabular-nums text-zinc-300">{r.p24}</div>
+            </div>
+            <div className="hidden text-center sm:block">
+              <div className="text-[9px] uppercase text-zinc-500">3 Saat</div>
+              <div className="text-[11px] tabular-nums text-zinc-300">{r.p3}</div>
+            </div>
+            <Chip tone={r.ok ? "up" : "down"}>{r.pick}</Chip>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function DesiScreen() {
+  const rows = [
+    { name: "Kobra Kemer 125 cm — Taktik Pantolon Kemeri", single: 186, most: "1 desi", pct: "%95,2", now: "3 desi" },
+    { name: "Taktik 3'lü Kobra Kemer Çelik Tokalı", single: 183, most: "1 desi", pct: "%95,1", now: "3 desi" },
+    { name: "Özel Güvenlik Yazılı Palaska Siyah", single: 78, most: "1 desi", pct: "%97,4", now: "3 desi" },
+    { name: "Görevli Palaskası - Türk Bayraklı", single: 64, most: "1 desi", pct: "%96,9", now: "3 desi" },
+  ];
+  return (
+    <div>
+      <ScreenHead
+        title="Desi Yönetimi"
+        desc="Teslim edilmiş tekli siparişlerden gerçekte kesilen desiyi öğrenir, kullandığınız desiyle farkı ve TL cinsinden kargo kaybını gösterir."
+      />
+      <div className="mb-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+        <Stat label="Katalog" value="35.618" hint="kayıtlı ürün" />
+        <Stat label="Desi Öğrenilen" value="1.144" hint="tekli siparişten" tone="brand" />
+        <Stat label="Farklı Desi" value="1.060" hint="kullanılan ile uyuşmuyor" tone="down" />
+        <Stat label="Dönem Kargo Etkisi" value="-36.396 ₺" hint="fark × sipariş adedi" tone="down" />
+      </div>
+      <div className="overflow-hidden rounded-lg border border-zinc-800">
+        <table className="w-full text-left text-[11px]">
+          <thead className="bg-zinc-900/70 text-zinc-500">
+            <tr>
+              <th className="px-3 py-2 font-medium">Ürün</th>
+              <th className="px-3 py-2 font-medium">Tekli</th>
+              <th className="px-3 py-2 font-medium">En Çok Gelen</th>
+              <th className="px-3 py-2 font-medium">Şu An Kull.</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-zinc-800">
+            {rows.map((r) => (
+              <tr key={r.name}>
+                <td className="max-w-[180px] truncate px-3 py-2 text-zinc-300">{r.name}</td>
+                <td className="px-3 py-2 tabular-nums text-zinc-400">{r.single}</td>
+                <td className="px-3 py-2"><Chip tone="up">{r.most} · {r.pct}</Chip></td>
+                <td className="px-3 py-2 tabular-nums text-red-300">{r.now}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="mt-2 text-[10px] text-zinc-500">
+        Tek tuşla toplu desi düzeltme — kargo maliyetiniz ve fiyat hesabı otomatik güncellenir.
+      </div>
+    </div>
+  );
+}
+
+function KarScreen() {
+  const rows = [
+    ["Alış (KDV dahil)", "300,00 ₺", "blur"],
+    ["Komisyon (%14,00)", "-104,86 ₺"],
+    ["Kargo (Aras · 3 desi)", "-121,01 ₺"],
+    ["Hizmet + Stopaj", "-18,40 ₺"],
+    ["Net KDV Etkisi", "+9,10 ₺"],
+  ];
+  return (
+    <div>
+      <ScreenHead
+        title="Karlılık Hesaplama"
+        desc="Barkod ile otomatik doldurun veya değerleri manuel girin. Komisyon oranına göre karlılık hesaplanır; her kalem tek tek dökülür."
+      />
+      <div className="grid gap-2 lg:grid-cols-2">
+        <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-3">
+          <div className="mb-2 text-[11px] font-medium text-zinc-300">Girdi</div>
+          <div className="space-y-2 text-[11px]">
+            <label className="block">
+              <span className="text-zinc-500">Barkod</span>
+              <div className="mt-1 rounded-md border border-zinc-800 bg-zinc-950 px-2 py-1.5 text-zinc-300">TYBOTU2DDV0C3GJ439</div>
+            </label>
+            <div className="grid grid-cols-2 gap-2">
+              <div>
+                <span className="text-zinc-500">Satış Fiyatı</span>
+                <div className="mt-1 rounded-md border border-zinc-800 bg-zinc-950 px-2 py-1.5 text-zinc-300">749,00 ₺</div>
+              </div>
+              <div>
+                <span className="text-zinc-500">KDV</span>
+                <div className="mt-1 rounded-md border border-zinc-800 bg-zinc-950 px-2 py-1.5 text-zinc-300">%10</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-3">
+          <div className="mb-2 text-[11px] font-medium text-zinc-300">Detaylı Hesap Dökümü</div>
+          <div className="space-y-1.5 text-[11px]">
+            {rows.map(([label, value, blur]) => (
+              <div key={label} className="flex items-center justify-between">
+                <span className="text-zinc-500">{label}</span>
+                <span className="tabular-nums text-zinc-300">{blur ? <Blur>{value}</Blur> : value}</span>
+              </div>
+            ))}
+            <div className="mt-2 flex items-center justify-between border-t border-zinc-800 pt-2">
+              <span className="font-medium text-zinc-200">Net Kâr</span>
+              <span className="text-[13px] font-semibold tabular-nums text-emerald-400">+169,90 ₺</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-zinc-500">Kâr Marjı</span>
+              <span className="tabular-nums text-emerald-400">%22,7</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function LinkScreen() {
+  return (
+    <div>
+      <ScreenHead
+        title="Link Rakip Fırsatları"
+        desc="Kendi ürün linkinizi bir rakip linkiyle eşleştirin; her renk ve beden için fiyat, stok, sıra ve satış karşılaştırması burada tutulur."
+      />
+      <div className="mb-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+        <Stat label="Eşleştirilmiş" value="2" hint="link" />
+        <Stat label="1. Sıradayım" value="1" tone="up" />
+        <Stat label="Hedef Hesaplanan" value="2" tone="brand" />
+        <Stat label="Rakipten Ucuz" value="0" tone="down" />
+      </div>
+      <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-3">
+        <div className="flex items-center gap-2">
+          <Thumb className="h-9 w-9" />
+          <div className="min-w-0 flex-1">
+            <div className="truncate text-[12px] font-medium text-zinc-200">Single Sword Microfiber T-Shirt — Askeri Üst İçlik</div>
+            <div className="text-[10px] text-zinc-500">Rakip: <Blur>IŞIK ASKERİ MALZEME</Blur> • Satıcı sıra 1 • Stok 551</div>
+          </div>
+          <span className="text-[13px] font-semibold text-zinc-100">336,82 ₺</span>
+        </div>
+        <div className="mt-3 overflow-hidden rounded-md border border-zinc-800">
+          <table className="w-full text-left text-[11px]">
+            <thead className="bg-zinc-900/70 text-zinc-500">
+              <tr>
+                <th className="px-2.5 py-1.5 font-medium">Varyant</th>
+                <th className="px-2.5 py-1.5 font-medium">Rakip Satıcı</th>
+                <th className="px-2.5 py-1.5 font-medium">Fiyat</th>
+                <th className="px-2.5 py-1.5 font-medium">Stok</th>
+                <th className="px-2.5 py-1.5 font-medium">Sıra</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-zinc-800 text-zinc-300">
+              {[
+                ["Siyah / L", "1.253", "1"],
+                ["Siyah / M", "1.282", "1"],
+                ["Siyah / S", "551", "1"],
+                ["Siyah / XL", "379", "1"],
+              ].map(([v, stock, rank]) => (
+                <tr key={v}>
+                  <td className="px-2.5 py-1.5">{v}</td>
+                  <td className="px-2.5 py-1.5"><Blur>IŞIK ASKERİ MALZEME</Blur></td>
+                  <td className="px-2.5 py-1.5 tabular-nums">336,82 ₺</td>
+                  <td className="px-2.5 py-1.5 tabular-nums">{stock}</td>
+                  <td className="px-2.5 py-1.5"><Chip tone="up">{rank}.</Chip></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SatisScreen() {
+  const rows = [
+    { r: 1, code: "4386244000652", name: "Paslanmaz Çelik Asker Künyesi ve Zinciri", qty: 417 },
+    { r: 2, code: "4932014045646", name: "Kobra Kemer 125 cm — Taktik Pantolon Kemeri", qty: 285 },
+    { r: 3, code: "36852588952236", name: "Taktik 3'lü Kobra Kemer Çelik Tokalı", qty: 202 },
+    { r: 4, code: "7736261111112", name: "Kemikli Taktik / Motosiklet Eldiveni", qty: 185 },
+    { r: 5, code: "4932014079511", name: "Oakley Taktik Askeri Eldiven Destekli", qty: 177 },
+    { r: 6, code: "4932014045660", name: "Kobra Kemer 125 cm — Koruma Kemeri", qty: 116 },
+  ];
+  const max = rows[0].qty;
+  return (
+    <div>
+      <ScreenHead
+        title="Satış Analizi & Sayımı"
+        desc="Tarih ve minimum adet belirleyin; çok satanlar tüm ekranlarda yeşil, iade/iptali yüksekler kırmızı işaretlenir."
+      />
+      <div className="mb-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+        <Stat label="Kayıtlı Sipariş" value="10.418" hint="yerel satır" />
+        <Stat label="Toplam Ciro" value="7.11M ₺" hint="seçili aralık" tone="brand" />
+        <Stat label="Eşiği Geçen (≥10)" value="1.644" hint="listelerde yeşil" tone="up" />
+        <Stat label="İade / İptal" value="498" hint="adet" tone="down" />
+      </div>
+      <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-3">
+        <div className="mb-2 text-[11px] font-medium text-zinc-300">En Çok Satan Ürünler</div>
+        <div className="space-y-1.5">
+          {rows.map((p) => (
+            <div key={p.code} className="flex items-center gap-2">
+              <span className="w-4 text-right text-[10px] tabular-nums text-zinc-500">{p.r}</span>
+              <div className="min-w-0 flex-1">
+                <div className="truncate text-[11px] text-zinc-300">{p.name}</div>
+                <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-zinc-800">
+                  <div className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-emerald-400" style={{ width: `${(p.qty / max) * 100}%` }} />
+                </div>
+              </div>
+              <span className="w-14 text-right text-[11px] font-semibold tabular-nums text-emerald-300">{p.qty} adet</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TaramaScreen() {
+  const cards = [
+    { t: "Trendyol API Taraması", d: "Onaylı/onaysız tüm katalog, fiyat/stok/komisyon ve BuyBox sırasını resmî API'den tazeler.", cta: "↻ API Tarama Başlat" },
+    { t: "WEB Rakip Taraması", d: "Takip listesindeki her ürünün rakip satıcı/varyant sayfasını tarar; fiyat/stok/kampanya günceller.", cta: "↻ WEB Rakiplerini Tara" },
+    { t: "Sipariş Satış Taraması", d: "Tarih aralığındaki teslim edilmiş siparişleri barkod bazında toplar.", cta: "↻ Siparişleri Tara" },
+  ];
+  return (
+    <div>
+      <ScreenHead
+        title="Tek Merkezden Tarama"
+        desc="Trendyol API kataloğu, WEB rakip taraması ve sipariş taraması buradan başlatılır. Sonuçlar tüm menülere otomatik yansır."
+      />
+      <div className="mb-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+        <Stat label="WEB Takip" value="3.879" hint="rakip taramasına dahil" />
+        <Stat label="BuyBox (API)" value="4.727" hint="resmî API barkodu" tone="brand" />
+        <Stat label="Onaylı Varyant" value="10.434" hint="katalog güncel" tone="up" />
+        <Stat label="Durum" value="Boşta" hint="son senkron 16:26" tone="info" />
+      </div>
+      <div className="grid gap-2 sm:grid-cols-3">
+        {cards.map((c) => (
+          <div key={c.t} className="flex flex-col rounded-lg border border-zinc-800 bg-zinc-900/50 p-3">
+            <div className="text-[12px] font-medium text-zinc-200">{c.t}</div>
+            <p className="mt-1 flex-1 text-[10px] leading-snug text-zinc-500">{c.d}</p>
+            <span className="mt-2 inline-flex w-fit items-center rounded-md bg-orange-500/15 px-2 py-1 text-[10px] font-medium text-orange-300 ring-1 ring-inset ring-orange-500/25">{c.cta}</span>
+          </div>
+        ))}
+      </div>
+      <div className="mt-2 text-[10px] text-zinc-500">
+        Siz çalışırken program yormaz; boşta kalınca kaldığı yerden devam eder. Manuel taramalar her zaman önceliklidir.
+      </div>
+    </div>
+  );
+}
+
+function DegisiklikScreen() {
+  const rows = [
+    { time: "14:15", name: "Özel Güvenlik Yazılı Palaska Siyah", seller: "Aksoy Tactical", move: "Satıcı listeden", tone: "neutral" },
+    { time: "06:02", name: "Motosiklet Eldiveni CE Sertifikalı Carbon", seller: "BABEMOTORS", move: "Fiyat düştü", tone: "down" },
+    { time: "05:24", name: "BabeBiker 3 Mevsim Korumalı Eldiven", seller: "SPEED BİKER", move: "Kampanya değişti", tone: "info" },
+    { time: "05:24", name: "BabeBiker 3 Mevsim Korumalı Eldiven", seller: "SPEED BİKER", move: "Fiyat yükseldi", tone: "up" },
+    { time: "05:23", name: "Babe Biker 4 Mevsim Uzun Mavi Eldiven", seller: "BABEMOTORS", move: "Yeni satıcı", tone: "brand" },
+  ];
+  return (
+    <div>
+      <ScreenHead
+        title="Değişiklik Merkezi"
+        desc="Her hareket satıcı + model + renk + beden + barkod bazında son 15 dakikalık taramalardan kaydedilir."
+      />
+      <div className="mb-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+        <Stat label="Eksilen / Tah. Satış" value="0 adet" hint="stok düşüşü" tone="down" />
+        <Stat label="Eklenen Stok" value="+0 adet" hint="stok girişi" tone="up" />
+        <Stat label="Kampanya Hareketi" value="22" hint="gizlenenler hariç" tone="info" />
+        <Stat label="Gösterilen Kayıt" value="100" hint="filtre sonucu" tone="brand" />
+      </div>
+      <div className="overflow-hidden rounded-lg border border-zinc-800">
+        <table className="w-full text-left text-[11px]">
+          <thead className="bg-zinc-900/70 text-zinc-500">
+            <tr>
+              <th className="px-3 py-2 font-medium">Saat</th>
+              <th className="px-3 py-2 font-medium">Ürün</th>
+              <th className="px-3 py-2 font-medium">Satıcı</th>
+              <th className="px-3 py-2 font-medium">Hareket</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-zinc-800">
+            {rows.map((r, i) => (
+              <tr key={i}>
+                <td className="px-3 py-2 tabular-nums text-zinc-500">{r.time}</td>
+                <td className="max-w-[170px] truncate px-3 py-2 text-zinc-300">{r.name}</td>
+                <td className="px-3 py-2"><Blur>{r.seller}</Blur></td>
+                <td className="px-3 py-2"><Chip tone={r.tone}>{r.move}</Chip></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------ gallery ------------------------------------ */
+
+const TABS = [
+  { id: "dashboard", tab: "Satış Takip", active: "dashboard", title: "Dashboard", Screen: DashboardScreen },
+  { id: "fiyat", tab: "Fiyat Güncelleme", active: "fiyat", title: "Fiyat Güncelleme", Screen: FiyatScreen },
+  { id: "komisyon", tab: "Komisyon İndirimleri", active: "komisyon", title: "Komisyon İndirimleri", Screen: KomisyonScreen },
+  { id: "flas", tab: "Flaş Ürün", active: "flas", title: "Flaş Ürün", Screen: FlasScreen },
+  { id: "desi", tab: "Desi Yönetimi", active: "desi", title: "Desi Yönetimi", Screen: DesiScreen },
+  { id: "satis", tab: "Satış Analizi", active: "satis", title: "Satış Analizi", Screen: SatisScreen },
+  { id: "kar", tab: "Karlılık", active: "kar", title: "Karlılık Hesaplama", Screen: KarScreen },
+  { id: "link", tab: "Link Rakip", active: "link", title: "Link Rakip Fırsatları", Screen: LinkScreen },
+  { id: "tarama", tab: "Tarama Merkezi", active: "tarama", title: "Tarama Merkezi", Screen: TaramaScreen },
+  { id: "degisiklikler", tab: "Değişiklikler", active: "degisiklikler", title: "Değişiklik Merkezi", Screen: DegisiklikScreen },
+];
+
+function Gallery() {
+  const [current, setCurrent] = useState(TABS[0].id);
+  const activeTab = TABS.find((t) => t.id === current) ?? TABS[0];
+  const { Screen } = activeTab;
+
+  return (
+    <div>
+      <div className="-mx-4 mb-5 overflow-x-auto px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex w-max gap-2">
+          {TABS.map((t) => (
+            <button
+              key={t.id}
+              type="button"
+              onClick={() => setCurrent(t.id)}
+              aria-pressed={t.id === current}
+              className={cn(
+                "whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[13px] font-medium transition-colors",
+                t.id === current
+                  ? "border-orange-500/40 bg-orange-500/15 text-orange-300"
+                  : "border-zinc-800 bg-zinc-900/60 text-zinc-400 hover:border-zinc-700 hover:text-zinc-200"
+              )}
+            >
+              {t.tab}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <AppWindow active={activeTab.active} title={activeTab.title}>
+        <Screen />
+      </AppWindow>
+
+      <p className="mt-4 flex items-center justify-center gap-2 text-center text-xs text-zinc-500">
+        <span className="inline-block h-3 w-8 rounded bg-zinc-700 blur-[3px]" aria-hidden="true" />
+        Gizlilik için satıcı/rakip firma adları ve alış fiyatları bulanıklaştırılmıştır.
+      </p>
+    </div>
+  );
+}
+
+/* ------------------------------------ shared ------------------------------------ */
+
+function SectionTitle({ eyebrow, title, desc, align = "center" }) {
+  return (
+    <div className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
+      <span className="text-xs font-semibold uppercase tracking-widest text-orange-400">{eyebrow}</span>
+      <h2 className="mt-2 text-balance text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">{title}</h2>
+      {desc ? <p className="mt-3 text-pretty text-sm leading-relaxed text-zinc-400 sm:text-base">{desc}</p> : null}
+    </div>
+  );
+}
+
+/* ------------------------------------ nav ------------------------------------ */
+
+function SiteNav() {
+  const links = [
+    { href: "#neden", label: "Neden KomiFly" },
+    { href: "#ozellikler", label: "Özellikler" },
+    { href: "#ekranlar", label: "Ekranlar" },
+    { href: "#adimlar", label: "Nasıl Başlarım" },
+    { href: "#sss", label: "SSS" },
+  ];
+  return (
+    <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+        <Logo />
+        <nav className="hidden items-center gap-7 text-sm text-zinc-400 lg:flex">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className="transition-colors hover:text-zinc-100">
+              {l.label}
+            </a>
+          ))}
+        </nav>
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-br from-orange-500 to-amber-400 px-4 py-2 text-sm font-semibold text-zinc-950 shadow-lg shadow-orange-500/20 transition-transform hover:scale-[1.03]"
+        >
+          <WhatsAppIcon className="h-4 w-4" />
+          WhatsApp'tan Yaz
+        </a>
+      </div>
+    </header>
+  );
+}
+
+/* ------------------------------------ hero ------------------------------------ */
+
+function Hero() {
+  return (
+    <section className="relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(249,115,22,0.12),transparent_70%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
+      <div className="relative mx-auto max-w-6xl px-4 pb-6 pt-16 sm:px-6 sm:pt-20">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1 text-xs font-medium text-zinc-300">
+            <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
+            Trendyol satıcıları için Windows masaüstü programı
+          </span>
+          <h1 className="mt-6 text-balance text-4xl font-bold tracking-tight text-zinc-50 sm:text-5xl md:text-6xl">
+            Hangi fiyatın sana ne kazandırdığını{" "}
+            <span className="bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">
+              tahmin etme, gör.
+            </span>
+          </h1>
+          <p className="mx-auto mt-5 max-w-2xl text-pretty text-base leading-relaxed text-zinc-400 sm:text-lg">
+            Komisyon tarifeleri değişiyor, kargo desileri kayıyor, rakipler her gün fiyat kırıyor, BuyBox bir saatte el
+            değiştiriyor. KomiFly hepsini tek ekranda toplar; her ürünün gerçek kârını hesaplar ve ne yapmanız
+            gerektiğini önünüze koyar.
+          </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-br from-orange-500 to-amber-400 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-lg shadow-orange-500/20 transition-transform hover:scale-[1.03] sm:w-auto"
+            >
+              <WhatsAppIcon className="h-4 w-4" />
+              WhatsApp'tan Bilgi Al
+            </a>
+            <a
+              href="#ekranlar"
+              className="w-full rounded-lg border border-zinc-800 bg-zinc-900/60 px-6 py-3 text-sm font-semibold text-zinc-200 transition-colors hover:border-zinc-700 sm:w-auto"
+            >
+              Ekranları Gör
+            </a>
+          </div>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-zinc-500">
+            <span className="inline-flex items-center gap-1.5">
+              <Icon name="lock" className="h-3.5 w-3.5 text-emerald-400" /> Verileriniz kendi bilgisayarınızda
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Icon name="check" className="h-3.5 w-3.5 text-emerald-400" /> Trendyol şablonuyla uyumlu Excel
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Icon name="check" className="h-3.5 w-3.5 text-emerald-400" /> Kurulumu kolay
+            </span>
+          </div>
+        </div>
+
+        <div className="relative mx-auto mt-14 max-w-4xl">
+          <div className="absolute -inset-x-8 -top-8 bottom-0 -z-10 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(249,115,22,0.15),transparent)]" />
+          <AppWindow active="fiyat" title="Fiyat Güncelleme">
+            <FiyatScreen />
+          </AppWindow>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------ why ------------------------------------ */
+
+function WhyCard({ icon, title, children }) {
+  return (
+    <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
+      <div className="grid h-11 w-11 place-items-center rounded-xl bg-orange-500/12 text-orange-400 ring-1 ring-inset ring-orange-500/20">
+        {icon}
+      </div>
+      <h3 className="mt-4 text-base font-semibold text-zinc-100">{title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-zinc-400">{children}</p>
+    </div>
+  );
+}
+
+function WhySection() {
+  return (
+    <section id="neden" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-20 sm:px-6">
+      <SectionTitle eyebrow="Neden KomiFly?" title="Kâr hesabını tahmine bırakmayın" desc="Elle takip hem vakit alır hem hata yapmaya açıktır. KomiFly bu işi sizin için yapar." />
+      <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <WhyCard icon={<Icon name="trendingUp" className="h-5 w-5" />} title="Gerçek kârı görürsünüz">
+          Alış, KDV, komisyon, hizmet bedeli, kargo (desiye göre), stopaj ve net KDV etkisi tek tek hesaplanır. Her satırda "Detay" ile hesabı adım adım açarsınız.
+        </WhyCard>
+        <WhyCard icon={<Icon name="radar" className="h-5 w-5" />} title="BuyBox'ı takip eder">
+          Ürünlerinizin BuyBox durumunu ve 1. sıradaki fiyatı sürekli izler. BuyBox içi ve dışı için ayrı asgari kâr kuralları tanımlarsınız.
+        </WhyCard>
+        <WhyCard icon={<Icon name="percent" className="h-5 w-5" />} title="Komisyon kararını saniyede verir">
+          4 tarifeli komisyon Excel'ini yükleyin; her ürün için dört tarifenin kârı hesaplanır, kârlı olanı işaretlenir ve toplu uygulanır.
+        </WhyCard>
+        <WhyCard icon={<Icon name="arrowLeftRight" className="h-5 w-5" />} title="Rakibi ürün ürün izler">
+          Web taraması rakip satıcıları, sıralarını, fiyat, stok ve kupon/kampanya bilgisini toplar. Değişiklikler zaman çizelgesine düşer.
+        </WhyCard>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------ features ------------------------------------ */
+
+const FEATURES = [
+  { icon: "layoutDashboard", title: "Dashboard & Satış Takibi", desc: "Rekabet & Satış Takip Merkezi, ürün bazlı satış zaman çizgisi, görselli satış liderleri, en çok satan kategori/marka/ürünler." },
+  { icon: "package", title: "Ürün & Rakip Takip Merkezi", desc: "Renk/beden bazında varyant matrisi, mağaza özeti, stok hareketi, tahmini satış, fiyat ve stok geçmişi grafikleri." },
+  { icon: "tag", title: "Fiyat Güncelleme", desc: "Maliyet ve kâr hedefine göre hedef satış fiyatı; kâr marjı %, kâr oranı % veya TL tutar. BuyBox 1. sıra ile yan yana karşılaştırma." },
+  { icon: "percent", title: "Komisyon İndirimleri", desc: "4 tarifeli komisyon hesabı ve otomatik seçim, tıkla-sürükle çoklu seçim, TL eşiği ile otomatik tarife, iki ayrı Excel çıktısı." },
+  { icon: "zap", title: "Flaş Ürün", desc: "24 Saat / 3 Saat fiyatları için uygunluk ve kâr hesabı; yalnızca uygun süreyi yazan, Trendyol Flaş şablonuna uygun export." },
+  { icon: "scale", title: "Desi Yönetimi", desc: "Teslim edilen siparişlerden gerçek desiyi öğrenir, TL cinsinden kargo kaybını gösterir, tek tuşla toplu düzeltir." },
+  { icon: "star", title: "Satış Analizi", desc: "Çok satanlar her ekranda yeşil, iade/iptali yüksekler kırmızı işaretlenir. İade oranı, kayıp tutar ve iade sebepleri." },
+  { icon: "arrowLeftRight", title: "Link Rakip Fırsatları", desc: "Kendi linkinizi rakip linkiyle eşleştirin; renk/beden bazında fiyat, stok, sıra ve satış karşılaştırması, hedef fiyat." },
+  { icon: "scanSearch", title: "Akıllı Tarama Merkezi", desc: "Trendyol API, WEB rakip ve sipariş taraması tek yerde. BuyBox'takilere öncelik, boşta kalınca devam, hata günlüğü." },
+];
+
+function Features() {
+  return (
+    <section id="ozellikler" className="scroll-mt-20 border-y border-zinc-800/60 bg-zinc-900/20 py-20">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <SectionTitle eyebrow="Özellikler" title="Bir mağazayı yönetmek için gereken her şey" desc="Onlarca ürün değil, binlerce ürün ölçeğinde çalışacak şekilde tasarlandı." />
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {FEATURES.map((f) => (
+            <div key={f.title} className="group rounded-2xl border border-zinc-800 bg-zinc-950/40 p-6 transition-colors hover:border-orange-500/30 hover:bg-zinc-900/40">
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-zinc-800/80 text-zinc-300 transition-colors group-hover:bg-orange-500/12 group-hover:text-orange-400">
+                <Icon name={f.icon} className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 text-base font-semibold text-zinc-100">{f.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-400">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------ steps ------------------------------------ */
+
+function Steps() {
+  const steps = [
+    { n: "1", icon: "download", title: "Kurun ve bağlanın", desc: "Programı kurun, Trendyol API bilgilerinizi girin. Verileriniz kendi bilgisayarınızda kalır." },
+    { n: "2", icon: "scanSearch", title: "Tarayın", desc: "Ürünler, siparişler, komisyon Excel'i ve rakipler içeri gelsin. Sonuçlar tüm menülere otomatik yansır." },
+    { n: "3", icon: "check", title: "Karar verin", desc: "Kâr, BuyBox ve rakip verisine göre fiyatı ve komisyon tarifesini seçin; Excel'i Trendyol'a yükleyin." },
+  ];
+  return (
+    <section id="adimlar" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-20 sm:px-6">
+      <SectionTitle eyebrow="Nasıl Başlarım" title="3 adımda başlayın" />
+      <div className="mt-10 grid gap-4 md:grid-cols-3">
+        {steps.map((s, i) => (
+          <div key={s.n} className="relative rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
+            <div className="flex items-center gap-3">
+              <span className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-orange-500 to-amber-400 text-sm font-bold text-zinc-950">{s.n}</span>
+              <Icon name={s.icon} className="h-5 w-5 text-orange-400" />
+            </div>
+            <h3 className="mt-4 text-base font-semibold text-zinc-100">{s.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-400">{s.desc}</p>
+            {i < steps.length - 1 ? (
+              <span className="absolute -right-3 top-1/2 hidden h-6 w-6 -translate-y-1/2 items-center justify-center text-zinc-700 md:flex">→</span>
+            ) : null}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------ audience ------------------------------------ */
+
+function Audience() {
+  const items = [
+    "Trendyol'da yüzlerce, binlerce ürünle satış yapan mağazalar",
+    "Komisyon indirimi kampanyalarında hangi ürüne girileceğini elle hesaplamaktan yorulanlar",
+    "Kargo desisi yüzünden görünmez zarar edenler",
+    "BuyBox savaşında rakibi gün içinde izlemek isteyenler",
+  ];
+  return (
+    <section className="border-y border-zinc-800/60 bg-zinc-900/20 py-20">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <SectionTitle eyebrow="Kimler için?" title="Ölçeği büyüyen Trendyol satıcısı için" align="left" />
+            <p className="mt-4 text-sm leading-relaxed text-zinc-400">
+              Ürün sayısı arttıkça her kalemi elle hesaplamak imkânsızlaşır. KomiFly, kararı veriyle almanızı sağlar.
+            </p>
+          </div>
+          <ul className="space-y-3">
+            {items.map((t) => (
+              <li key={t} className="flex items-start gap-3 rounded-xl border border-zinc-800 bg-zinc-950/40 p-4">
+                <Icon name="check" className="mt-0.5 h-5 w-5 shrink-0 text-emerald-400" />
+                <span className="text-sm text-zinc-300">{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------ faq ------------------------------------ */
+
+function Faq() {
+  const faqs = [
+    { q: "Trendyol'a doğrudan fiyat gönderiyor mu?", a: "Hayır. KomiFly, Trendyol'un kendi Excel şablonuyla birebir uyumlu bir dosya üretir; siz bu dosyayı panele yüklersiniz." },
+    { q: "Verilerim güvende mi?", a: "Program bilgisayarınızda çalışır, veriler yerel olarak tutulur. Bilgileriniz kendi cihazınızdan dışarı çıkmaz." },
+    { q: "Trendyol kâr hesabına hangi kalemler dahil ediliyor?", a: "Alış fiyatı, KDV, komisyon, hizmet bedeli, desiye göre kargo, stopaj ve net KDV etkisi tek tek hesaplanır. Her satırdaki Detay bağlantısıyla hesabın adımlarını görebilirsiniz." },
+    { q: "Trendyol komisyon oranları programda nasıl hesaplanıyor?", a: "4 tarifeli komisyon Excel'inizi yüklersiniz; KomiFly her ürün için dört tarifenin de kârını ayrı ayrı hesaplar, en kârlı tarifeyi işaretler ve seçiminizi toplu olarak uygular." },
+    { q: "Desi nedir, kâr hesabını nasıl etkiler?", a: "Desi, kargo ücretinin hesaplandığı hacimsel ağırlıktır. Üründe yazan desi gerçeğinden düşükse aradaki farkı siz ödersiniz. KomiFly teslim edilen siparişlerden gerçek desiyi öğrenir, TL cinsinden kargo kaybını gösterir ve tek tuşla toplu düzeltir." },
+    { q: "BuyBox takibi nasıl çalışıyor?", a: "Program ürünlerinizin BuyBox durumunu ve 1. sıradaki fiyatı sürekli izler. BuyBox içi ve BuyBox dışı için ayrı asgari kâr kuralları tanımlayabilirsiniz." },
+    { q: "Rakip fiyatlarını takip edebilir miyim?", a: "Evet. Web taraması rakip satıcıları, sıralarını, fiyat, stok ve kupon/kampanya bilgisini toplar; değişiklikler zaman çizelgesine düşer. Kendi ürün linkinizi rakip linkiyle eşleştirip renk ve beden bazında karşılaştırma yapabilirsiniz." },
+    { q: "Flaş Ürün kampanyalarına uygunluğu görebilir miyim?", a: "Evet. 24 Saat ve 3 Saat flaş fiyatları için uygunluk ve kâr hesabı yapılır; yalnızca uygun süreyi yazan, Trendyol Flaş şablonuna uygun bir Excel dosyası üretilir." },
+    { q: "Satış adetleri nasıl hesaplanıyor?", a: "Satış adetleri stok hareketinden tahmini olarak hesaplanır. Ekranlarda bu değerler 'tahmini satış' olarak belirtilir." },
+    { q: "Lisans nasıl çalışıyor?", a: "Lisans bilgisayarınıza bağlıdır; süreli ve takip edilecek ürün linki kapasitesine göre verilir." },
+    { q: "Başka bilgisayara taşıyabilir miyim?", a: "Taşıma için yeni bir lisans dosyası gerekir." },
+  ];
+  return (
+    <section id="sss" className="mx-auto max-w-3xl scroll-mt-20 px-4 py-20 sm:px-6">
+      <SectionTitle eyebrow="SSS" title="Sık sorulan sorular" />
+      <div className="mt-10 space-y-3">
+        {faqs.map((f) => (
+          <details key={f.q} className="group rounded-xl border border-zinc-800 bg-zinc-900/40 px-5 py-4">
+            <summary className="flex cursor-pointer items-center justify-between gap-4 text-sm font-medium text-zinc-100">
+              {f.q}
+              <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full border border-zinc-700 text-zinc-400 transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p className="mt-3 text-sm leading-relaxed text-zinc-400">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------ cta ------------------------------------ */
+
+function Cta() {
+  return (
+    <section id="iletisim" className="scroll-mt-20 px-4 pb-20 sm:px-6">
+      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-orange-500/20 bg-gradient-to-br from-zinc-900 to-zinc-950 px-6 py-14 text-center sm:px-12">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_80%_at_50%_0%,rgba(249,115,22,0.18),transparent_70%)]" />
+        <div className="relative">
+          <div className="mx-auto flex w-fit items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1 text-xs text-zinc-300">
+            <Icon name="shieldCheck" className="h-3.5 w-3.5 text-emerald-400" /> Windows masaüstü • yerel veri
+          </div>
+          <h2 className="mx-auto mt-5 max-w-2xl text-balance text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
+            Hangi ürünün gerçekten kazandırdığını görün
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-zinc-400 sm:text-base">
+            Komisyon tarifesini doğru seçin, kargo desisini kontrol edin, BuyBox'ı takip edin. Kâr hesabını KomiFly yapsın.
+          </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-br from-orange-500 to-amber-400 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-lg shadow-orange-500/20 transition-transform hover:scale-[1.03] sm:w-auto"
+            >
+              <WhatsAppIcon className="h-4 w-4" />
+              WhatsApp'tan İletişime Geç
+            </a>
+            <a href="#ekranlar" className="w-full rounded-lg border border-zinc-700 bg-zinc-900/60 px-6 py-3 text-sm font-semibold text-zinc-200 transition-colors hover:border-zinc-600 sm:w-auto">
+              Ekranları İncele
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------ footer ------------------------------------ */
+
+function Footer() {
+  return (
+    <footer className="border-t border-zinc-800/80 bg-zinc-950">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row sm:px-6">
+        <Logo />
+        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-medium text-emerald-400 transition-colors hover:text-emerald-300">
+          <WhatsAppIcon className="h-4 w-4" />
+          WhatsApp'tan bize ulaşın
+        </a>
+        <div className="flex items-center gap-2 text-xs text-zinc-500">
+          <Icon name="monitor" className="h-3.5 w-3.5" />
+          <Icon name="cpu" className="h-3.5 w-3.5" />
+          Windows masaüstü uygulaması
+        </div>
+        <p className="text-xs text-zinc-600">© {new Date().getFullYear()} KomiFly. Tüm hakları saklıdır.</p>
+      </div>
+    </footer>
+  );
+}
+
+/* ------------------------------------ whatsapp fab ------------------------------------ */
+
+function WhatsAppFab() {
+  return (
+    <a
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp'tan bilgi al"
+      className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 font-semibold text-white shadow-lg shadow-emerald-900/40 transition-transform hover:scale-105"
+    >
+      <WhatsAppIcon className="h-6 w-6" />
+      <span className="hidden text-sm sm:inline">WhatsApp'tan Yaz</span>
+    </a>
+  );
+}
+
+/* ------------------------------------ app root ------------------------------------ */
+
+function App() {
+  return (
+    <div className="min-h-screen bg-zinc-950 text-zinc-100 antialiased selection:bg-orange-500/30">
+      <SiteNav />
+      <main>
+        <Hero />
+        <WhySection />
+        <Features />
+
+        <section id="ekranlar" className="scroll-mt-20 border-t border-zinc-800/60 py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="text-xs font-semibold uppercase tracking-widest text-orange-400">Ekranlar</span>
+              <h2 className="mt-2 text-balance text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
+                Programın içinden görüntüler
+              </h2>
+              <p className="mt-3 text-pretty text-sm leading-relaxed text-zinc-400 sm:text-base">
+                Her menüden gerçek bir ekran. Sekmeler arasında gezinerek KomiFly'ın nasıl çalıştığını görün.
+              </p>
+            </div>
+            <div className="mt-10">
+              <Gallery />
+            </div>
+          </div>
+        </section>
+
+        <Steps />
+        <Audience />
+        <Faq />
+        <Cta />
+      </main>
+      <Footer />
+      <WhatsAppFab />
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+</script>
+</body>
+</html>
