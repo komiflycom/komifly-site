@@ -1,0 +1,11 @@
+# KomiFly - robots.txt
+# Alan adını kendi adresinizle değiştirmeyi unutmayın.
+
+User-agent: *
+Allow: /
+
+# Arama motorlarına gereksiz yük bindiren parametreli adresler
+Disallow: /*?utm_
+Disallow: /*?fbclid
+
+Sitemap: https://komifly.com/sitemap.xml
