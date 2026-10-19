@@ -2,9 +2,14 @@
 <html lang="tr">
 <head>
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5VZZJFB4');</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2778SL2TET"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2778SL2TET');</script>
+<script>/* Analitik çerezler yalnızca açık rıza sonrası yüklenir (KVKK Çerez Rehberi). */
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+function kfLoadAnalytics(){if(window.kfAL)return;window.kfAL=1;
+var d=document,a=d.createElement('script');a.async=true;a.src='https://www.googletagmanager.com/gtag/js?id=G-2778SL2TET';d.head.appendChild(a);
+gtag('js',new Date());gtag('config','G-2778SL2TET',{anonymize_ip:true});
+dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});var g=d.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtm.js?id=GTM-5VZZJFB4';d.head.appendChild(g);}
+try{if(localStorage.getItem('kf_consent')==='yes')kfLoadAnalytics();}catch(e){}
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Trendyol Kâr Hesaplama ve BuyBox Takip Programı | KomiFly</title>
@@ -15,7 +20,7 @@
 <link rel="alternate" hreflang="tr" href="https://komifly.com/">
 <meta property="og:type" content="website"><meta property="og:site_name" content="KomiFly"><meta property="og:locale" content="tr_TR"><meta property="og:url" content="https://komifly.com/">
 <meta property="og:title" content="Trendyol Kâr Hesaplama ve BuyBox Takip Programı | KomiFly">
-<meta property="og:description" content="Komisyon, KDV, kargo desisi ve stopajı hesaba katarak gerçek kârı gösterir; BuyBox'ı ve rakip fiyatlarını izler, Trendyol şablonuna uygun Excel üretir.">
+<meta property="og:description" content="Komisyon, KDV, kargo desisi ve stopajı hesaba katarak gerçek kârı gösterir; BuyBox ve fiyat değişimlerini izler, panele yüklenebilir Excel hazırlar.">
 <meta property="og:image" content="https://komifly.com/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://komifly.com/og-image.jpg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
@@ -213,6 +218,12 @@ input[type=range]{width:100%;accent-color:var(--blue);cursor:pointer;margin-bott
 .cta .box img{width:64px;height:64px;margin:0 auto 22px;border-radius:16px}
 .cta .sub{color:#b8c0dc;margin:16px auto 0}
 .cta .row{justify-content:center}
+.ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:640px;margin:0 auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);padding:16px 18px;font-size:14px;line-height:1.5}
+.ck[hidden]{display:none}.ck p{margin:0 0 12px}.ck a{color:var(--blue)}
+.ck .ckb{display:flex;gap:10px;flex-wrap:wrap}.ck button{flex:1 1 120px;padding:11px 14px;border-radius:10px;border:1px solid var(--ink);background:var(--card);color:var(--ink);font:700 14px/1 var(--fb);cursor:pointer}
+.ck button:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.legal{background:var(--bg);padding:40px 0;font-size:14px;color:var(--mut)}.legal h2{font-size:20px;color:var(--ink);margin:0 0 12px}.legal details{margin:8px 0}.legal summary{cursor:pointer;font-weight:700;color:var(--ink)}
+footer a{color:#c9cfe6}
 footer{background:var(--navy);color:#8f98ba;padding:40px 0;font-size:14px}
 footer .w{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 footer img{height:30px;width:auto}
@@ -310,7 +321,6 @@ footer picture{display:inline-block;background:#fff;padding:6px 12px;border-radi
 </style>
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZZJFB4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
  <defs>
@@ -348,9 +358,9 @@ footer picture{display:inline-block;background:#fff;padding:6px 12px;border-radi
    <p class="lead">KomiFly komisyonu, KDV'yi, desiye göre kargoyu ve stopajı düşer; her ürünün gerçek kârını, BuyBox sırasını ve rakibin fiyatını tek programda gösterir.</p>
    <div class="row"><a class="btn" href="https://wa.me/905426983465?text=Merhaba%20KOM%C4%B0FLY%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp'tan bilgi alın</a><a class="btn alt" href="#araclar">Kendiniz deneyin</a></div>
    <ul class="chk">
-    <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Resmi Trendyol API</li>
-    <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Veriler bilgisayarınızda</li>
-    <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Trendyol şablonuna uygun Excel</li>
+    <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Trendyol Satıcı API entegrasyonu</li>
+    <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Yerel çalışan masaüstü program</li>
+    <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Panele yüklenebilir Excel formatı</li>
    </ul>
   </div>
   <div class="stage">
@@ -370,7 +380,7 @@ footer picture{display:inline-block;background:#fff;padding:6px 12px;border-radi
     </div>
    </div>
    <div class="float f1" aria-hidden="true"><span class="ic"><svg><use href="#i-crown"/></svg></span><span><b>4.604</b>BuyBox 1. sıra</span></div>
-   <div class="float f2" aria-hidden="true"><span class="ic"><svg><use href="#i-box"/></svg></span><span><b>-36.396 ₺</b>desi kaybı bulundu</span></div>
+   <div class="float f2" aria-hidden="true"><span class="ic"><svg><use href="#i-box"/></svg></span><span><b>Örnek:</b>desi kaybı tespiti</span></div>
   </div>
  </div>
  <div style="height:44px"></div>
@@ -391,11 +401,11 @@ footer picture{display:inline-block;background:#fff;padding:6px 12px;border-radi
   <article class="card cb s5 rv"><span class="ico"><svg aria-hidden="true"><use href="#i-crown"/></svg></span><h3>BuyBox takibi</h3>
    <p>BuyBox'ta 1., 2. ve 3. fiyat ile sıranız izlenir. BuyBox içi ve dışı için ayrı asgari kâr kuralları tanımlanır; "1. olmadıklarım" filtresiyle kaybettiğiniz ürünler öne çıkar.</p></article>
   <article class="card cc s4 rv"><span class="ico"><svg aria-hidden="true"><use href="#i-radar"/></svg></span><h3>Rakip fiyat takibi</h3>
-   <p>Web taraması rakip satıcıları, sıralarını, fiyat, stok ve kupon/kampanya bilgisini toplar. Değişiklikler zaman çizelgesine düşer, Rakip Raporu'nda özetlenir.</p></article>
+   <p>Kendi ürünlerinizin sayfalarında herkese açık görünen satıcı sırası, fiyat ve kampanya bilgilerini izlemenize yardımcı olur. Değişiklikler zaman çizelgesine düşer, Rakip Raporu'nda özetlenir.</p></article>
   <article class="card ca s4 rv"><span class="ico"><svg aria-hidden="true"><use href="#i-pct"/></svg></span><h3>4 tarifeli komisyon</h3>
    <p>Komisyon İndirimleri Excel'ini yükleyin; dört tarifenin kârı ayrı hesaplanır, en kârlısı işaretlenir, seçiminiz toplu uygulanır.</p></article>
   <article class="card cd s4 rv"><span class="ico"><svg aria-hidden="true"><use href="#i-bolt"/></svg></span><h3>Flaş Ürünler</h3>
-   <p>24 Saat ve 3 Saat flaş fiyatlarına uygunluk ve kâr kontrolü. Yalnızca uygun süreyi yazan, Trendyol şablonuna uygun Excel üretilir.</p></article>
+   <p>24 Saat ve 3 Saat flaş fiyatlarına uygunluk ve kâr kontrolü. Yalnızca uygun süreyi yazan, panele yüklenebilir formatta Excel üretilir.</p></article>
   <article class="card cb s6 rv"><span class="ico"><svg aria-hidden="true"><use href="#i-chart"/></svg></span><h3>Satış raporları ve analiz</h3>
    <p>Sipariş tarihine göre satış raporları, En Çok Satanlar, İade/İptal Analizi ve stok hareketinden tahmini satış sayımı. Değişiklikler ekranında fiyat ve satıcı hareketlerini görürsünüz.</p></article>
   <article class="card ce s6 rv"><span class="ico"><svg aria-hidden="true"><use href="#i-tag"/></svg></span><h3>Kampanya ve kuponlar</h3>
@@ -436,34 +446,34 @@ footer picture{display:inline-block;background:#fff;padding:6px 12px;border-radi
     <div class="spane" role="tabpanel" id="sp2" aria-labelledby="st2">
      <h3>Komisyon &amp; Kâr Hesaplama</h3><p>18 ürün seçili · toplu hesapla</p>
      <table class="st"><thead><tr><th>Ürün</th><th>Barkod</th><th>Alış</th><th>Satış</th><th>Kom.</th><th>Kargo</th><th>Net Kâr</th><th>Kâr %</th></tr></thead><tbody>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>118,00 ₺</td><td>349,90 ₺</td><td><span class="tg g">%5</span></td><td>82 ₺ (2D)</td><td class="up">+68,43 ₺</td><td class="up">%19,6</td></tr>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>92,50 ₺</td><td>299,00 ₺</td><td><span class="tg b">%8,5</span></td><td>62 ₺ (1D)</td><td class="up">+90,12 ₺</td><td class="up">%30,1</td></tr>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>205,00 ₺</td><td>599,90 ₺</td><td><span class="tg y">%10</span></td><td>150 ₺ (5D)</td><td class="up">+58,91 ₺</td><td class="up">%9,8</td></tr>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>68,00 ₺</td><td>179,90 ₺</td><td><span class="tg g">%5</span></td><td>62 ₺ (1D)</td><td class="up">+27,31 ₺</td><td class="up">%15,2</td></tr>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>154,00 ₺</td><td>349,00 ₺</td><td><span class="tg g">%5</span></td><td>121 ₺ (3D)</td><td class="up">+38,65 ₺</td><td class="up">%11,1</td></tr>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>310,00 ₺</td><td>749,00 ₺</td><td><span class="tg r">%13</span></td><td>190 ₺ (8D)</td><td class="dn">-12,87 ₺</td><td class="dn">-1,7%</td></tr>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>42,00 ₺</td><td>119,90 ₺</td><td><span class="tg g">%5</span></td><td>62 ₺ (1D)</td><td class="up">+10,51 ₺</td><td class="up">%8,8</td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>118,00 ₺</td><td>349,90 ₺</td><td><span class="tg g">%5</span></td><td>82 ₺ (2D)</td><td class="up">+113,73 ₺</td><td class="up">%32,5</td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>92,50 ₺</td><td>299,00 ₺</td><td><span class="tg b">%8,5</span></td><td>62 ₺ (1D)</td><td class="up">+101,17 ₺</td><td class="up">%33,8</td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>205,00 ₺</td><td>599,90 ₺</td><td><span class="tg y">%10</span></td><td>150 ₺ (5D)</td><td class="up">+166,27 ₺</td><td class="up">%27,7</td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>68,00 ₺</td><td>179,90 ₺</td><td><span class="tg g">%5</span></td><td>62 ₺ (1D)</td><td class="up">+26,08 ₺</td><td class="up">%14,5</td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>154,00 ₺</td><td>349,00 ₺</td><td><span class="tg g">%5</span></td><td>121 ₺ (3D)</td><td class="up">+40,19 ₺</td><td class="up">%11,5</td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>310,00 ₺</td><td>749,00 ₺</td><td><span class="tg r">%13</span></td><td>190 ₺ (8D)</td><td class="up">+131,63 ₺</td><td class="up">%17,6</td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>42,00 ₺</td><td>119,90 ₺</td><td><span class="tg g">%5</span></td><td>62 ₺ (1D)</td><td class="dn">-4,37 ₺</td><td class="dn">-%3,6</td></tr>
      </tbody></table>
     </div>
     <div class="spane" role="tabpanel" id="sp3" aria-labelledby="st3">
      <h3>BuyBox Takibi</h3><p>BuyBox'ta 1. olmadığınız ürünler önce taranır · 15 dakikada bir</p>
      <div class="sk"><div><small>1. SIRADA</small><strong class="up">4.604</strong><em class="up">▲ 37 bugün</em></div><div><small>2.–3. SIRA</small><strong style="color:#b76e00">812</strong><em class="bk">fırsat</em></div><div><small>KAYBEDİLEN</small><strong class="dn">96</strong><em class="dn">son 24 saat</em></div><div><small>YENİ RAKİP</small><strong>23</strong><em class="bk">bu hafta</em></div></div>
      <table class="st"><thead><tr><th>Ürün</th><th>Barkod</th><th>Sizin fiyat</th><th>BuyBox fiyatı</th><th>Sıra</th><th>Önerilen</th><th>Kâr (önerilen)</th></tr></thead><tbody>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>429,90 ₺</td><td>419,90 ₺</td><td><span class="tg y">2.</span></td><td class="bk">418,90 ₺</td><td class="up">+61,20 ₺</td></tr>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>259,00 ₺</td><td>249,00 ₺</td><td><span class="tg y">3.</span></td><td class="bk">248,00 ₺</td><td class="up">+34,75 ₺</td></tr>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>189,90 ₺</td><td>189,90 ₺</td><td><span class="tg g">1.</span></td><td>—</td><td class="up">+42,10 ₺</td></tr>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>649,00 ₺</td><td>579,00 ₺</td><td><span class="tg r">5.</span></td><td><span class="tg r">Asgari kâr altı</span></td><td class="dn">-8,40 ₺</td></tr>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>339,90 ₺</td><td>334,90 ₺</td><td><span class="tg y">2.</span></td><td class="bk">333,90 ₺</td><td class="up">+48,05 ₺</td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>429,90 ₺</td><td>419,90 ₺</td><td><span class="tg y">2.</span></td><td class="bk">418,90 ₺</td><td class="up">+35,44 ₺</td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>259,00 ₺</td><td>249,00 ₺</td><td><span class="tg y">3.</span></td><td class="bk">248,00 ₺</td><td class="up">+18,32 ₺</td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>189,90 ₺</td><td>189,90 ₺</td><td><span class="tg g">1.</span></td><td>—</td><td class="up">+8,99 ₺</td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>649,00 ₺</td><td>579,00 ₺</td><td><span class="tg r">5.</span></td><td><span class="tg r">Asgari kâr altı</span></td><td class="dn">-44,72 ₺</td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>339,90 ₺</td><td>334,90 ₺</td><td><span class="tg y">2.</span></td><td class="bk">333,90 ₺</td><td class="up">+32,28 ₺</td></tr>
      </tbody></table>
     </div>
     <div class="spane" role="tabpanel" id="sp4" aria-labelledby="st4">
      <h3>Flaş Ürünler</h3><p>24 Saat ve 3 Saat teklifleri asgari kâr hedefinize göre süzüldü</p>
      <div class="sk"><div><small>AKTARILACAK</small><strong class="up">636</strong><em class="up">kârlı</em></div><div><small>UYGUN DEĞİL</small><strong style="color:#b76e00">459</strong><em>kâr hedefi altı</em></div><div><small>BİLGİ EKSİK</small><strong>48</strong><em>alış fiyatı yok</em></div><div><small>TAHMİNİ EK KÂR</small><strong class="bk">27.340 ₺</strong><em class="bk">kampanya süresince</em></div></div>
      <table class="st"><thead><tr><th>Ürün</th><th>Barkod</th><th>Normal</th><th>24 Saat</th><th>3 Saat</th><th>Kâr (seçilen)</th><th>Karar</th></tr></thead><tbody>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>299,90 ₺</td><td>264,90 ₺</td><td>249,90 ₺</td><td class="up">+41,30 ₺</td><td><span class="tg g">24 Saat</span></td></tr>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>549,00 ₺</td><td>489,00 ₺</td><td>459,00 ₺</td><td class="up">+52,85 ₺</td><td><span class="tg b">3 Saat</span></td></tr>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>159,90 ₺</td><td>139,90 ₺</td><td>129,90 ₺</td><td class="dn">-4,15 ₺</td><td><span class="tg r">Uygun değil</span></td></tr>
-     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>399,00 ₺</td><td>359,00 ₺</td><td>339,00 ₺</td><td class="up">+38,60 ₺</td><td><span class="tg g">24 Saat</span></td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>299,90 ₺</td><td>264,90 ₺</td><td>249,90 ₺</td><td class="up">+20,81 ₺</td><td><span class="tg g">24 Saat</span></td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>549,00 ₺</td><td>489,00 ₺</td><td>459,00 ₺</td><td class="up">+53,74 ₺</td><td><span class="tg b">3 Saat</span></td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>159,90 ₺</td><td>139,90 ₺</td><td>129,90 ₺</td><td class="dn">-34,46 ₺</td><td><span class="tg r">Uygun değil</span></td></tr>
+     <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>399,00 ₺</td><td>359,00 ₺</td><td>339,00 ₺</td><td class="up">+34,65 ₺</td><td><span class="tg g">24 Saat</span></td></tr>
      <tr><td><div class="pr"><i></i><span></span></div></td><td class="bc">░░░░░░░░</td><td>219,90 ₺</td><td>—</td><td>—</td><td>—</td><td><span class="tg">Bilgi eksik</span></td></tr>
      </tbody></table>
     </div>
@@ -516,7 +526,7 @@ footer picture{display:inline-block;background:#fff;padding:6px 12px;border-radi
     <label>Ürün KDV'si<select id="v"><option value="0.1" selected>%10</option><option value="0.2">%20</option></select></label></div>
    <div class="bd" id="bd"></div>
    <div class="nt" id="nt"><small>Net kâr</small><strong id="nv"></strong></div><div class="vd" id="vd"></div>
-   <p class="nb">Örnek hesap: hizmet bedeli 9 TL ve desiye göre kargo tutarları (62–230 TL) örnek değerlerdir. Programda kendi kargo tarifeniz ve hizmet bedeliniz kullanılır.</p></article>
+   <p class="nb">Örnek hesap: hizmet bedeli 13,19 TL ve desiye göre kargo tutarları (62–230 TL) örnek değerlerdir. Programda kendi kargo tarifeniz ve hizmet bedeliniz kullanılır.</p></article>
 
   <article class="tool s5 rv"><h3>Rakibin 1 TL altına inersem?</h3>
    <p>Link Rakip Fırsatları'nda rakibin fiyatının altına kaç TL ineceğinizi siz seçersiniz. Program hedef fiyatı ve kârı hesaplar.</p>
@@ -527,11 +537,11 @@ footer picture{display:inline-block;background:#fff;padding:6px 12px;border-radi
   <article class="tool s6 rv"><h3>Hangi komisyon tarifesine girilir?</h3>
    <p>4 tarifeli Excel'i yükleyin; her ürün için dördü ayrı hesaplanır, kârlı olan işaretlenir, seçim toplu uygulanır.</p>
    <div class="sc-x"><table class="tb"><thead><tr><th>Tarife</th><th>Komisyon</th><th>Hedef fiyat</th><th>Net kâr</th></tr></thead><tbody>
-    <tr><td>1. tarife</td><td>%17,50</td><td>813,26 ₺</td><td class="n">-81,36 ₺</td></tr>
-    <tr><td>2. tarife</td><td>%13,00</td><td>742,10 ₺</td><td class="p">+4,90 ₺</td></tr>
-    <tr class="best"><td>3. tarife, önerilen</td><td>%8,50</td><td>698,40 ₺</td><td class="p">+58,05 ₺</td></tr>
-    <tr><td>4. tarife</td><td>%5,00</td><td>664,20 ₺</td><td class="p">+96,10 ₺</td></tr></tbody></table></div>
-   <p class="nb">Örnek tablo; tutarlar temsilidir.</p></article>
+    <tr><td>1. tarife</td><td>%17,50</td><td>749,90 ₺</td><td class="p">+177,66 ₺</td></tr>
+    <tr class="best"><td>2. tarife, önerilen</td><td>%13,00</td><td>729,90 ₺</td><td class="p">+193,29 ₺</td></tr>
+    <tr><td>3. tarife</td><td>%8,50</td><td>669,90 ₺</td><td class="p">+170,91 ₺</td></tr>
+    <tr><td>4. tarife</td><td>%5,00</td><td>599,90 ₺</td><td class="p">+130,26 ₺</td></tr></tbody></table></div>
+   <p class="nb">Örnek tablo; tutarlar temsilîdir (alış 300 TL, kargo 121 TL, KDV %10, hizmet bedeli 13,19 TL).</p></article>
 
   <article class="tool s6 rv"><h3>Flaş Ürün</h3>
    <p>24 Saat ve 3 Saat fiyatından hangisi asgari kârı sağlıyor? Yalnızca uygun olan Excel'e yazılır.</p>
@@ -541,7 +551,7 @@ footer picture{display:inline-block;background:#fff;padding:6px 12px;border-radi
   <article class="tool s12 rv" id="desi"><h3>Kargo desisi kontrolü</h3>
    <p>Desi Yönetimi, teslim edilen siparişlerdeki gerçek desiyi üründe kayıtlı desiyle karşılaştırır. Fark varsa kargo kaybını TL olarak gösterir; düzeltmeyi tek tuşla toplu uygularsınız.</p>
    <div class="big-loss">-36.396 ₺</div>
-   <p class="nb" style="margin-top:6px">1.060 üründe bulunan toplam desi kaybı</p>
+   <p class="nb" style="margin-top:6px">Örnek ekran: 1.060 üründe hesaplanan toplam desi kaybı (temsilî)</p>
    <div class="sc-x"><table class="dtab"><thead><tr><th>Ürün</th><th>Kayıtlı desi</th><th>Gerçek desi</th><th>Sipariş başı fark</th></tr></thead><tbody>
     <tr><td><div class="pr"><i></i><span></span></div></td><td>1</td><td>3</td><td>-59,00 ₺</td></tr>
     <tr><td><div class="pr"><i></i><span></span></div></td><td>2</td><td>5</td><td>-68,00 ₺</td></tr>
@@ -549,14 +559,14 @@ footer picture{display:inline-block;background:#fff;padding:6px 12px;border-radi
    <p class="nb">Örnek: ürünler ve kargo farkları temsilidir; gerçek tutarlar anlaşmalı kargo tarifenize göre hesaplanır.</p></article>
   <article class="tool s4 rv"><h3>Hız modu</h3><p>Arka plandaki sayım programı yavaşlatırsa hız modu sayımları durdurur, kaldığı yerden devam ettirir. Ekranda 5 dakika hareket yoksa kendiliğinden sürer.</p></article>
   <article class="tool s4 rv"><h3>BuyBox'a göre öncelik</h3><p>BuyBox'ta 1. olmadığınız ürünler 15 dakikada bir önce taranır; boşta kalınca tüm katalog taranır. Satıcı çıkışı, yeni satıcı, fiyat ve kampanya değişimi kaydedilir.</p></article>
-  <article class="tool s4 rv"><h3>Excel ve raporlar</h3><p>Trendyol şablonuna uygun fiyat ve tarife Excel'leri. Tarih aralığı seçip tüm işlem geçmişini, her tür ayrı sayfada, indirirsiniz.</p></article>
+  <article class="tool s4 rv"><h3>Excel ve raporlar</h3><p>Panele yüklenebilir formatta fiyat ve tarife Excel'leri. Tarih aralığı seçip tüm işlem geçmişini, her tür ayrı sayfada, indirirsiniz.</p></article>
  </div>
 </div></section>
 
 <section id="adimlar" style="background:#fff;padding:96px 0"><div class="w">
  <div class="head rv" style="text-align:center;margin-bottom:56px"><span class="eyb">Nasıl başlanır</span><h2 class="h2">Üç adımda başlayın</h2></div>
  <div class="steps">
-  <div class="step rv"><b>1</b><h3>Kurun ve bağlanın</h3><p>Programı kurun, Trendyol API bilgilerinizi girin. Veriler bilgisayarınızda kalır.</p></div>
+  <div class="step rv"><b>1</b><h3>Kurun ve bağlanın</h3><p>Programı kurun, Trendyol Satıcı Paneli'nden aldığınız kendi API bilgilerinizi girin. Program verileri cihazınızda yerel olarak tutar.</p></div>
   <div class="step rv"><b>2</b><h3>Tarayın</h3><p>Ürünler, siparişler, komisyon Excel'i ve rakipler içeri gelir; sonuçlar tüm menülere yansır.</p></div>
   <div class="step rv"><b>3</b><h3>Karar verin</h3><p>Kâr, BuyBox ve rakip verisine göre fiyatı ve tarifeyi seçin; Excel'i Trendyol paneline yükleyin.</p></div>
  </div>
@@ -580,13 +590,13 @@ footer picture{display:inline-block;background:#fff;padding:6px 12px;border-radi
 <section id="sss" style="padding:0 0 112px"><div class="w faq-wrap">
  <div class="rv"><span class="eyb">SSS</span><h2 class="h2">Sık sorulan sorular</h2><p class="sub">Aradığınızı bulamazsanız WhatsApp'tan yazın.</p></div>
  <div class="faq rv">
-  <details><summary>Trendyol'a doğrudan fiyat gönderiyor mu?</summary><p>Hayır. KomiFly, Trendyol'un kendi Excel şablonuyla birebir uyumlu bir dosya üretir; siz bu dosyayı panele yüklersiniz.</p></details>
-  <details><summary>Verilerim güvende mi?</summary><p>Program bilgisayarınızda çalışır, veriler yerel olarak tutulur. Bilgileriniz kendi cihazınızdan dışarı çıkmaz.</p></details>
+  <details><summary>Trendyol'a doğrudan fiyat gönderiyor mu?</summary><p>Hayır. KomiFly, Satıcı Paneli'ne yüklenebilecek Excel formatında bir dosya hazırlar; dosyayı kontrol edip yükleme kararını siz verirsiniz.</p></details>
+  <details><summary>Verilerim güvende mi?</summary><p>Program bilgisayarınızda çalışır, mağaza verileri yerel olarak tutulur. Program yalnızca Trendyol API'si ve herkese açık ürün sayfalarıyla iletişim kurar.</p></details>
   <details><summary>Trendyol kâr hesabına hangi kalemler dahil ediliyor?</summary><p>Alış fiyatı, KDV, komisyon, hizmet bedeli, desiye göre kargo, stopaj ve net KDV etkisi tek tek hesaplanır. Her satırdaki Detay bağlantısıyla hesabın adımlarını görebilirsiniz.</p></details>
   <details><summary>Trendyol komisyon oranları programda nasıl hesaplanıyor?</summary><p>4 tarifeli komisyon Excel'inizi yüklersiniz; KomiFly her ürün için dört tarifenin de kârını ayrı ayrı hesaplar, en kârlı tarifeyi işaretler ve seçiminizi toplu olarak uygular.</p></details>
   <details><summary>Desi nedir, kâr hesabını nasıl etkiler?</summary><p>Desi, kargo ücretinin hesaplandığı hacimsel ağırlıktır. Üründe yazan desi gerçeğinden düşükse aradaki farkı siz ödersiniz. KomiFly teslim edilen siparişlerden gerçek desiyi öğrenir, TL cinsinden kargo kaybını gösterir ve tek tuşla toplu düzeltir.</p></details>
   <details><summary>BuyBox takibi nasıl çalışıyor?</summary><p>BuyBox'taki 1., 2. ve 3. fiyat ile sizin sıranız izlenir. "1. olmadıklarım" filtresi kaybettiğiniz ürünleri öne çıkarır; bu ürünler taramada önceliklidir.</p></details>
-  <details><summary>Rakip takibi otomatik mi?</summary><p>Evet. Web taraması arka planda çalışır; rakip satıcıların sırasını, fiyatını, stoğunu ve kupon/kampanya bilgisini toplar. Değişiklikler zaman çizelgesine kaydedilir.</p></details>
+  <details><summary>Rakip takibi otomatik mi?</summary><p>Evet. Program, kendi ürünlerinizin sayfalarında herkese açık görünen satıcı sırası, fiyat ve kampanya bilgilerini makul aralıklarla kontrol eder. Değişiklikler zaman çizelgesine kaydedilir. Kullanımın Trendyol satıcı sözleşmesine ve platform kurallarına uygunluğu kullanıcının sorumluluğundadır.</p></details>
   <details><summary>Flaş Ürünler hangi kurala göre seçiliyor?</summary><p>24 Saat ve 3 Saat fiyatlarının ikisi de asgari kâr hedefinize göre hesaplanır. Yalnızca uygun süre Excel'e yazılır, uygun olmayan ürün atlanır.</p></details>
  </div>
 </div></section>
@@ -598,16 +608,28 @@ footer picture{display:inline-block;background:#fff;padding:6px 12px;border-radi
  <div class="row"><a class="btn" href="https://wa.me/905426983465?text=Merhaba%20KOM%C4%B0FLY%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp'tan bilgi alın</a><a class="btn alt" href="#araclar">Hesaplayıcıları deneyin</a></div>
 </div></div></section>
 
+<section class="legal" id="yasal" aria-labelledby="yasal-h"><div class="w">
+ <h2 id="yasal-h">Yasal bilgilendirme</h2>
+ <details id="kvkk"><summary>KVKK aydınlatma metni</summary>
+  <p>6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında veri sorumlusu [ŞİRKET UNVANI / AD SOYAD], [ADRES]'dir. WhatsApp üzerinden bize yazdığınızda paylaştığınız ad ve telefon bilgisi, talebinize yanıt vermek amacıyla ve sözleşmenin kurulması ile meşru menfaat hukuki sebeplerine dayanılarak işlenir. Analitik çerezler yalnızca açık rızanızla kullanılır; bu veriler Google LLC hizmetleri aracılığıyla yurt dışına aktarılabilir. KVKK m.11 kapsamındaki haklarınız için [E-POSTA] adresine başvurabilirsiniz.</p></details>
+ <details id="cerez"><summary>Çerez politikası</summary>
+  <p>Bu sitede zorunlu olmayan tek çerez türü Google Analytics ve Google Tag Manager ile kullanılan analitik çerezlerdir; ziyaret istatistiklerini ölçmek için yalnızca "Kabul et" seçerseniz yüklenir. "Reddet" seçerseniz analitik çerez kullanılmaz. Tercihiniz tarayıcınızda saklanır ve aşağıdaki "Çerez tercihleri" bağlantısıyla dilediğiniz an değiştirilebilir.</p></details>
+ <details><summary>Sorumluluk reddi</summary>
+  <p>KomiFly bağımsız bir yazılımdır; Trendyol ile ortaklığı, bayiliği veya Trendyol tarafından onaylanmışlığı yoktur. Program, kullanıcının kendi Trendyol Satıcı API bilgileriyle çalışır. Programın Trendyol satıcı sözleşmesi ve platform kurallarına uygun kullanılması kullanıcının sorumluluğundadır. Sitedeki tutarlar ve ekranlar temsilîdir; hesaplamalar bilgilendirme amaçlıdır ve mali müşavir ya da vergi danışmanlığı yerine geçmez.</p></details>
+</div></section>
+
 <footer><div class="w">
  <div><picture><source srcset="komifly-logo.webp" type="image/webp"><img src="komifly-logo.png" alt="KomiFly" width="108" height="30" loading="lazy"></picture><p>Trendyol satıcıları için kâr hesaplama ve BuyBox takip programı.</p></div>
- <p>&copy; <span id="yr">2026</span> KomiFly. Trendyol, ilgili sahibinin markasıdır.</p>
+ <p>&copy; <span id="yr">2026</span> KomiFly. KomiFly bağımsız bir yazılımdır; Trendyol ile ortaklığı, bayiliği veya Trendyol tarafından onaylanmışlığı yoktur. Trendyol adı ve logosu ilgili hak sahibinin tescilli markasıdır.</p>
+ <p style="font-size:12px"><a href="#kvkk">KVKK aydınlatma metni</a> · <a href="#cerez">Çerez politikası</a> · <a href="#" id="ckOpen">Çerez tercihleri</a></p>
+ <p style="font-size:12px;opacity:.8">Sitedeki tüm tutarlar ve ekranlar temsilî örneklerdir; gerçek sonuçlar ürün, tarife ve maliyetlerinize göre değişir. Hesaplamalar bilgilendirme amaçlıdır, mali müşavir veya vergi danışmanlığı yerine geçmez.</p>
 </div></footer>
 
 <a class="fab" href="https://wa.me/905426983465?text=Merhaba%20KOM%C4%B0FLY%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" rel="noopener" aria-label="WhatsApp ile yazın"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
 <script>
 (function(){
- // Örnek sabitler (temsilî): hizmet bedeli KDV dahil 9 TL, stopaj %1, komisyon/hizmet/kargo KDV'si %20.
- var SERVICE=9,STOP=1,FEE_VAT=20;
+ // Örnek sabitler (temsilî): hizmet bedeli KDV dahil 13,19 TL, stopaj %1, komisyon/hizmet/kargo KDV'si %20.
+ var SERVICE=13.19,STOP=1,FEE_VAT=20;
  var $=function(id){return document.getElementById(id)};
  var tl=function(n){return n.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2})+' ₺'};
  var vatPart=function(g,r){return g>0&&r>0?g*r/(100+r):0};
@@ -665,5 +687,15 @@ footer picture{display:inline-block;background:#fff;padding:6px 12px;border-radi
  }else els.forEach(function(el){el.classList.add('in')});
 })();
 </script>
+<div class="ck" id="ck" role="dialog" aria-live="polite" aria-label="Çerez tercihi" hidden>
+ <p>Ziyaret istatistikleri için analitik çerezler (Google Analytics) kullanmak istiyoruz. Bu çerezler yalnızca onay verirseniz yüklenir. Ayrıntılar: <a href="#cerez">Çerez politikası</a>, <a href="#kvkk">KVKK aydınlatma metni</a>.</p>
+ <div class="ckb"><button type="button" id="ckNo">Reddet</button><button type="button" id="ckYes">Kabul et</button></div>
+</div>
+<script>(function(){var ck=document.getElementById('ck');function g(){try{return localStorage.getItem('kf_consent')}catch(e){return null}}
+function set(v){try{localStorage.setItem('kf_consent',v)}catch(e){}ck.hidden=true;if(v==='yes')kfLoadAnalytics();}
+if(!g())ck.hidden=false;
+document.getElementById('ckYes').onclick=function(){set('yes')};
+document.getElementById('ckNo').onclick=function(){var was=g()==='yes';set('no');if(was)location.reload();};
+document.getElementById('ckOpen').onclick=function(e){e.preventDefault();ck.hidden=false;document.getElementById('ckNo').focus();};})();</script>
 </body>
 </html>
