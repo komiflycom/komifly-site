@@ -23,242 +23,507 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- BURAYA: mevcut JSON-LD bloklarınızı (SoftwareApplication, Organization, WebSite, WebPage, FAQPage, HowTo) aynen yapıştırın. -->
+<link rel="preload" as="image" href="komifly-logo.webp" type="image/webp">
 <style>
-:root{--co:#2338ff;--ink:#0d1226;--pa:#f6f7fb;--ln:#d9dce8;--mu:#565c75;--gn:#0a8f62;--rd:#e5392b;--bu:#ffd84a;--d:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;--b:'Hanken Grotesk','Segoe UI',Arial,sans-serif;color-scheme:light}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:20px}
-body{font:17px/1.6 var(--b);color:var(--ink);background:var(--pa);-webkit-font-smoothing:antialiased}
-a{color:inherit}:focus-visible{outline:3px solid var(--bu);outline-offset:3px}
-h1,h2,h3{font-family:var(--d);line-height:1.05;letter-spacing:-.02em}
-.w{max-width:1160px;margin:0 auto;padding:0 22px}
-.btn{display:inline-flex;align-items:center;background:var(--bu);color:var(--ink);font:700 16px var(--d);padding:14px 22px;border-radius:999px;text-decoration:none;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .12s,box-shadow .12s}
-.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
-.btn.alt{background:transparent;color:#fff;border-color:#fff;box-shadow:4px 4px 0 rgba(255,255,255,.3)}
-/* top */
-.top{background:var(--co);color:#fff;padding-bottom:0;overflow:hidden}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
-.logo{font:800 24px var(--d);letter-spacing:-.03em;text-decoration:none;display:flex;align-items:center;gap:9px}
-.logo i{width:22px;height:22px;background:var(--bu);border-radius:6px 6px 6px 0}
-.nav nav{display:flex;gap:22px;font-size:15px}.nav nav a{text-decoration:none;opacity:.85}.nav nav a:hover{opacity:1;text-decoration:underline}
-.hd{padding:40px 0 38px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end}
-.hd h1{font-size:clamp(42px,6.6vw,86px);font-weight:800}
-.hd p{font-size:19px;color:#e4e8ff;margin-bottom:22px}
-.row{display:flex;flex-wrap:wrap;gap:14px}
-/* app window */
-.win{background:#fff;color:#1e293b;border:2px solid var(--ink);border-radius:16px 16px 0 0;box-shadow:0 0 0 6px rgba(255,255,255,.18);margin-bottom:-2px;font-size:13px}
-.bar{display:flex;align-items:center;gap:7px;padding:9px 14px;background:#eef1f7;border-bottom:1px solid #dfe3ee;border-radius:14px 14px 0 0}
-.bar i{width:11px;height:11px;border-radius:50%;background:#cbd2e1}.bar span{margin-left:10px;font-size:12px;color:#64748b}
-.bar em{margin-left:auto;font-style:normal;font-size:11px;background:#dcfce7;color:#166534;border-radius:99px;padding:2px 10px;display:flex;gap:6px;align-items:center}
-.bar em:before{content:"";width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pl 1.6s infinite}
-@keyframes pl{50%{opacity:.25}}@media(prefers-reduced-motion:reduce){.bar em:before{animation:none}}
-.app{display:grid;grid-template-columns:196px 1fr;height:420px;overflow:hidden}
-.sb{background:#f8fafc;border-right:1px solid #e5e9f2;padding:10px 8px;display:flex;flex-direction:column;gap:1px}
-.sb b{font:800 16px var(--d);color:var(--co);padding:4px 8px 10px}
-.sb a{display:block;padding:6px 9px;border-radius:7px;text-decoration:none;color:#475569;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sb a.on{background:#e0e7ff;color:#1e3a8a;font-weight:700}
-.pg{padding:16px 18px;overflow:hidden}
-.pg h3{font-size:20px;color:#0f172a}.pg>p{color:#64748b;margin:3px 0 12px;font-size:12px}
+:root{--blue:#2338ff;--blue2:#1a2bd6;--sky:#3b82f6;--orange:#ff7a1a;--amber:#ffb020;--navy:#070b1f;--navy2:#0e1433;--ink:#0f172a;--mut:#5b6478;--line:#e6e9f2;--bg:#f6f7fb;--card:#fff;--ok:#12a150;--bad:#e5484d;--r:18px;--sh:0 1px 2px #0f172a0d,0 12px 32px -12px #0f172a26;--fd:'Bricolage Grotesque',system-ui,sans-serif;--fb:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font:16px/1.6 var(--fb);color:var(--ink);background:var(--bg);overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.w{max-width:1200px;margin:0 auto;padding:0 20px}
+.h2{font:800 clamp(28px,4vw,44px)/1.1 var(--fd);letter-spacing:-.02em}
+.sub{color:var(--mut);font-size:clamp(16px,1.6vw,18px);max-width:640px;margin-top:14px}
+.eyb{display:inline-flex;align-items:center;gap:8px;font:700 12px/1 var(--fb);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.eyb::before{content:"";width:22px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--orange),var(--blue))}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:12px;font:700 15px/1 var(--fb);text-decoration:none;background:linear-gradient(135deg,var(--orange),#ff5a1f);color:#fff;box-shadow:0 10px 24px -10px #ff6a1acc;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px #ff6a1aee}
+.btn.alt{background:#ffffff14;color:#fff;box-shadow:inset 0 0 0 1px #ffffff33}
+.btn.alt:hover{background:#ffffff22}
+.btn svg{width:18px;height:18px;flex:none}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+section{padding:96px 0}
+/* hero */
+.top{position:relative;background:radial-gradient(900px 500px at 85% -10%,#2338ff55,transparent 60%),radial-gradient(700px 420px at -10% 30%,#ff7a1a2e,transparent 60%),linear-gradient(180deg,var(--navy),var(--navy2));color:#fff;overflow:hidden;isolation:isolate}
+.top::after{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 0,#000 30%,transparent 75%)}
+.nav{position:sticky;top:0;z-index:50;transition:background .25s,box-shadow .25s}
+.nav.sc{background:#070b1fe6;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 #ffffff14}
+.nav .w{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.logo{display:flex;align-items:center;text-decoration:none}
+.logo img{height:38px;width:auto}
+.nav nav{display:flex;gap:4px}
+.nav nav a{padding:8px 14px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;color:#c9cfe4;transition:color .2s,background .2s}
+.nav nav a:hover{color:#fff;background:#ffffff12}
+.nav .btn{padding:11px 18px;font-size:14px}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;padding:56px 0 88px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px 7px 8px;border-radius:99px;background:#ffffff10;box-shadow:inset 0 0 0 1px #ffffff1f;font-size:13px;font-weight:600;color:#dfe3f5;margin-bottom:22px}
+.pill b{padding:3px 9px;border-radius:99px;background:linear-gradient(135deg,var(--orange),var(--amber));color:#1a0f00;font-size:11px;letter-spacing:.06em}
+.hero h1{font:800 clamp(36px,5.4vw,62px)/1.04 var(--fd);letter-spacing:-.03em}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--amber),var(--orange) 45%,#ff4d6d);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{margin-top:22px;font-size:clamp(17px,1.7vw,19px);color:#b8c0dc;max-width:560px}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.chk{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;list-style:none;font-size:14px;color:#aab3d3}
+.chk li{display:flex;align-items:center;gap:8px}
+.chk svg{width:16px;height:16px;color:var(--amber);flex:none}
+/* mock window */
+.stage{position:relative;perspective:1600px}
+.win{position:relative;border-radius:16px;background:#fff;color:var(--ink);box-shadow:0 40px 80px -30px #000c,0 0 0 1px #ffffff1a;overflow:hidden;transform:rotateY(-8deg) rotateX(4deg);transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.stage:hover .win{transform:none}
+.stage::before{content:"";position:absolute;inset:8% -6% -8% 10%;background:radial-gradient(closest-side,#2338ff88,transparent);filter:blur(40px);z-index:-1}
+.bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#f1f3f9;border-bottom:1px solid var(--line);font-size:12px;color:var(--mut)}
+.bar i{width:10px;height:10px;border-radius:50%;background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
+.bar span{margin-left:10px;font-weight:600;color:var(--ink)}.bar em{margin-left:auto;font-style:normal;color:var(--blue);font-weight:600}
+.app{display:grid;grid-template-columns:150px 1fr;min-height:340px}
+.sb{background:var(--navy);padding:12px 8px;display:flex;flex-direction:column;gap:2px}
+.sb img{width:28px;height:28px;margin:2px 6px 10px}
+.sb a{font-size:10.5px;color:#9aa3c4;padding:5px 8px;border-radius:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sb a.on{background:linear-gradient(90deg,#2338ff,#3b5bff);color:#fff}
+.pg{padding:16px 18px;min-width:0}
+.pg h3{font:700 16px var(--fd)}.pg>p{font-size:11.5px;color:var(--mut);margin:4px 0 12px}
 .kp{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
-.kp div{border:1px solid #e2e8f0;border-radius:10px;padding:8px 10px}.kp small{display:block;font-size:9.5px;color:#64748b;font-weight:700}
-.kp strong{font:800 22px var(--d)}
-.fm{border:1px solid #e2e8f0;border-radius:10px;padding:10px;display:grid;grid-template-columns:1fr 1fr 90px auto;gap:8px;align-items:end;margin-bottom:12px}
-.fm span{display:block;font-size:10px;color:#64748b;margin-bottom:2px}.fm div div{border:1px solid #cbd5e1;border-radius:7px;padding:6px 8px;color:#94a3b8;font-size:11px;white-space:nowrap;overflow:hidden}
-.fm u{text-decoration:none;background:var(--co);color:#fff;border-radius:8px;padding:8px 12px;font-weight:700;font-size:11px}
-.lt{width:100%;border-collapse:collapse;font-size:12px}.lt th{text-align:left;color:#64748b;font-size:10px;padding:5px 8px;border-bottom:1px solid #e2e8f0}
-.lt td{padding:6px 8px;border-bottom:1px solid #f1f5f9;border-radius:0}
+.kp div{border:1px solid var(--line);border-radius:10px;padding:8px}
+.kp small{display:block;font-size:8.5px;font-weight:700;color:var(--mut);letter-spacing:.04em}
+.kp strong{font:800 20px var(--fd)}
+.lt{width:100%;border-collapse:collapse;font-size:11px}
+.lt th{text-align:left;font-size:9.5px;color:var(--mut);font-weight:700;padding:6px;border-bottom:1px solid var(--line)}
+.lt td{padding:7px 6px;border-bottom:1px solid #f0f2f7;white-space:nowrap}
 .bl{filter:blur(4px);user-select:none}
-.ch{display:inline-block;border-radius:99px;padding:1px 9px;font-size:11px;font-weight:700;background:#dcfce7;color:#166534}.ch.r{background:#fee2e2;color:#991b1b}.ch.y{background:#fef3c7;color:#92400e}
-/* sections */
-section{padding:84px 0}
-.h2{font-size:clamp(30px,4.4vw,54px);font-weight:800;max-width:16em}
-.sub{margin-top:14px;max-width:36em;color:var(--mu);font-size:18px}
-.stats{background:var(--ink);color:#fff;padding:0}
-.stats .w{display:grid;grid-template-columns:repeat(4,1fr)}
-.stats div{padding:30px 22px;border-right:1px solid #2b3150}.stats div:last-child{border:0}
-.stats b{display:block;font:800 clamp(30px,4vw,50px) var(--d);letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--bu)}
-.stats span{font-size:14px;color:#b9bfd8}
-/* tiles */
-.g{margin-top:38px;display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-.t{border:2px solid var(--ink);border-radius:22px;padding:24px;background:#fff;min-width:0}
-.t h3{font-size:24px;margin-bottom:8px}.t>p{font-size:15px;color:var(--mu);margin-bottom:14px}
-.s2{grid-column:span 2}.s3{grid-column:span 3}.s4{grid-column:span 4}.s6{grid-column:span 6}
-.t.bu{background:var(--bu)}.t.bu>p{color:#4a3d00}.t.co{background:var(--co);color:#fff;border-radius:60px 22px 22px 22px}.t.co>p{color:#dfe4ff}
-.t.ik{background:var(--ink);color:#fff}.t.ik>p{color:#b9bfd8}
-.fl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
-.fl label,.fl2 label{display:block;font-size:12.5px;font-weight:500;color:var(--mu)}
-.t.bu .fl label{color:#4a3d00}
-.fl input,.fl select{width:100%;font:600 16px var(--b);padding:8px 10px;border:2px solid var(--ink);border-radius:10px;background:#fff;color:var(--ink);margin-top:3px}
-.rg{margin:2px 0 12px}.rg label{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mu);font-weight:500}.rg b{font:800 19px var(--d);color:var(--ink)}
-input[type=range]{width:100%;accent-color:var(--co);height:26px}
-.bd{border-top:2px dashed var(--ln);padding-top:8px;font-size:14px}.bd div{display:flex;justify-content:space-between;padding:2px 0;color:var(--mu);font-variant-numeric:tabular-nums}.bd span+span{color:var(--ink);font-weight:500}
-.nt{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-top:10px;padding:12px 14px;border-radius:12px;background:#dff5ea;color:var(--gn);transition:background .2s,color .2s}
-.nt.bad{background:#fde5e2;color:var(--rd)}.nt small{font:600 13px var(--b)}.nt strong{font:800 clamp(28px,4vw,38px) var(--d);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.vd{margin-top:8px;font-size:14px;font-weight:600;min-height:22px}
-.nb{font-size:12px;color:var(--mu);margin-top:6px}
-table.tb{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;border:2px solid var(--ink);border-radius:12px;overflow:hidden;background:#fff;color:var(--ink)}
-.tb th,.tb td{padding:11px 12px;text-align:left;font-size:14.5px;border-bottom:1px solid var(--ln)}.tb th{background:var(--ink);color:#fff;font:700 13px var(--d)}
-.tb tr:last-child td{border:0}.tb .p{color:var(--gn);font-weight:700}.tb .n{color:var(--rd);font-weight:700}.tb tr.best td{background:var(--bu);font-weight:700}.tb tr.best .p{color:var(--ink)}
-.sc{overflow-x:auto}
-.ls{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid #fff;border-radius:16px;overflow:hidden;margin-bottom:18px}
-.ls div{padding:20px;border-right:2px solid #fff}.ls div:last-child{border:0}.ls b{display:block;font:800 clamp(28px,3.6vw,44px) var(--d);letter-spacing:-.03em}.ls div:first-child b{color:#ff8a7f}.ls span{font-size:14px;color:#b9bfd8}
-.t.ik .tb{background:transparent;color:#fff;border-color:#fff}.t.ik .tb td{border-color:#2b3150}.t.ik .tb .n{color:#ff8a7f}.t.ik .tb .p{color:#6ee7b7}
-.cp{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.cp span{border:2px solid #fff;border-radius:99px;padding:3px 12px;font-size:13px;font-weight:700}
-.fr{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px solid rgba(255,255,255,.3);font-size:14.5px}
-.fr b{white-space:nowrap}
-/* steps, who, faq, cta */
-.stp{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.stp div{border-left:4px solid var(--co);padding:4px 0 4px 18px}.stp b{font:800 46px var(--d);color:var(--co);display:block;line-height:1}.stp h3{font-size:22px;margin:10px 0 6px}.stp p{color:var(--mu)}
-.who{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:0 40px;list-style:none;padding:0}.who li{padding:16px 0;border-bottom:1px solid var(--ln);font-size:18px;font-weight:500}
-details{border-bottom:1px solid var(--ln)}summary{cursor:pointer;padding:18px 34px 18px 0;font:700 19px var(--d);list-style:none;position:relative}
-summary::-webkit-details-marker{display:none}summary:after{content:"+";position:absolute;right:4px;top:14px;font-size:26px;transition:transform .2s}details[open] summary:after{transform:rotate(45deg)}
-details p{padding:0 0 20px;color:var(--mu);max-width:46em}.faq{max-width:800px;margin-top:28px}
-.cta{background:var(--co);color:#fff}.cta .sub{color:#e4e8ff}
-footer{background:var(--ink);color:#b9bfd8;padding:28px 0 calc(28px + env(safe-area-inset-bottom,0));font-size:14px}footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
-.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0));z-index:9;background:#25d366;color:#04230f;font:700 15px var(--d);padding:13px 18px;border-radius:999px;text-decoration:none;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
-@media(max-width:900px){
-.hd{grid-template-columns:1fr}.nav nav{display:none}.app{grid-template-columns:1fr;height:auto}.sb{display:none}
-.kp{grid-template-columns:1fr 1fr}.fm{grid-template-columns:1fr}.stats .w{grid-template-columns:1fr 1fr}.stats div:nth-child(2){border-right:0}
-.g{grid-template-columns:1fr}.s2,.s3,.s4,.s6{grid-column:auto}.ls,.stp,.who{grid-template-columns:1fr}.ls div{border-right:0;border-bottom:2px solid #fff}.t.co{border-radius:36px 22px 22px 22px}section{padding:60px 0}}
+.ch{display:inline-block;padding:1px 8px;border-radius:99px;background:#e7f7ee;color:var(--ok);font-weight:700}.ch.y{background:#fff4e0;color:#b76e00}
+.float{position:absolute;background:#fff;color:var(--ink);border-radius:14px;padding:12px 14px;box-shadow:0 20px 40px -16px #000a;font-size:12px;display:flex;align-items:center;gap:10px;animation:bob 6s ease-in-out infinite}
+.float b{display:block;font:800 18px var(--fd)}
+.float .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:none}
+.float svg{width:18px;height:18px}
+.f1{left:-28px;bottom:36px}.f1 .ic{background:#e7f7ee;color:var(--ok)}
+.f2{right:-18px;top:-18px;animation-delay:-3s}.f2 .ic{background:#fff1e6;color:var(--orange)}
+@keyframes bob{50%{transform:translateY(-8px)}}
+/* stats */
+.stats{position:relative;margin-top:-44px;z-index:2}
+.stats .w>div{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:20px;box-shadow:var(--sh);border:1px solid var(--line)}
+.stats .w>div>div{padding:26px 24px;border-left:1px solid var(--line)}
+.stats .w>div>div:first-child{border-left:0}
+.stats b{display:block;font:800 clamp(26px,3vw,36px)/1 var(--fd);letter-spacing:-.02em;background:linear-gradient(135deg,var(--blue),#6a3bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats span{display:block;margin-top:8px;font-size:14px;color:var(--mut)}
+/* features grid */
+.feat{padding:112px 0;background:var(--bg)}
+.feat .head{text-align:center;margin-bottom:72px}
+.feat .head .sub{margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px;box-shadow:var(--sh);transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-4px);box-shadow:0 2px 4px #0f172a0d,0 24px 48px -20px #0f172a30}
+.card .ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:20px;flex:none}
+.card .ico svg{width:24px;height:24px}
+.card h3{font:700 20px/1.2 var(--fd);margin-bottom:10px}
+.card p{font-size:15px;color:var(--mut);line-height:1.65}
+.card ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:7px}
+.card ul li{font-size:14px;color:var(--mut);display:flex;align-items:flex-start;gap:8px}
+.card ul li::before{content:"";width:6px;height:6px;border-radius:50%;margin-top:7px;flex:none}
+.badge{position:absolute;top:20px;right:20px;padding:4px 11px;border-radius:99px;font:700 11px var(--fb);letter-spacing:.06em}
+/* card accent sets */
+.ca{--ac:var(--blue);--acl:#eef0ff}.cb{--ac:var(--orange);--acl:#fff4ec}.cc{--ac:#8b5cf6;--acl:#f5f3ff}.cd{--ac:var(--ok);--acl:#ecfdf5}.ce{--ac:#e11d48;--acl:#fff1f3}
+.card .ico{background:var(--acl);color:var(--ac)}
+.card ul li::before{background:var(--ac)}
+.badge{background:var(--acl);color:var(--ac)}
+/* span helpers */
+.s12{grid-column:span 12}.s8{grid-column:span 8}.s7{grid-column:span 7}.s6{grid-column:span 6}.s5{grid-column:span 5}.s4{grid-column:span 4}.s3{grid-column:span 3}
+/* desi table inside card */
+.dtab{width:100%;border-collapse:collapse;margin-top:16px;font-size:13px}
+.dtab th{text-align:left;color:var(--mut);font-weight:700;font-size:11px;letter-spacing:.05em;padding:6px 8px;border-bottom:2px solid var(--line)}
+.dtab td{padding:8px;border-bottom:1px solid #f0f2f7}
+.dtab td:nth-child(2){color:var(--bad);font-weight:600}.dtab td:nth-child(3){color:var(--ok);font-weight:600}
+.big-loss{font:800 clamp(36px,5vw,52px)/1 var(--fd);letter-spacing:-.03em;background:linear-gradient(135deg,var(--bad),#ff6a1a);-webkit-background-clip:text;background-clip:text;color:transparent;margin-top:14px}
+/* calculator */
+.calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--sh);background:var(--card)}
+.calc-side{padding:32px}
+.calc-side:first-child{border-right:1px solid var(--line)}
+.calc-side h3{font:700 18px var(--fd);margin-bottom:20px}
+.rg label{font-size:13px;font-weight:600;color:var(--mut);display:flex;justify-content:space-between;margin-bottom:8px}
+.rg label b{color:var(--ink);font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--blue);cursor:pointer;margin-bottom:16px}
+.fl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.fl label{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:600;color:var(--mut)}
+.fl input,.fl select{border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:14px var(--fb);color:var(--ink);background:#fff;width:100%;outline:none;transition:border-color .2s}
+.fl input:focus,.fl select:focus{border-color:var(--blue)}
+.bd{margin:14px 0;display:flex;flex-direction:column;gap:4px;font-size:13px}
+.bd div{display:flex;justify-content:space-between;padding:5px 8px;border-radius:6px}
+.bd div:nth-child(odd){background:#f6f7fb}
+.nt{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:12px;background:linear-gradient(135deg,#eef0ff,#f0f4ff);border:1px solid #c7d0ff;margin-top:4px}
+.nt small{font-size:13px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.06em}
+.nt strong{font:800 24px/1 var(--fd);font-variant-numeric:tabular-nums}
+.nt.bad{background:linear-gradient(135deg,#fff1f3,#fff5f5);border-color:#ffa0a8}
+.nt.bad small{color:var(--bad)}.nt.bad strong{color:var(--bad)}
+.vd{margin-top:8px;font-size:13px;color:var(--mut);min-height:18px}
+.nb{font-size:11px;color:#aab3c8;margin-top:12px}
+/* tariff table */
+.tb{width:100%;border-collapse:collapse;font-size:13px;margin-top:4px}
+.tb th{text-align:left;font-size:11px;color:var(--mut);font-weight:700;letter-spacing:.04em;padding:8px;border-bottom:2px solid var(--line)}
+.tb td{padding:9px 8px;border-bottom:1px solid #f0f2f7}
+.tb .n{color:var(--bad);font-weight:600}.tb .p{color:var(--ok);font-weight:600}
+.tb tr.best td{background:#f0fdf4}.tb tr.best td:first-child{border-left:3px solid var(--ok)}
+/* flash */
+.cp{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.cp span{padding:7px 14px;border-radius:99px;font:600 13px var(--fb)}
+.cp span:first-child{background:#ecfdf5;color:#166534}
+.cp span:nth-child(2){background:#fff4e0;color:#92400e}
+.cp span:last-child{background:#f3f4f6;color:#6b7280}
+.fr{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-radius:8px;background:#f6f7fb;margin-bottom:6px;font-size:13px}
+.fr b{padding:3px 10px;border-radius:99px;font-size:12px;background:var(--navy);color:#fff}
+/* tools section */
+.tools{background:var(--bg);padding:112px 0}
+.tools .head{text-align:center;margin-bottom:72px}
+.tools .head .sub{margin:0 auto}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px;box-shadow:var(--sh)}
+.tool h3{font:700 22px var(--fd);margin-bottom:12px}
+.tool>p{color:var(--mut);font-size:15px;margin-bottom:20px}
+.sc-x{overflow-x:auto}
+/* modules strip */
+.mods{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:96px 0}
+.mods .head{text-align:center;margin-bottom:14px}
+.mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.mgrid div{display:flex;align-items:center;gap:12px;padding:16px;border-radius:14px;border:1px solid var(--line);background:var(--bg);font-weight:600;font-size:14.5px;transition:border-color .2s,background .2s}
+.mgrid div:hover{border-color:#c7d0ff;background:#fff}
+.mgrid svg{width:20px;height:20px;color:var(--blue);flex:none}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;counter-reset:st}
+.step{position:relative;padding:32px;border-radius:var(--r);background:#fff;border:1px solid var(--line);box-shadow:var(--sh)}
+.step b{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--blue),#5b3bff);color:#fff;font:800 18px var(--fd);margin-bottom:18px}
+.step h3{font:700 19px var(--fd);margin-bottom:8px}.step p{color:var(--mut);font-size:15px}
+/* who */
+.who-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.who{list-style:none;display:flex;flex-direction:column;gap:12px}
+.who li{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:14px;background:#fff;border:1px solid var(--line);font-weight:500}
+.who svg{width:22px;height:22px;color:var(--orange);flex:none;margin-top:1px}
+.trust{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.trust div{padding:22px;border-radius:16px;background:var(--navy);color:#fff}
+.trust svg{width:24px;height:24px;color:var(--amber);margin-bottom:12px}
+.trust h4{font:700 16px var(--fd);margin-bottom:6px}.trust p{font-size:13.5px;color:#aab3d3}
+/* faq */
+.faq-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.faq{display:flex;flex-direction:column;gap:10px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;transition:border-color .2s,box-shadow .2s}
+.faq details[open]{border-color:#c7d0ff;box-shadow:var(--sh)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 52px 18px 20px;font-weight:700;font-size:16px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:20px;top:50%;width:10px;height:10px;border-right:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:translateY(-70%) rotate(45deg);transition:transform .25s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq details p{padding:0 20px 20px;color:var(--mut);font-size:15px}
+/* cta */
+.cta{padding:0 0 112px}
+.cta .box{position:relative;overflow:hidden;border-radius:28px;padding:72px 48px;text-align:center;color:#fff;background:radial-gradient(600px 300px at 15% 0,#ff7a1a55,transparent 60%),radial-gradient(600px 300px at 90% 100%,#2338ffaa,transparent 60%),var(--navy)}
+.cta .box img{width:64px;height:64px;margin:0 auto 22px;border-radius:16px}
+.cta .sub{color:#b8c0dc;margin:16px auto 0}
+.cta .row{justify-content:center}
+footer{background:var(--navy);color:#8f98ba;padding:40px 0;font-size:14px}
+footer .w{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer img{height:30px;width:auto;margin-bottom:10px}
+.fab{position:fixed;right:20px;bottom:20px;z-index:60;display:inline-flex;align-items:center;gap:10px;padding:13px 18px;border-radius:99px;background:#25d366;color:#fff;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 12px 28px -8px #25d366aa;transition:transform .2s}
+.fab:hover{transform:translateY(-3px)}
+.fab svg{width:22px;height:22px}
+/* reveal */
+/* Gizleme yalnızca JS 'js' sınıfını eklediğinde devreye girer; JS çalışmazsa içerik görünür kalır. */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+/* responsive */
+@media(max-width:1024px){
+ .hero{grid-template-columns:1fr;gap:48px;padding-top:32px}
+ .win{transform:none}
+ .s8,.s7,.s6,.s5,.s4{grid-column:span 12}.s3{grid-column:span 6}
+ .mgrid{grid-template-columns:repeat(3,1fr)}
+ .who-wrap,.faq-wrap{grid-template-columns:1fr;gap:36px}
+}
+@media(max-width:820px){
+ .nav nav{display:none}
+ .calc-wrap{grid-template-columns:1fr}.calc-side:first-child{border-right:0;border-bottom:1px solid var(--line)}
+ .stats .w>div{grid-template-columns:1fr 1fr}
+ .stats .w>div>div:nth-child(3){border-left:0}
+ .stats .w>div>div:nth-child(n+3){border-top:1px solid var(--line)}
+ .steps{grid-template-columns:1fr}
+ .mgrid{grid-template-columns:1fr 1fr}
+ section,.feat{padding:72px 0}
+}
+@media(max-width:560px){
+ .w{padding:0 16px}
+ .app{grid-template-columns:1fr}.sb{display:none}
+ .kp{grid-template-columns:1fr 1fr}
+ .lt th:nth-child(4),.lt td:nth-child(4){display:none}
+ .f1{left:8px;bottom:-22px}.f2{right:8px;top:-22px}
+ .s3{grid-column:span 12}
+ .card,.calc-side,.step{padding:24px}
+ .fl{grid-template-columns:1fr}
+ .mgrid,.trust{grid-template-columns:1fr}
+ .cta .box{padding:52px 22px}
+ .nav .btn span{display:none}
+ .fab span{display:none}.fab{padding:14px}
+ .sc-x{overflow-x:auto}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .js .rv{opacity:1;transform:none}
+ .win{transform:none}
+}
 </style>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZZJFB4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<div class="top"><div class="w">
- <header class="nav">
-  <a class="logo" href="/" aria-label="KomiFly ana sayfa"><i></i>KomiFly</a>
-  <nav aria-label="Ana menü"><a href="#araclar">Hesaplayın</a><a href="#desi">Desi</a><a href="#adimlar">Başlangıç</a><a href="#sss">SSS</a></nav>
-  <a class="btn" href="https://wa.me/905426983465?text=Merhaba%20KOM%C4%B0FLY%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" rel="noopener" style="padding:9px 16px;font-size:14px;box-shadow:3px 3px 0 var(--ink)">WhatsApp</a>
- </header>
- <div class="hd">
-  <h1>Trendyol'da satış fiyatınız değil, cebinize kalan önemli.</h1>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+  <symbol id="i-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15v3M8 18h4"/></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 4.5 4L12 4l4.5 7L21 7l-2 12H5L3 7Z"/></symbol>
+  <symbol id="i-radar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12 19 5"/></symbol>
+  <symbol id="i-pct" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5M12 13v8"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+  <symbol id="i-xls" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z"/><path d="M14 2v6h6M9 13l4 5M13 13l-4 5"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol>
+  <symbol id="i-ret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></symbol>
+  <symbol id="i-hist" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-pc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+  <symbol id="i-api" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></symbol>
+ </defs>
+</svg>
+<div class="top">
+ <header class="nav" id="nav"><div class="w">
+  <a class="logo" href="/" aria-label="KomiFly ana sayfa"><picture><source srcset="komifly-logo.webp" type="image/webp"><img src="komifly-logo.png" alt="KomiFly" width="137" height="38"></picture></a>
+  <nav aria-label="Ana menü"><a href="#ozellikler">Özellikler</a><a href="#araclar">Hesaplayın</a><a href="#desi">Desi</a><a href="#adimlar">Başlangıç</a><a href="#sss">SSS</a></nav>
+  <a class="btn" href="https://wa.me/905426983465?text=Merhaba%20KOM%C4%B0FLY%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" rel="noopener" aria-label="WhatsApp ile iletişime geçin"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
+ </div></header>
+ <div class="w hero">
   <div>
-   <p>KomiFly komisyonu, KDV'yi, desiye göre kargoyu ve stopajı düşer; her ürünün gerçek kârını, BuyBox sırasını ve rakibin fiyatını tek programda gösterir.</p>
-   <div class="row"><a class="btn" href="https://wa.me/905426983465?text=Merhaba%20KOM%C4%B0FLY%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" rel="noopener">WhatsApp'tan bilgi alın</a><a class="btn alt" href="#araclar">Kendiniz deneyin</a></div>
+   <div class="pill"><b>WINDOWS</b>Trendyol satıcıları için masaüstü programı</div>
+   <h1>Trendyol'da satış fiyatınız değil, <em>cebinize kalan</em> önemli.</h1>
+   <p class="lead">KomiFly komisyonu, KDV'yi, desiye göre kargoyu ve stopajı düşer; her ürünün gerçek kârını, BuyBox sırasını ve rakibin fiyatını tek programda gösterir.</p>
+   <div class="row"><a class="btn" href="https://wa.me/905426983465?text=Merhaba%20KOM%C4%B0FLY%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp'tan bilgi alın</a><a class="btn alt" href="#araclar">Kendiniz deneyin</a></div>
+   <ul class="chk">
+    <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Resmi Trendyol API</li>
+    <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Veriler bilgisayarınızda</li>
+    <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Trendyol şablonuna uygun Excel</li>
+   </ul>
   </div>
- </div>
- <div class="win" role="img" aria-label="KomiFly programı, Link Rakip Fırsatları ekranı">
-  <div class="bar"><i></i><i></i><i></i><span>KomiFly — Link Rakip Fırsatları</span><em>Sürekli • BuyBox 1. olmadıklarımız</em></div>
-  <div class="app">
-   <div class="sb"><b>KomiFly</b><a>▦ Dashboard</a><a>▤ Ürünler</a><a>₺ Komisyon Fiyat Güncelleme</a><a>% Komisyon İndirimleri</a><a>⚡ Flaş Ürün</a><a>🏷 Kampanyalar</a><a>⚠ Veri Bildirimleri</a><a>▣ Desi Yönetimi</a><a>% Karlılık Hesaplama</a><a>◈ Sipariş Raporu</a><a class="on">⇄ Link Rakip Fırsatları</a><a>★ Satış Sayımı</a><a>📊 Satış Raporları</a><a>↻ Tarama</a></div>
-   <div class="pg">
-    <h3>Link Rakip Fırsatları</h3>
-    <p>Kendi ürün linkinizi bir rakip linkiyle eşleştirin; her renk ve beden için fiyat, stok, sıra ve satış karşılaştırması burada tutulur.</p>
-    <div class="kp"><div><small>EŞLEŞTİRİLMİŞ LİNK</small><strong>2</strong></div><div><small>1. SIRADA OLDUKLARIM</small><strong style="color:#16a34a">1</strong></div><div><small>HEDEF FİYATI HESAPLANAN</small><strong style="color:#2338ff">2</strong></div><div><small>RAKİPTEN UCUZ OLDUKLARIM</small><strong>0</strong></div></div>
-    <div class="fm"><div><span>Rakip ürün linki</span><div>https://www.trendyol.com/...</div></div><div><span>Kendi ürün linkiniz</span><div>https://www.trendyol.com/...?merchantId=</div></div><div><span>Altına inilecek TL</span><div>1</div></div><u>Eşleştir ve Taramaya Al</u></div>
-    <table class="lt"><thead><tr><th>Varyant</th><th>Rakip satıcı</th><th>Fiyat</th><th>Stok</th><th>Sıra</th><th>Hedef fiyat</th></tr></thead><tbody>
-    <tr><td>Siyah / L</td><td><span class="bl">IŞIK ASKERİ MALZEME</span></td><td>336,82 ₺</td><td>1.253</td><td><span class="ch">1.</span></td><td>335,82 ₺</td></tr>
-    <tr><td>Siyah / M</td><td><span class="bl">IŞIK ASKERİ MALZEME</span></td><td>336,82 ₺</td><td>1.282</td><td><span class="ch">1.</span></td><td>335,82 ₺</td></tr>
-    <tr><td>Siyah / S</td><td><span class="bl">IŞIK ASKERİ MALZEME</span></td><td>336,82 ₺</td><td>551</td><td><span class="ch y">2.</span></td><td>335,82 ₺</td></tr></tbody></table>
+  <div class="stage">
+   <div class="win" role="img" aria-label="KomiFly programı, Link Rakip Fırsatları ekranı">
+    <div class="bar"><i></i><i></i><i></i><span>KomiFly — Link Rakip Fırsatları</span><em>BuyBox 1. olmadıklarım</em></div>
+    <div class="app">
+     <div class="sb"><img src="komifly-icon.webp" alt="" width="28" height="28" loading="lazy"><a>Dashboard</a><a>Ürünler</a><a>Ürün Fiyat Güncelleme</a><a>Komisyon İndirimleri</a><a>Flaş Ürünler</a><a>Kampanyalar</a><a>Komisyon &amp; Kâr Hesaplama</a><a>Satış Raporları</a><a>Desi Yönetimi</a><a>Tarama</a><a class="on">Link Rakip Fırsatları</a><a>En Çok Satanlar</a><a>İade/İptal Analizi</a><a>Rakip Raporu</a></div>
+     <div class="pg">
+      <h3>Link Rakip Fırsatları</h3>
+      <p>Kendi ürün linkinizi bir rakip linkiyle eşleştirin; her renk ve beden için fiyat, stok, sıra karşılaştırması burada.</p>
+      <div class="kp"><div><small>EŞLEŞTİRİLMİŞ</small><strong>2</strong></div><div><small>1. SIRADA</small><strong style="color:#12a150">1</strong></div><div><small>HEDEF FİYAT</small><strong style="color:#2338ff">2</strong></div><div><small>RAKİPTEN UCUZ</small><strong>0</strong></div></div>
+      <table class="lt"><thead><tr><th>Varyant</th><th>Rakip satıcı</th><th>Fiyat</th><th>Stok</th><th>Sıra</th><th>Hedef</th></tr></thead><tbody>
+      <tr><td>Siyah / L</td><td><span class="bl">IŞIK ASKERİ MALZEME</span></td><td>336,82 ₺</td><td>1.253</td><td><span class="ch">1.</span></td><td>335,82 ₺</td></tr>
+      <tr><td>Siyah / M</td><td><span class="bl">IŞIK ASKERİ MALZEME</span></td><td>336,82 ₺</td><td>1.282</td><td><span class="ch">1.</span></td><td>335,82 ₺</td></tr>
+      <tr><td>Siyah / S</td><td><span class="bl">IŞIK ASKERİ MALZEME</span></td><td>336,82 ₺</td><td>551</td><td><span class="ch y">2.</span></td><td>335,82 ₺</td></tr></tbody></table>
+     </div>
+    </div>
    </div>
+   <div class="float f1" aria-hidden="true"><span class="ic"><svg><use href="#i-crown"/></svg></span><span><b>4.604</b>BuyBox 1. sıra</span></div>
+   <div class="float f2" aria-hidden="true"><span class="ic"><svg><use href="#i-box"/></svg></span><span><b>-36.396 ₺</b>desi kaybı bulundu</span></div>
   </div>
  </div>
-</div></div>
+ <div style="height:44px"></div>
+</div>
 
-<div class="stats"><div class="w">
+<div class="stats"><div class="w"><div>
  <div><b>34.938</b><span>barkod tek ekranda izleniyor</span></div>
  <div><b>4.604</b><span>üründe BuyBox 1. sıra sizde</span></div>
  <div><b>636</b><span>ürün Flaş'a kârlı girebiliyor</span></div>
  <div><b>1.060</b><span>üründe desi gerçekle uyuşmuyordu</span></div>
-</div></div>
+</div></div></div>
+<section class="feat" id="ozellikler"><div class="w">
+ <div class="head rv"><span class="eyb">Özellikler</span><h2 class="h2">Fiyattan kâra, BuyBox'tan desiye: tek programda</h2><p class="sub">Programdaki her menü gerçek Trendyol verinizle çalışır. Aşağıda en çok kullanılan modüller var.</p></div>
+ <div class="grid">
+  <article class="card ca s7 rv"><span class="ico"><svg aria-hidden="true"><use href="#i-calc"/></svg></span><h3>Ürün bazında gerçek kâr</h3>
+   <p>Alış maliyeti, komisyon, hizmet bedeli, desiye göre kargo, stopaj ve net KDV etkisi her ürün için ayrı ayrı düşülür. Her satırdaki Detay bağlantısı hesabın adımlarını gösterir.</p>
+   <ul><li>Komisyon &amp; Kâr Hesaplama ekranı</li><li>Asgari kâr hedefine göre hedef fiyat</li><li>XML'den alış maliyeti aktarımı</li></ul></article>
+  <article class="card cb s5 rv"><span class="ico"><svg aria-hidden="true"><use href="#i-crown"/></svg></span><h3>BuyBox takibi</h3>
+   <p>BuyBox'ta 1., 2. ve 3. fiyat ile sıranız izlenir. BuyBox içi ve dışı için ayrı asgari kâr kuralları tanımlanır; "1. olmadıklarım" filtresiyle kaybettiğiniz ürünler öne çıkar.</p></article>
+  <article class="card cc s4 rv"><span class="ico"><svg aria-hidden="true"><use href="#i-radar"/></svg></span><h3>Rakip fiyat takibi</h3>
+   <p>Web taraması rakip satıcıları, sıralarını, fiyat, stok ve kupon/kampanya bilgisini toplar. Değişiklikler zaman çizelgesine düşer, Rakip Raporu'nda özetlenir.</p></article>
+  <article class="card ca s4 rv"><span class="ico"><svg aria-hidden="true"><use href="#i-pct"/></svg></span><h3>4 tarifeli komisyon</h3>
+   <p>Komisyon İndirimleri Excel'ini yükleyin; dört tarifenin kârı ayrı hesaplanır, en kârlısı işaretlenir, seçiminiz toplu uygulanır.</p></article>
+  <article class="card cd s4 rv"><span class="ico"><svg aria-hidden="true"><use href="#i-bolt"/></svg></span><h3>Flaş Ürünler</h3>
+   <p>24 Saat ve 3 Saat flaş fiyatlarına uygunluk ve kâr kontrolü. Yalnızca uygun süreyi yazan, Trendyol şablonuna uygun Excel üretilir.</p></article>
+  <article class="card cb s6 rv"><span class="ico"><svg aria-hidden="true"><use href="#i-chart"/></svg></span><h3>Satış raporları ve analiz</h3>
+   <p>Sipariş tarihine göre satış raporları, En Çok Satanlar, İade/İptal Analizi ve stok hareketinden tahmini satış sayımı. Değişiklikler ekranında fiyat ve satıcı hareketlerini görürsünüz.</p></article>
+  <article class="card ce s6 rv"><span class="ico"><svg aria-hidden="true"><use href="#i-tag"/></svg></span><h3>Kampanya ve kuponlar</h3>
+   <p>Kampanyalar modülünde kupon ve kampanya etkisi kâra yansıtılır; kampanya fiyatları Excel olarak hazırlanır. Ürün Fiyat Güncelleme ekranı fiyat kararlarını toplu yönetir.</p></article>
+ </div>
+</div></section>
 
-<section id="araclar">
- <div class="w">
-  <h2 class="h2">Anlatmayalım. Rakamı siz değiştirin.</h2>
-  <p class="sub">Aşağıdaki dört kutu programdaki hesapların küçük hâli. Hepsi canlı çalışıyor.</p>
-  <div class="g">
-   <div class="t s3"><h3>Bu fiyata satarsam ne kalır?</h3>
-    <div class="rg"><label for="p">Satış fiyatı (KDV dahil) <b id="pv"></b></label><input id="p" type="range" min="150" max="2500" step="1" value="749"></div>
-    <div class="fl"><label>Alış maliyeti<input id="c" type="number" min="0" value="300"></label>
-     <label>Komisyon<select id="m"><option value="8.5">%8,5</option><option value="13">%13</option><option value="14" selected>%14</option><option value="17.5">%17,5</option><option value="21.5">%21,5</option></select></label>
-     <label>Kargo desisi<select id="d"><option value="62">1 desi</option><option value="82">2 desi</option><option value="121" selected>3 desi</option><option value="150">5 desi</option><option value="190">8 desi</option><option value="230">10 desi</option></select></label>
-     <label>Ürün KDV'si<select id="v"><option value="0.1" selected>%10</option><option value="0.2">%20</option></select></label></div>
-    <div class="bd" id="bd"></div>
-    <div class="nt" id="nt"><small>Net kâr</small><strong id="nv"></strong></div><div class="vd" id="vd"></div>
-    <p class="nb">Örnek hesap; kargo ve hizmet bedeli tutarları temsilidir.</p></div>
+<section class="mods"><div class="w">
+ <div class="rv"><span class="eyb">Program menüsü</span><h2 class="h2">Hepsi aynı uygulamanın içinde</h2></div>
+ <div class="mgrid rv">
+  <div><svg aria-hidden="true"><use href="#i-grid"/></svg>Dashboard</div>
+  <div><svg aria-hidden="true"><use href="#i-box"/></svg>Ürünler</div>
+  <div><svg aria-hidden="true"><use href="#i-tag"/></svg>Ürün Fiyat Güncelleme</div>
+  <div><svg aria-hidden="true"><use href="#i-pct"/></svg>Komisyon İndirimleri</div>
+  <div><svg aria-hidden="true"><use href="#i-bolt"/></svg>Flaş Ürünler</div>
+  <div><svg aria-hidden="true"><use href="#i-calc"/></svg>Komisyon &amp; Kâr Hesaplama</div>
+  <div><svg aria-hidden="true"><use href="#i-xls"/></svg>Sipariş Raporu</div>
+  <div><svg aria-hidden="true"><use href="#i-chart"/></svg>Satış Raporları</div>
+  <div><svg aria-hidden="true"><use href="#i-box"/></svg>Desi Yönetimi</div>
+  <div><svg aria-hidden="true"><use href="#i-alert"/></svg>Veri Bildirimleri</div>
+  <div><svg aria-hidden="true"><use href="#i-radar"/></svg>Tarama ve Raporları</div>
+  <div><svg aria-hidden="true"><use href="#i-api"/></svg>Link Rakip Fırsatları</div>
+  <div><svg aria-hidden="true"><use href="#i-crown"/></svg>En Çok Satanlar</div>
+  <div><svg aria-hidden="true"><use href="#i-ret"/></svg>İade/İptal Analizi</div>
+  <div><svg aria-hidden="true"><use href="#i-hist"/></svg>Değişiklikler</div>
+  <div><svg aria-hidden="true"><use href="#i-bell"/></svg>Rakip Raporu</div>
+ </div>
+</div></section>
+<section class="tools" id="araclar"><div class="w">
+ <div class="head rv"><span class="eyb">Kendiniz deneyin</span><h2 class="h2">Anlatmayalım. Rakamı siz değiştirin.</h2><p class="sub">Aşağıdaki kutular programdaki hesapların küçük hâli. Hepsi canlı çalışıyor.</p></div>
+ <div class="grid">
+  <article class="tool s7 rv"><h3>Bu fiyata satarsam ne kalır?</h3>
+   <div class="rg"><label for="p">Satış fiyatı (KDV dahil) <b id="pv"></b></label><input id="p" type="range" min="150" max="2500" step="1" value="749"></div>
+   <div class="fl"><label>Alış maliyeti<input id="c" type="number" min="0" value="300"></label>
+    <label>Komisyon<select id="m"><option value="8.5">%8,5</option><option value="13">%13</option><option value="14" selected>%14</option><option value="17.5">%17,5</option><option value="21.5">%21,5</option></select></label>
+    <label>Kargo desisi (örnek tarife)<select id="d"><option value="62">1 desi</option><option value="82">2 desi</option><option value="121" selected>3 desi</option><option value="150">5 desi</option><option value="190">8 desi</option><option value="230">10 desi</option></select></label>
+    <label>Ürün KDV'si<select id="v"><option value="0.1" selected>%10</option><option value="0.2">%20</option></select></label></div>
+   <div class="bd" id="bd"></div>
+   <div class="nt" id="nt"><small>Net kâr</small><strong id="nv"></strong></div><div class="vd" id="vd"></div>
+   <p class="nb">Örnek hesap: hizmet bedeli 9 TL ve desiye göre kargo tutarları (62–230 TL) örnek değerlerdir. Programda kendi kargo tarifeniz ve hizmet bedeliniz kullanılır.</p></article>
 
-   <div class="t s3 bu"><h3>Rakibin 1 TL altına inersem?</h3>
-    <p>Link Rakip Fırsatları'nda rakibin fiyatının altına kaç TL ineceğinizi siz seçersiniz. Program hedef fiyatı ve kârı hesaplar.</p>
-    <div class="fl"><label>Rakip fiyatı<input id="rk" type="number" value="336.82" step="0.01"></label><label>Altına inilecek TL<input id="un" type="number" value="1" step="0.5"></label>
-     <label>Alış maliyeti<input id="rc" type="number" value="210"></label><label>Asgari kâr (TL)<input id="mn" type="number" value="40"></label></div>
-    <div class="nt" id="rn"><small>Hedef fiyat</small><strong id="rt"></strong></div>
-    <div class="bd" id="rb" style="border-color:#4a3d0044"></div><div class="vd" id="rv"></div></div>
+  <article class="tool s5 rv"><h3>Rakibin 1 TL altına inersem?</h3>
+   <p>Link Rakip Fırsatları'nda rakibin fiyatının altına kaç TL ineceğinizi siz seçersiniz. Program hedef fiyatı ve kârı hesaplar.</p>
+   <div class="fl"><label>Rakip fiyatı<input id="rk" type="number" value="336.82" step="0.01"></label><label>Altına inilecek TL<input id="un" type="number" value="1" step="0.5"></label>
+    <label>Alış maliyeti<input id="rc" type="number" value="210"></label><label>Asgari kâr (TL)<input id="mn" type="number" value="40"></label></div>
+   <div class="nt" id="rn"><small>Hedef fiyat</small><strong id="rt"></strong></div>
+   <div class="bd" id="rb"></div><div class="vd" id="rv"></div></article>
+  <article class="tool s6 rv"><h3>Hangi komisyon tarifesine girilir?</h3>
+   <p>4 tarifeli Excel'i yükleyin; her ürün için dördü ayrı hesaplanır, kârlı olan işaretlenir, seçim toplu uygulanır.</p>
+   <div class="sc-x"><table class="tb"><thead><tr><th>Tarife</th><th>Komisyon</th><th>Hedef fiyat</th><th>Net kâr</th></tr></thead><tbody>
+    <tr><td>1. tarife</td><td>%17,50</td><td>813,26 ₺</td><td class="n">-81,36 ₺</td></tr>
+    <tr><td>2. tarife</td><td>%13,00</td><td>742,10 ₺</td><td class="p">+4,90 ₺</td></tr>
+    <tr class="best"><td>3. tarife, önerilen</td><td>%8,50</td><td>698,40 ₺</td><td class="p">+58,05 ₺</td></tr>
+    <tr><td>4. tarife</td><td>%5,00</td><td>664,20 ₺</td><td class="p">+96,10 ₺</td></tr></tbody></table></div>
+   <p class="nb">Örnek tablo; tutarlar temsilidir.</p></article>
 
-   <div class="t s4"><h3>Hangi komisyon tarifesine girilir?</h3>
-    <p>4 tarifeli Excel'i yükleyin; her ürün için dördü ayrı hesaplanır, kârlı olan işaretlenir, seçim toplu uygulanır.</p>
-    <div class="sc"><table class="tb"><thead><tr><th>Tarife</th><th>Komisyon</th><th>Hedef fiyat</th><th>Net kâr</th></tr></thead><tbody>
-     <tr><td>1. tarife</td><td>%17,50</td><td>813,26 ₺</td><td class="n">-81,36 ₺</td></tr>
-     <tr><td>2. tarife</td><td>%13,00</td><td>742,10 ₺</td><td class="p">+4,90 ₺</td></tr>
-     <tr class="best"><td>3. tarife, önerilen</td><td>%8,50</td><td>698,40 ₺</td><td class="p">+58,05 ₺</td></tr>
-     <tr><td>4. tarife</td><td>%5,00</td><td>664,20 ₺</td><td class="p">+96,10 ₺</td></tr></tbody></table></div></div>
+  <article class="tool s6 rv"><h3>Flaş Ürün</h3>
+   <p>24 Saat ve 3 Saat fiyatından hangisi asgari kârı sağlıyor? Yalnızca uygun olan Excel'e yazılır.</p>
+   <div class="cp"><span>636 aktarılacak</span><span>459 uygun değil</span><span>48 bilgi eksik</span></div>
+   <div class="fr"><span>Pilot Eldiven</span><b>24 Saat</b></div><div class="fr"><span>Taktik Takım</span><b>3 Saat</b></div><div class="fr"><span>Polar Bere Seti</span><b>Uygun değil</b></div>
+   <p class="nb">Örnek ekran; sayılar temsilidir.</p></article>
+  <article class="tool s12 rv" id="desi"><h3>Kargo desisi kontrolü</h3>
+   <p>Desi Yönetimi, teslim edilen siparişlerdeki gerçek desiyi üründe kayıtlı desiyle karşılaştırır. Fark varsa kargo kaybını TL olarak gösterir; düzeltmeyi tek tuşla toplu uygularsınız.</p>
+   <div class="big-loss">-36.396 ₺</div>
+   <p class="nb" style="margin-top:6px">1.060 üründe bulunan toplam desi kaybı</p>
+   <div class="sc-x"><table class="dtab"><thead><tr><th>Ürün</th><th>Kayıtlı desi</th><th>Gerçek desi</th><th>Sipariş başı fark</th></tr></thead><tbody>
+    <tr><td>Pilot Eldiven</td><td>1</td><td>3</td><td>-59,00 ₺</td></tr>
+    <tr><td>Taktik Takım</td><td>2</td><td>5</td><td>-68,00 ₺</td></tr>
+    <tr><td>Polar Bere Seti</td><td>1</td><td>2</td><td>-20,00 ₺</td></tr></tbody></table></div>
+   <p class="nb">Örnek: ürünler ve kargo farkları temsilidir; gerçek tutarlar anlaşmalı kargo tarifenize göre hesaplanır.</p></article>
+  <article class="tool s4 rv"><h3>Hız modu</h3><p>Arka plandaki sayım programı yavaşlatırsa hız modu sayımları durdurur, kaldığı yerden devam ettirir. Ekranda 5 dakika hareket yoksa kendiliğinden sürer.</p></article>
+  <article class="tool s4 rv"><h3>BuyBox'a göre öncelik</h3><p>BuyBox'ta 1. olmadığınız ürünler 15 dakikada bir önce taranır; boşta kalınca tüm katalog taranır. Satıcı çıkışı, yeni satıcı, fiyat ve kampanya değişimi kaydedilir.</p></article>
+  <article class="tool s4 rv"><h3>Excel ve raporlar</h3><p>Trendyol şablonuna uygun fiyat ve tarife Excel'leri. Tarih aralığı seçip tüm işlem geçmişini, her tür ayrı sayfada, indirirsiniz.</p></article>
+ </div>
+</div></section>
 
-   <div class="t s2 co"><h3>Flaş Ürün</h3>
-    <p>24 Saat ve 3 Saat fiyatından hangisi asgari kârı sağlıyor? Yalnızca uygun olan Excel'e yazılır.</p>
-    <div class="cp"><span>636 aktarılacak</span><span>459 uygun değil</span><span>48 bilgi eksik</span></div>
-    <div class="fr"><span>Pilot Eldiven</span><b>24 Saat</b></div><div class="fr"><span>Taktik Takım</span><b>3 Saat</b></div><div class="fr"><span>Polar Bere Seti</span><b>Uygun değil</b></div></div>
+<section id="adimlar" style="background:#fff;padding:96px 0"><div class="w">
+ <div class="head rv" style="text-align:center;margin-bottom:56px"><span class="eyb">Nasıl başlanır</span><h2 class="h2">Üç adımda başlayın</h2></div>
+ <div class="steps">
+  <div class="step rv"><b>1</b><h3>Kurun ve bağlanın</h3><p>Programı kurun, Trendyol API bilgilerinizi girin. Veriler bilgisayarınızda kalır.</p></div>
+  <div class="step rv"><b>2</b><h3>Tarayın</h3><p>Ürünler, siparişler, komisyon Excel'i ve rakipler içeri gelir; sonuçlar tüm menülere yansır.</p></div>
+  <div class="step rv"><b>3</b><h3>Karar verin</h3><p>Kâr, BuyBox ve rakip verisine göre fiyatı ve tarifeyi seçin; Excel'i Trendyol paneline yükleyin.</p></div>
+ </div>
+</div></section>
 
-   <div class="t s6 ik" id="desi"><h3>Kargo desisi: görünmeyen zarar</h3>
-    <p>Üründe yazan desi gerçeğinden düşükse farkı siz ödersiniz ve hiçbir yerde "zarar" diye görünmez. KomiFly, teslim edilen tekli siparişlerden Trendyol'un gerçekte kestiği desiyi öğrenir; tek tuşla toplu düzeltirsiniz.</p>
-    <div class="ls"><div><b>-36.396 ₺</b><span>bir dönemde kargo farkından kayıp</span></div><div><b>1.060</b><span>üründe kayıtlı desi yanlış</span></div><div><b>1.144</b><span>ürünün gerçek desisi öğrenildi</span></div></div>
-    <div class="sc"><table class="tb"><thead><tr><th>Ürün</th><th>Sizde kayıtlı</th><th>Gerçekte kesilen</th></tr></thead><tbody>
-     <tr><td>Kobra Kemer 125 cm, Taktik Pantolon Kemeri</td><td class="n">3 desi</td><td class="p">1 desi (%95,2)</td></tr>
-     <tr><td>Özel Güvenlik Yazılı Palaska Siyah</td><td class="n">3 desi</td><td class="p">1 desi (%97,4)</td></tr></tbody></table></div></div>
-
-   <div class="t s2"><h3>Hız modu</h3><p>Arka plandaki sayım programı yavaşlatırsa hız modu sayımları durdurur, kaldığı yerden devam ettirir. Ekranda 5 dakika hareket yoksa kendiliğinden sürer.</p></div>
-   <div class="t s2"><h3>BuyBox'a göre öncelik</h3><p>BuyBox'ta 1. olmadığınız ürünler 15 dakikada bir önce taranır; boşta kalınca tüm katalog taranır. Satıcı çıkışı, yeni satıcı, fiyat ve kampanya değişimi kaydedilir.</p></div>
-   <div class="t s2"><h3>Excel ve raporlar</h3><p>Trendyol şablonuna uygun fiyat ve tarife Excel'leri. Tarih aralığı seçip tüm işlem geçmişini, her tür ayrı sayfada, indirirsiniz.</p></div>
+<section style="padding:96px 0"><div class="w">
+ <div class="head rv" style="text-align:center;margin-bottom:56px"><span class="eyb">Kimler için</span><h2 class="h2">Ürün sayısı büyüdükçe elle hesap bitiyor</h2></div>
+ <div class="who-wrap">
+  <ul class="who rv">
+   <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Trendyol'da yüzlerce, binlerce ürünle satış yapıyorsunuz</li>
+   <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Komisyon kampanyalarında hangi ürüne girileceğini elle hesaplamaktan yoruldunuz</li>
+   <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Kargo desisi yüzünden görünmez zarar ediyorsunuz</li>
+   <li><svg aria-hidden="true"><use href="#i-ok"/></svg>BuyBox'ta rakibi gün içinde izlemek istiyorsunuz</li>
+  </ul>
+  <div class="trust rv">
+   <div><svg aria-hidden="true"><use href="#i-lock"/></svg><h4>Verileriniz güvende</h4><p>Program bilgisayarınızda çalışır, veriler yerel olarak tutulur.</p></div>
+   <div><svg aria-hidden="true"><use href="#i-pc"/></svg><h4>Windows masaüstü</h4><p>Kurulum tek seferlik. Trendyol API anahtarınızı girin, başlayın.</p></div>
   </div>
  </div>
-</section>
+</div></section>
+<section id="sss" style="padding:0 0 112px"><div class="w faq-wrap">
+ <div class="rv"><span class="eyb">SSS</span><h2 class="h2">Sık sorulan sorular</h2><p class="sub">Aradığınızı bulamazsanız WhatsApp'tan yazın.</p></div>
+ <div class="faq rv">
+  <details><summary>Trendyol'a doğrudan fiyat gönderiyor mu?</summary><p>Hayır. KomiFly, Trendyol'un kendi Excel şablonuyla birebir uyumlu bir dosya üretir; siz bu dosyayı panele yüklersiniz.</p></details>
+  <details><summary>Verilerim güvende mi?</summary><p>Program bilgisayarınızda çalışır, veriler yerel olarak tutulur. Bilgileriniz kendi cihazınızdan dışarı çıkmaz.</p></details>
+  <details><summary>Trendyol kâr hesabına hangi kalemler dahil ediliyor?</summary><p>Alış fiyatı, KDV, komisyon, hizmet bedeli, desiye göre kargo, stopaj ve net KDV etkisi tek tek hesaplanır. Her satırdaki Detay bağlantısıyla hesabın adımlarını görebilirsiniz.</p></details>
+  <details><summary>Trendyol komisyon oranları programda nasıl hesaplanıyor?</summary><p>4 tarifeli komisyon Excel'inizi yüklersiniz; KomiFly her ürün için dört tarifenin de kârını ayrı ayrı hesaplar, en kârlı tarifeyi işaretler ve seçiminizi toplu olarak uygular.</p></details>
+  <details><summary>Desi nedir, kâr hesabını nasıl etkiler?</summary><p>Desi, kargo ücretinin hesaplandığı hacimsel ağırlıktır. Üründe yazan desi gerçeğinden düşükse aradaki farkı siz ödersiniz. KomiFly teslim edilen siparişlerden gerçek desiyi öğrenir, TL cinsinden kargo kaybını gösterir ve tek tuşla toplu düzeltir.</p></details>
+  <details><summary>BuyBox takibi nasıl çalışıyor?</summary><p>BuyBox'taki 1., 2. ve 3. fiyat ile sizin sıranız izlenir. "1. olmadıklarım" filtresi kaybettiğiniz ürünleri öne çıkarır; bu ürünler taramada önceliklidir.</p></details>
+  <details><summary>Rakip takibi otomatik mi?</summary><p>Evet. Web taraması arka planda çalışır; rakip satıcıların sırasını, fiyatını, stoğunu ve kupon/kampanya bilgisini toplar. Değişiklikler zaman çizelgesine kaydedilir.</p></details>
+  <details><summary>Flaş Ürünler hangi kurala göre seçiliyor?</summary><p>24 Saat ve 3 Saat fiyatlarının ikisi de asgari kâr hedefinize göre hesaplanır. Yalnızca uygun süre Excel'e yazılır, uygun olmayan ürün atlanır.</p></details>
+ </div>
+</div></section>
 
-<section id="adimlar" style="background:#fff">
- <div class="w"><h2 class="h2">Üç adımda başlayın</h2>
-  <div class="stp"><div><b>1</b><h3>Kurun ve bağlanın</h3><p>Programı kurun, Trendyol API bilgilerinizi girin. Veriler bilgisayarınızda kalır.</p></div>
-  <div><b>2</b><h3>Tarayın</h3><p>Ürünler, siparişler, komisyon Excel'i ve rakipler içeri gelir; sonuçlar tüm menülere yansır.</p></div>
-  <div><b>3</b><h3>Karar verin</h3><p>Kâr, BuyBox ve rakip verisine göre fiyatı ve tarifeyi seçin; Excel'i Trendyol paneline yükleyin.</p></div></div></div>
-</section>
-
-<section><div class="w"><h2 class="h2">Ürün sayısı büyüdükçe elle hesap bitiyor</h2>
- <ul class="who"><li>Trendyol'da yüzlerce, binlerce ürünle satış yapıyorsunuz</li><li>Komisyon kampanyalarında hangi ürüne girileceğini elle hesaplamaktan yoruldunuz</li><li>Kargo desisi yüzünden görünmez zarar ediyorsunuz</li><li>BuyBox'ta rakibi gün içinde izlemek istiyorsunuz</li></ul></div></section>
-
-<section id="sss" style="padding-top:0"><div class="w"><h2 class="h2">Sık sorulan sorular</h2><div class="faq">
- <details><summary>Trendyol'a doğrudan fiyat gönderiyor mu?</summary><p>Hayır. KomiFly, Trendyol'un kendi Excel şablonuyla birebir uyumlu bir dosya üretir; siz bu dosyayı panele yüklersiniz.</p></details>
- <details><summary>Verilerim güvende mi?</summary><p>Program bilgisayarınızda çalışır, veriler yerel olarak tutulur. Bilgileriniz kendi cihazınızdan dışarı çıkmaz.</p></details>
- <details><summary>Trendyol kâr hesabına hangi kalemler dahil ediliyor?</summary><p>Alış fiyatı, KDV, komisyon, hizmet bedeli, desiye göre kargo, stopaj ve net KDV etkisi tek tek hesaplanır. Her satırdaki Detay bağlantısıyla hesabın adımlarını görebilirsiniz.</p></details>
- <details><summary>Trendyol komisyon oranları programda nasıl hesaplanıyor?</summary><p>4 tarifeli komisyon Excel'inizi yüklersiniz; KomiFly her ürün için dört tarifenin de kârını ayrı ayrı hesaplar, en kârlı tarifeyi işaretler ve seçiminizi toplu olarak uygular.</p></details>
- <details><summary>Desi nedir, kâr hesabını nasıl etkiler?</summary><p>Desi, kargo ücretinin hesaplandığı hacimsel ağırlıktır. Üründe yazan desi gerçeğinden düşükse aradaki farkı siz ödersiniz. KomiFly teslim edilen siparişlerden gerçek desiyi öğrenir, TL cinsinden kargo kaybını gösterir ve tek tuşla toplu düzeltir.</p></details>
- <details><summary>BuyBox takibi nasıl çalışıyor?</summary><p>Program ürünlerinizin BuyBox durumunu ve 1. sıradaki fiyatı sürekli izler. BuyBox içi ve BuyBox dışı için ayrı asgari kâr kuralları tanımlayabilirsiniz.</p></details>
- <details><summary>Rakip fiyatlarını takip edebilir miyim?</summary><p>Evet. Web taraması rakip satıcıları, sıralarını, fiyat, stok ve kupon/kampanya bilgisini toplar; değişiklikler zaman çizelgesine düşer. Kendi ürün linkinizi rakip linkiyle eşleştirip renk ve beden bazında karşılaştırma yapabilirsiniz.</p></details>
- <details><summary>Flaş Ürün kampanyalarına uygunluğu görebilir miyim?</summary><p>Evet. 24 Saat ve 3 Saat flaş fiyatları için uygunluk ve kâr hesabı yapılır; yalnızca uygun süreyi yazan, Trendyol Flaş şablonuna uygun bir Excel dosyası üretilir.</p></details>
- <details><summary>Satış adetleri nasıl hesaplanıyor?</summary><p>Satış adetleri stok hareketinden tahmini olarak hesaplanır. Ekranlarda bu değerler 'tahmini satış' olarak belirtilir.</p></details>
- <details><summary>Lisans nasıl çalışıyor?</summary><p>Lisans bilgisayarınıza bağlıdır; süreli ve takip edilecek ürün linki kapasitesine göre verilir.</p></details>
- <details><summary>Başka bilgisayara taşıyabilir miyim?</summary><p>Taşıma için yeni bir lisans dosyası gerekir.</p></details>
+<section class="cta"><div class="w"><div class="box rv">
+ <img src="komifly-icon.webp" alt="" width="64" height="64" loading="lazy">
+ <h2 class="h2">Hangi ürünün gerçekten kâr ettiğini görün</h2>
+ <p class="sub">Kurulum ve deneme için WhatsApp'tan yazın; programı kendi Trendyol verinizle birlikte inceleyelim.</p>
+ <div class="row"><a class="btn" href="https://wa.me/905426983465?text=Merhaba%20KOM%C4%B0FLY%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp'tan bilgi alın</a><a class="btn alt" href="#araclar">Hesaplayıcıları deneyin</a></div>
 </div></div></section>
 
-<section class="cta"><div class="w"><h2 class="h2">Hangi ürünün gerçekten kazandırdığını görün</h2>
- <p class="sub">Tarifeyi doğru seçin, desiyi kontrol edin, BuyBox'ı takip edin. Hesabı KomiFly yapsın.</p>
- <p style="margin-top:26px"><a class="btn" href="https://wa.me/905426983465?text=Merhaba%20KOM%C4%B0FLY%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" rel="noopener">WhatsApp'tan iletişime geçin</a></p></div></section>
+<footer><div class="w">
+ <div><picture><source srcset="komifly-logo.webp" type="image/webp"><img src="komifly-logo.png" alt="KomiFly" width="108" height="30" loading="lazy"></picture><p>Trendyol satıcıları için kâr hesaplama ve BuyBox takip programı.</p></div>
+ <p>&copy; <span id="yr">2026</span> KomiFly. Trendyol, ilgili sahibinin markasıdır.</p>
+</div></footer>
 
-<footer><div class="w"><span>KomiFly: Trendyol kâr hesaplama, komisyon, desi, BuyBox ve rakip takip programı. Windows masaüstü uygulaması.</span><span>&copy; 2026 KomiFly. Tüm hakları saklıdır.</span></div></footer>
-<a class="fab" href="https://wa.me/905426983465?text=Merhaba%20KOM%C4%B0FLY%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" rel="noopener">WhatsApp'tan yazın</a>
-
+<a class="fab" href="https://wa.me/905426983465?text=Merhaba%20KOM%C4%B0FLY%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" rel="noopener" aria-label="WhatsApp ile yazın"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
 <script>
 (function(){
-var $=function(i){return document.getElementById(i)};
-var f=function(n){return n.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2})+' ₺'};
-function calc(P,C,r,cg,v){var svc=9,com=P*r/100,st=P/(1+v)*.01,kdv=P*v/(1+v)-C*v/(1+v)-(com+cg+svc)*.2/1.2;
- return{com:com,svc:svc,st:st,kdv:kdv,net:P-C-com-cg-svc-st-kdv}}
-function rows(a,P,C,r,cg){return[['Satış fiyatı',f(P)],['Alış maliyeti','-'+f(C)],['Komisyon (%'+String(r).replace('.',',')+')','-'+f(a.com)],['Kargo','-'+f(cg)],['Hizmet bedeli','-'+f(a.svc)],['Stopaj','-'+f(a.st)],['Net KDV etkisi',(a.kdv>=0?'-':'+')+f(Math.abs(a.kdv))]].map(function(x){return '<div><span>'+x[0]+'</span><span>'+x[1]+'</span></div>'}).join('')}
-function s(n){return(n>=0?'+':'-')+f(Math.abs(n))}
-function run1(){var P=+$('p').value,C=+$('c').value||0,r=+$('m').value,cg=+$('d').value,v=+$('v').value,a=calc(P,C,r,cg,v),mar=P?a.net/P*100:0;
- $('pv').textContent=f(P);$('bd').innerHTML=rows(a,P,C,r,cg);$('nv').textContent=s(a.net);$('nt').className='nt'+(a.net<0?' bad':'');
- $('vd').textContent=a.net<0?'Bu fiyatta zarar ediyorsunuz.':'Kâr marjı %'+mar.toFixed(1).replace('.',',')+(mar<10?': ince. Kargo ve komisyon tarifesine bakın.':'.')}
-function run2(){var T=(+$('rk').value||0)-(+$('un').value||0),C=+$('rc').value||0,mn=+$('mn').value||0,a=calc(T,C,14,62,.1);
- $('rt').textContent=f(T);$('rb').innerHTML='<div><span>Bu fiyatta net kâr</span><span>'+s(a.net)+'</span></div>';
- var ok=a.net>=mn;$('rn').className='nt'+(ok?'':' bad');$('rv').textContent=ok?'✓ Kâr hedefini bozmadan 1. sıraya çıkılabilir.':'✕ Bu fiyat asgari kârın altında kalıyor.'}
-['p','c','m','d','v'].forEach(function(i){$(i).addEventListener('input',run1)});
-['rk','un','rc','mn'].forEach(function(i){$(i).addEventListener('input',run2)});
-run1();run2();
+ // Örnek sabitler (temsilî): hizmet bedeli KDV dahil 9 TL, stopaj %1, komisyon/hizmet/kargo KDV'si %20.
+ var SERVICE=9,STOP=1,FEE_VAT=20;
+ var $=function(id){return document.getElementById(id)};
+ var tl=function(n){return n.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2})+' ₺'};
+ var vatPart=function(g,r){return g>0&&r>0?g*r/(100+r):0};
+ // pricing_tools.price_breakdown ile aynı mantık; alış maliyeti KDV dahil kabul edilir.
+ function profit(S,cost,comm,ship,vat){
+  var salesVat=vatPart(S,vat),purVat=vatPart(cost,vat),c=S*comm/100;
+  var netVat=salesVat-purVat-vatPart(ship,FEE_VAT)-vatPart(c,FEE_VAT)-vatPart(SERVICE,FEE_VAT);
+  var vatCash=netVat>0?netVat:0,stop=(S-salesVat)*STOP/100;
+  return {c:c,ship:ship,stop:stop,netVat:netVat,vatCash:vatCash,p:S-cost-c-SERVICE-ship-stop-vatCash};
+ }
+ function num(id){var v=parseFloat(String($(id).value).replace(',','.'));return isFinite(v)&&v>=0?v:0}
+ function rows(r,cost){
+  return '<div><span>Alış maliyeti</span><span>-'+tl(cost)+'</span></div>'+
+   '<div><span>Komisyon</span><span>-'+tl(r.c)+'</span></div>'+
+   '<div><span>Hizmet bedeli (örnek)</span><span>-'+tl(SERVICE)+'</span></div>'+
+   '<div><span>Kargo (örnek tarife)</span><span>-'+tl(r.ship)+'</span></div>'+
+   '<div><span>Stopaj (%1)</span><span>-'+tl(r.stop)+'</span></div>'+
+   '<div><span>Ödenecek net KDV</span><span>-'+tl(r.vatCash)+'</span></div>';
+ }
+ function calc1(){
+  var S=num('p'),cost=num('c'),r=profit(S,cost,+$('m').value,+$('d').value,+$('v').value*100);
+  $('pv').textContent=tl(S);$('bd').innerHTML=rows(r,cost);$('nv').textContent=tl(r.p);
+  $('nt').classList.toggle('bad',r.p<0);
+  $('vd').textContent=S?'Kâr marjı: %'+(r.p/S*100).toLocaleString('tr-TR',{maximumFractionDigits:1})+(r.netVat<0?' · Negatif KDV devreden krediye yazılır, kâra eklenmez.':''):'';
+  calc2();
+ }
+ function calc2(){
+  var S=Math.max(0,num('rk')-num('un')),cost=num('rc'),min=num('mn');
+  var r=profit(S,cost,+$('m').value,+$('d').value,+$('v').value*100);
+  $('rt').textContent=tl(S);$('rb').innerHTML=rows(r,cost)+'<div><b>Net kâr</b><b>'+tl(r.p)+'</b></div>';
+  var ok=r.p>=min;$('rn').classList.toggle('bad',!ok);
+  $('rv').textContent=(ok?'Asgari kârı sağlıyor.':'Asgari kârın altında; program bu fiyatı önermez.')+' Komisyon, desi ve KDV soldaki hesaptan alınır.';
+ }
+ ['p','c','m','d','v'].forEach(function(id){$(id).addEventListener('input',calc1)});
+ ['rk','un','rc','mn'].forEach(function(id){$(id).addEventListener('input',calc2)});
+ calc1();
+ var nav=$('nav'),onS=function(){nav.classList.toggle('sc',scrollY>10)};addEventListener('scroll',onS,{passive:true});onS();
+ $('yr').textContent=new Date().getFullYear();
+ var els=document.querySelectorAll('.rv');
+ if('IntersectionObserver' in window){
+  document.documentElement.classList.add('js');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(el){io.observe(el)});
+ }else els.forEach(function(el){el.classList.add('in')});
 })();
 </script>
 </body>
